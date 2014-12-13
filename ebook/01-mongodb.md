@@ -225,7 +225,8 @@ db
 be-mean
 
 ```
-> **Dica**: instale o `mongo-hacker`, ver no github, manualmente
+
+**Dica**: instale o `mongo-hacker`, ver no github, manualmente
 
 ```
 db.teste.find()
