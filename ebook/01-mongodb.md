@@ -18,11 +18,15 @@ Quando nosso banco de dados relacional não aguenta mais requisições crescente
 
 Além disso, vários bancos NoSQL são *schemaless*, ou seja, não necessitam que uma estrutura seja pré-definida para a inserção de dados. Isso proporciona maior dinamismo na manipulação dos dados.
 
-####Onde usar?
+##Onde usar?
 
-Hoje em dia temos vários bancos NoSQL que podem resolver diversos problemas porém eles não são a chave para TODOS os problemas. Ainda existem cenários onde os bancos relacionais são mais indicados, visto que os mesmos possuem propriedades ACID, logo são melhores em cenários onde os dados são muitíssimo importantes e não pode haver nenhuma quebra de referencia. Ou seja não indicaria, ainda, algum banco NoSQL para sistemas de transações financeiras, por exemplo.
+Hoje em dia temos vários bancos NoSQL que podem resolver diversos problemas, porém eles não são a chave para TODOS os problemas. Ainda existem cenários onde os bancos relacionais são mais indicados, visto que os mesmos possuem propriedades **ACID**, logo são melhores em cenários onde os dados são muitíssimo importantes e não pode haver nenhuma quebra de referencia. Ou seja, não indicaria, ainda, algum banco NoSQL para sistemas de transações financeiras, por exemplo.
+
 Agora se o seu sistema é alguma rede social, ou algum site que necessite de alta disponibilidade ou escalabilidade com certeza lhe indicaria algum banco NoSQL.
-Entretanto não precisamos mudar todo o sistema para algum banco NoSQL, podemos muito bem utilizar um banco NoSQL e um relacional em conjunto. Como muitos ja fazem hoje em dia mas nem percebem. Por exemplo um sistema que utiliza cache, com certeza esta usando um banco NoSQL no cache como o mais conhecido Memcached. A Api Storage do HTML5 também utiliza um sistema de banco NoSQL do tipo chave-valor.
+
+Entretanto, não precisamos mudar todo o sistema para algum banco NoSQL, podemos muito bem utilizar um banco NoSQL e um relacional em conjunto. Como muitos já fazem hoje em dia mas nem percebem. 
+
+Por exemplo, um sistema que utiliza cache, com certeza esta usando um banco NoSQL no cache como o mais conhecido Memcached. A Api Storage do HTML5 também utiliza um sistema de banco NoSQL do tipo chave-valor.
 
 ####Tipo de armazenamento
 Existem diversos tipos de armazenamento, onde cada um trata os dados de uma forma diferente e que pode ser mais específico para o objetivo desejado.
