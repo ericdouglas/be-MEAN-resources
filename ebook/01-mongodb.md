@@ -45,8 +45,10 @@ Os tipo de armazenamento são:
 
 > Lista retirada de http://nosql-database.org/ 
 
-#####Key/Value Store
-Esse é o tipo de banco de dados NoSQL mais simples o conceito dele é uma chave e um valor para essa chave, mas ele é o que aguenta mais carga de dados. Esses tipos de bancos de dados, são o que tem a maior escalabilidade. 
+##Key/Value Store
+
+Esse é o tipo de banco de dados NoSQL mais simples. O conceito dele é uma chave e um valor para essa chave, mas ele é o que aguenta mais carga de dados. Esses tipos de bancos de dados são os que tem a maior escalabilidade.
+
 - Berkeley DB 
 - Tokyo Cabinet 
 - Kyoto Cabinet
