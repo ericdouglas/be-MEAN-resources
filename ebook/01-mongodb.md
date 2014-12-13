@@ -245,7 +245,7 @@ db.teste.find()
 
 Você deve ter percebido esse campo após listarmos os objetos da nossa coleção
 
-http://docs.mongodb.org/manual/reference/object-id/
+* [ObjectId](http://docs.mongodb.org/manual/reference/object-id/)
 
 Para apagarmos os dados dessa coleção de teste possuímos 2 comandos: `remove` e `drop`.
 
@@ -254,29 +254,26 @@ O `remove` apenas apaga os dados, porém a coleção continua existindo, já com
 ```
 suissacorp(mongod-2.4.8) be-mean> db.teste.remove({})
 Removed 2 record(s) in 1ms
+
 suissacorp(mongod-2.4.8) be-mean> db.teste.find()
 Fetched 0 record(s) in 0ms -- Index[none]
+
 suissacorp(mongod-2.4.8) be-mean> show collections
 system.indexes
 teste
+
 suissacorp(mongod-2.4.8) be-mean> db.teste.drop()
 true
+
 suissacorp(mongod-2.4.8) be-mean> show collections
 system.indexes
-<<<<<<< HEAD
-suissacorp(mongod-2.4.8) be-mean>
-=======
-suissacorp(mongod-2.4.8) be-mean> 
->>>>>>> 7a872a32dae5a729b585b1f68efe19ad5d8f828c
 
 ```
 
 
-*O `remove` recebe um objeto vazio {} pois precisa de um objeto de query obrigatoriamente, apenas versões acima da 2.6.*
+*O `remove` recebe um objeto vazio `{}`, pois precisa de um objeto de query obrigatoriamente, nas versões acima da 2.6.*
 
-
-
-##Inserindo
+###Inserindo
 
 Para inserir um objeto no MongoDb podemos criá-lo em uma variável e depois passar como parâmetro para a função `insert` ou `save`:
 
