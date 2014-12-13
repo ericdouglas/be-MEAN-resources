@@ -157,8 +157,6 @@ cd /Pasta_do_MongoDb/bin
 .\mongod
 ```
 
-
-
 ###MacOs
 
 ```
@@ -171,10 +169,9 @@ brew install mongodb
 apt-get install mongodb
 ```
 
-
 ##Console
 
-Para interagirmos com o MongoDb via terminal precisamos rodar o binário
+Para interagirmos com o MongoDB via terminal precisamos rodar o binário.
 
 *Caso você esteja no Windows e não adicionou a pasta `bin` do MongoDb no seu `PATH`, terá que executar os binários localmente:*
 
@@ -183,23 +180,21 @@ cd /Pasta_do_MongoDb/bin
 .\mongo
 ```
 
+###Mão na massa
 
-##Mão na massa
-
-
-Para criar uma database usamos o comando `use` que cria uma database nova ou usa um já existente.
+Para criar uma database usamos o comando `use` que cria um database novo ou usa um já existente.
 
 ```
 use be-mean
 ```
 
-Após criamos a database vamos listá-la:
+Após criamos o database vamos listá-lo:
 
 ```
 show dbs
 ```
 
-Você deve ter notado que a database `worksop-be-mean` não foi criada né? Porque o MongoDb só irá realmente criar sua database quando você inserir um objeto em um coleção. Então vamos fazer isso:
+Você deve ter notado que o database `worksop-be-mean` não foi criado né? Porque o MongoDB só irá realmente criar seu database quando você inserir um objeto em uma coleção. Então vamos fazer isso:
 
 ```
 db.teste.insert({a: true})
@@ -209,29 +204,28 @@ Listamos novamente com `show dbs` e voiala!
 
 Perceba que a sintaxe de um comando no MongoDb é:
 
-```
-database.coleção.função()
+`database.coleção.função()`
 
+```
 db.teste.insert()
 
-//Inserindo diretamente via parametro
+// Inserindo diretamente via parametro
 db.teste.insert({a: true})
 
-//Inserindo via variável
+// Inserindo via variável
 var json = {b: 'TESTE'}
 db.teste.insert(json)
 
 ```
 
-Quando usamos o comando `use` ele muda nossa database e aponta ela para a variável `db` usada no inicio dos comandos, então ela sempre apontará para a database atual, como podemos ver executando apenas seu nome:
+Quando usamos o comando `use`, ele muda nosso database e o aponta para a variável `db` usada no inicio dos comandos, então ela sempre apontará para e database atual, como podemos ver executando apenas seu nome:
 
 ```
 db
 be-mean
 
 ```
-*Dica: instale o mongo-hacker, ver no github, manualmente*
-
+> **Dica**: instale o `mongo-hacker`, ver no github, manualmente
 
 ```
 db.teste.find()
