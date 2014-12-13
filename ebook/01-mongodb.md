@@ -74,17 +74,20 @@ Baseado em documentos XML ou JSON, podem ser localizados pelo seu id unico ou po
 - MongoDB 
 - RavenDB 
 
-#####Graph Store
-Com uma complexibilidade maior esses bancos de dados guardam objetos e não registros como os outros tipos de NoSQL. A busca destes itens são feitas pela navegação destes objetos. 
+###Graph Store
+
+Com uma complexibilidade maior, esses bancos de dados guardam objetos, e não registros como os outros tipos de NoSQL. A busca destes itens são feitas pela navegação destes objetos.
+
 - Neo4J 
 - InfoGrid 
 - HyperGraphDB 
 
-Na imagem abaixo podemos ver um gráfico demonstrando a diferença entre o tamanho da base de dados pela complexidade dos seus dados. Assim podemos perceber que os bancos do tipo chave-valor conseguem aguentar mais dados, sendo que seus dados são mais simples, enquanto que os banco do tipo grafo aguentam menos dados porém seus dados são mais complexos.
+Na imagem abaixo podemos ver um gráfico demonstrando a diferença entre o tamanho da base de dados pela complexidade dos seus dados. 
+
+Assim podemos perceber que os bancos do tipo **chave-valor** conseguem aguentar mais dados, sendo que seus dados são mais simples, enquanto que os banco do tipo **grafo** aguentam menos dados porém seus dados são mais complexos.
 
 ![](http://blog.3pillarglobal.com/sites/default/files/nosql-3a.png)
 
-<<<<<<< HEAD
 ###Introdução ao MongoDB
 O MongoDB é um dos bancos NoSQL mais utilizados atualmente pela sua facilidade de instalação, documentação e os diversos drivers para inúmeras linguagens de programação. Ele é um banco de dados orientado a documentos, escalável, livre de esquema, de alto desempenho e código aberto escrito em C++.
 Algumas funcionalidades interessantes do MongoDB são: orientação a documentos(JSON/BSON), suporte a index, replicação e alta disponibilidade, auto-sharding, map/reduce GridFS e suporte comercial da MongoDb Inc.
