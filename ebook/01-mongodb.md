@@ -1,14 +1,17 @@
-##MongoDb
-###NoSQL
-O termo NoSQL foi usado pela primeira vez em 1998 como o nome de um banco de dados relacional de código aberto que não possuía um interface SQL. Seu autor, Carlo Strozzi, alega que o movimento NoSQL "é completamente distinto do modelo relacional e portanto deveria ser mais apropriadamente chamado "NoREL" ou algo que produzisse o mesmo efeito". Porém o termo só voltou a ser assunto em 2009 por um funcionário do Rackspace, Eric Evans, quando Johan Oskarsson da Last.fm queria organizar um evento para discutir bancos de dados open source distribuídos. 
+#MongoDb
 
-NoSQL são diferentes sistemas de armazenamento que vieram para suprir necessidades onde os bancos de dados tradicionais(Relacionais) são ineficazes. Muitas dessas bases apresentam características muito interessantes como alta performance, escalabilidade, replicação, suporte à dados estruturados, grafos e sub-colunas. 
+##NoSQL
+
+O termo NoSQL foi usado pela primeira vez em 1998 como o nome de um banco de dados relacional de código aberto que não possuía uma interface SQL. Seu autor, Carlo Strozzi, alega que o movimento NoSQL é "completamente distinto do modelo relacional, e portanto deveria ser mais apropriadamente chamado "NoREL" ou algo que produzisse o mesmo efeito". Porém o termo só voltou a ser assunto em 2009 por um funcionário do Rackspace, Eric Evans, quando Johan Oskarsson da Last.fm queria organizar um evento para discutir bancos de dados open source distribuídos. 
+
+NoSQL são diferentes sistemas de armazenamento que vieram para suprir necessidades onde os bancos de dados tradicionais (relacionais) são ineficazes. Muitas dessas bases apresentam características muito interessantes como **alta performance**, **escalabilidade**, **replicação**, **suporte à dados estruturados**, **grafos** e **sub-colunas**. 
 
 O NoSQL surgiu da necessidade de uma performance superior e de alta escalabilidade. Os atuais bancos de dados relacionais são muito restritos a isso, sendo necessário a distribuição vertical de servidores, ou seja, quanto mais dados, mais memória e mais disco um servidor precisa. O NoSQL tem uma grande facilidade na distribuição horizontal, ou seja, mais dados, mais servidores, não necessariamente de alta performance. Um grande utilizador desse conceito é o google, que usa computadores de pequeno e médio porte, para a distribuição dos dados, essa forma de utilização e muito mais eficiente e econômica. Alem disso, os bancos de dados NoSQL são muito tolerantes a erros. 
 
-No caso dos bancos NoSQL toda a a informação necessária estará agrupada no mesmo registro, ou seja, em vez de você ter o relacionamento entre várias tabelas para formar uma informação ela estará em sua totalidade no mesmo registro. 
+No caso dos bancos NoSQL, toda a a informação necessária estará agrupada no mesmo registro, ou seja, em vez de você ter o relacionamento entre várias tabelas para formar uma informação, ela estará em sua totalidade no **mesmo registro**. 
 
-####Por que usar?
+##Por que usar?
+
 Os bancos de dados NoSQL nasceram de necessidades mais específicas, então quase sempre encontramos algum para resolver melhor algum problema. Caso necessitemos de um sistema que tenha como obrigação alta escalabilidade a baixo custo provavelmente usaremos algum banco de dados NoSQL.   
 Quando nosso banco de dados relacional não aguenta mais requisições crescentes e o servidor ja está no seu máximo essa seria uma boa hora para testar algum NoSQL. Assim como podemos usar mais de um banco NoSQL para tratar de objetivos específicos. 
 Além disso vários bancos NoSQL são schema-less, ou seja, não necessitam que uma estrutura seja pré-definida para a inserção de dados. Isso proporciona maior dinamismo na manipulação dos dados.
