@@ -377,7 +377,7 @@ Fetched 4 record(s) in 1ms -- Index[none]
 
 ```
 
-*Dica: quando utilizar o comando `find` ou `findOne` e não tiver o mongo-hacker, utilize no final a função `pretty()`.
+**Dica**: quando utilizar o comando `find` ou `findOne` e não tiver o mongo-hacker, utilize no final a função `pretty()`.
 
 ```
 find().pretty()
