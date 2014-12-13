@@ -17,11 +17,12 @@ Nada mais que a sigla das tecnologias utilizadas:
 
 ##Por que usar MEAN?
 
-Hoje essa stack MEAN nos oferece as mesmas funcionalidades que stacks largamente utilizadas como LAMP/MAMP/WAMP adicionando maior performance opr utilizar tecnologias feitas para escalar como Node.js e MongoDb.
+Hoje essa stack MEAN nos oferece as mesmas funcionalidades que stacks largamente utilizadas como LAMP/MAMP/WAMP, adicionando maior performance, por utilizar tecnologias feitas para escalar como Node.js e MongoDB.
 
-Sem contar que o Javascript é a linguagem mais utilizada na Web não precisando muito esforço para entender o porquê já que é a única linguagem que roda nativamente em qualquer navegador e que foi criada especificamente para a Internet, por mais que ainda precise melhorar muito, mas já está no caminho com o EcmaScript 6.
+Sem contar que o Javascript é a linguagem mais utilizada na Web, não precisando muito esforço para entender o porquê, já que é a única linguagem que roda nativamente em qualquer navegador e que foi criada especificamente para a Internet, por mais que ainda precise melhorar muito, mas já está no caminho com o ECMAScript 6.
 
 ##Arquitetura
 
-Nesse Workshop iremos criar um Single Page App onde nosso Frontend feito com AngularJs consumirá os dados do Backend feito com o Node.js e MongoDb.
+Nesse livro iremos criar uma *Single Page Application*, onde nosso Frontend será feito com AngularJS e consumirá os dados do Backend feito com o Node.js e MongoDb.
+
 ![](https://i.cloudup.com/bg9bVWvHGG.png)
