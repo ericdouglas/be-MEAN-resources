@@ -28,7 +28,7 @@ Entretanto, não precisamos mudar todo o sistema para algum banco NoSQL, podemos
 
 Por exemplo, um sistema que utiliza cache, com certeza esta usando um banco NoSQL no cache como o mais conhecido Memcached. A Api Storage do HTML5 também utiliza um sistema de banco NoSQL do tipo chave-valor.
 
-##Tipo de armazenamento
+##Tipos de armazenamento
 
 Existem diversos tipos de armazenamento, onde cada um trata os dados de uma forma diferente e que pode ser mais específico para o objetivo desejado.
 
@@ -45,7 +45,7 @@ Os tipo de armazenamento são:
 
 > Lista retirada de http://nosql-database.org/ 
 
-##Key/Value Store
+###Key/Value Store
 
 Esse é o tipo de banco de dados NoSQL mais simples. O conceito dele é uma chave e um valor para essa chave, mas ele é o que aguenta mais carga de dados. Esses tipos de bancos de dados são os que tem a maior escalabilidade.
 
@@ -58,11 +58,13 @@ Esse é o tipo de banco de dados NoSQL mais simples. O conceito dele é uma chav
 - Redis
 - Riak
 
-#####Wide Columns Store
-Fortemente inspirados pelo BigTable do Google eles suportam várias linhas e colunas, alem disso ele permite subcolunas. Alem do BigTable do google outros que usam essa tecnologia são: 
-- HBase(Apache) 
+###Wide Columns Store
+
+Fortemente inspirados pelo *BigTable* do Google, eles suportam várias linhas e colunas, além disso ele permite subcolunas. Alem do BigTable do google outros que usam essa tecnologia são:
+
+- HBase (Apache) 
 - HiperTable 
-- Cassandra(Apache) 
+- Cassandra (Apache) 
 
 #####Document Store
 Baseado em documentos XML ou JSON, podem ser localizados pelo seu id unico ou por qualquer registro que tenha no documento. 
