@@ -112,40 +112,39 @@ O que significa ser livre de esquema? Basicamente, é não precisar ter nenhum o
 E isso é bom? Dependendo do que você quer fazer sim, ele dá maior liberdade para futuras modificações e maiores possibilidades de modelagem em comparação à relacional.
 
 ###JSON/BSON
-![](http://wp.clicrbs.com.br/infosfera/files/2014/04/jason-2.jpg)
-O MongoDb é um banco NoSQL orientado a documento [JSON](http://json.org/), ou seja, ele persiste os dados usando o formato [JSON](http://json.org/) criando assim um formato único de troca de dados em todo stack [MEAN](http://bemean.com.br/).
 
-<<<<<<< HEAD
+![](http://wp.clicrbs.com.br/infosfera/files/2014/04/jason-2.jpg)
+
+O MongoDb é um banco NoSQL orientado a documento [JSON](http://json.org/), ou seja, ele persiste os dados usando o formato [JSON](http://json.org/), criando assim um formato único de troca de dados em toda stack [MEAN](http://bemean.com.br/).
+
 ![Replica chapter's image](http://images.freshnessmag.com/wp-content/uploads/2010/07/bat-pod-replica-1.jpg)
-####Replica
+
+###Replica
+
 Possuímos réplicas na maioria dos bancos de dados relacionais também, ela apenas faz o espelhamento dos seus dados de um servidor para outro.
 No MongoDb funciona da mesma forma, porém podemos replicar também os shardings.
 
 ![Sharding chapter's image](http://www.codefutures.com/img/dbshards-shardit.gif)
-####Sharding
+
+###Sharding
 
 O [Sharding](http://docs.mongodb.org/manual/sharding/) é um mecanismo de distribuição de dados entre os servidores para persistir grandes volumes de dados. Quando uma coleção começar a atingir o limite daquele servidor, você poderá adicionar outro servidor e colocar essa coleção como **sharding** para que ela distribua uma quantidade de seus dados para esse outro servidor ou servidores.
-=======
-####Replica
+
+###Replica
+
 ![](http://images.freshnessmag.com/wp-content/uploads/2010/07/bat-pod-replica-1.jpg)
+
 Possuímos réplicas na maioria dos bancos de dados relacionais também, ela apenas faz o espelhamento dos seus dados de um servidor para outro.
 
-####Sharding
-![](http://www.codefutures.com/img/dbshards-shardit.gif)
->>>>>>> 7a872a32dae5a729b585b1f68efe19ad5d8f828c
+###GridFs
 
-####GridFs
 ![](http://www.kratedesign.com/wp-content/uploads/2012/11/less-files-more-miles.jpg)
 
-<<<<<<< HEAD
 É o sistema de armazenamento de aquivos binários do MongoDb, com ele você poderá distribuir seus arquivos binários pelos seus servidores, dando assim alta disponibilidade de acesso a eles.
 
-=======
->>>>>>> 7a872a32dae5a729b585b1f68efe19ad5d8f828c
 ##Instalação
 
 ###Download
-
 
 Para instalar o MongoDb, após descompactarmos ele, precisamos criar a pasta `/data/db` para que ele persista localmente seus dados, essa pasta é a padrão, você pode mudar a localização dessa pasta via linha de comando:
 
