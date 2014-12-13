@@ -117,19 +117,17 @@ E isso é bom? Dependendo do que você quer fazer sim, ele dá maior liberdade p
 
 O MongoDb é um banco NoSQL orientado a documento [JSON](http://json.org/), ou seja, ele persiste os dados usando o formato JSON, criando assim um formato único de troca de dados em toda stack [MEAN](http://bemean.com.br/).
 
-![Replica chapter's image](http://images.freshnessmag.com/wp-content/uploads/2010/07/bat-pod-replica-1.jpg)
-
 ###Replica
 
-![](http://images.freshnessmag.com/wp-content/uploads/2010/07/bat-pod-replica-1.jpg)
+![Replica chapter's image](http://images.freshnessmag.com/wp-content/uploads/2010/07/bat-pod-replica-1.jpg)
 
 Possuímos réplicas na maioria dos bancos de dados relacionais também, ela apenas faz o espelhamento dos seus dados de um servidor para outro.
 
 No MongoDb funciona da mesma forma, porém podemos replicar também os shardings.
 
-![Sharding chapter's image](http://www.codefutures.com/img/dbshards-shardit.gif)
-
 ###Sharding
+
+![Sharding chapter's image](http://www.codefutures.com/img/dbshards-shardit.gif)
 
 O [Sharding](http://docs.mongodb.org/manual/sharding/) é um mecanismo de distribuição de dados entre os servidores para persistir grandes volumes de dados. 
 
