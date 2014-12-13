@@ -32,7 +32,16 @@ Por exemplo, um sistema que utiliza cache, com certeza esta usando um banco NoSQ
 
 Existem diversos tipos de armazenamento, onde cada um trata os dados de uma forma diferente e que pode ser mais específico para o objetivo desejado.
 
-Os tipo de armazenamento são: Wide Column Store/Column Families, Document Store, Key Value/Tuple Store, Eventually Consistent Key Value Store, Graph Databases, Object Databases, Grid Database Solutions, XML Databases. 
+Os tipo de armazenamento são: 
+
+* Wide Column Store/Column Families
+* Document Store
+* Key Value/Tuple Store 
+* Eventually Consistent Key Value Store
+* Graph Databases
+* Object Databases
+* Grid Database Solutions
+* XML Databases
 
 > Lista retirada de http://nosql-database.org/ 
 
