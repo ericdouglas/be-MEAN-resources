@@ -88,14 +88,20 @@ Assim podemos perceber que os bancos do tipo **chave-valor** conseguem aguentar 
 
 ![](http://blog.3pillarglobal.com/sites/default/files/nosql-3a.png)
 
-###Introdução ao MongoDB
-O MongoDB é um dos bancos NoSQL mais utilizados atualmente pela sua facilidade de instalação, documentação e os diversos drivers para inúmeras linguagens de programação. Ele é um banco de dados orientado a documentos, escalável, livre de esquema, de alto desempenho e código aberto escrito em C++.
-Algumas funcionalidades interessantes do MongoDB são: orientação a documentos(JSON/BSON), suporte a index, replicação e alta disponibilidade, auto-sharding, map/reduce GridFS e suporte comercial da MongoDb Inc.
-=======
-###Introdução
-O MongoDB é um dos bancos NoSQL mais utilizados atualmente pela sua facilidade de instalação, documentação e os diversos drivers para inúmeras linguagens de programação. Ele é um banco de dados orientado a documentos, escalável, livre de esquema, de alto desempenho e código aberto escrito em C++.
-Algumas funcionalidades interessantes do MongoDB são: orientação a documentos(JSON/BSON), suporte a index, replicação e alta disponibilidade, auto-sharding, map/reduce GridFS e suporte comercial da 10gen.
->>>>>>> 7a872a32dae5a729b585b1f68efe19ad5d8f828c
+##Introdução ao MongoDB
+
+O MongoDB é um dos bancos NoSQL mais utilizados atualmente pela sua facilidade de instalação, documentação e os diversos drivers para inúmeras linguagens de programação. 
+
+Ele é um banco de dados **orientado a documentos**, **escalável**, **livre de esquema**, de **alto desempenho** e **código aberto** escrito em C++.
+
+Algumas funcionalidades interessantes do MongoDB são: 
+
+* orientação a documentos(JSON/BSON)
+* suporte a index, replicação e alta disponibilidade
+* auto-sharding
+* map/reduce 
+* GridFS
+* suporte comercial da MongoDB Inc.
 
 ####Schemaless
 ![](http://www.greenberg-art.com/.Illustrations/.Humorous/qq1sgMessyDesk.jpg)
