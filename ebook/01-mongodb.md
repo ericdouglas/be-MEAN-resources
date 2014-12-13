@@ -103,13 +103,15 @@ Algumas funcionalidades interessantes do MongoDB são:
 * GridFS
 * suporte comercial da MongoDB Inc.
 
-####Schemaless
+###Schemaless
+
 ![](http://www.greenberg-art.com/.Illustrations/.Humorous/qq1sgMessyDesk.jpg)
-O que significa ser livre de esquema? Basicamente é não precisar ter nenhum objeto identificando como será nosso modelo de persistência, ou seja, não terá nada dizendo o nome dos campos nem seus tipos.
+
+O que significa ser livre de esquema? Basicamente, é não precisar ter nenhum objeto identificando como será nosso modelo de persistência, ou seja, não terá nada dizendo o nome dos campos, nem seus tipos.
 
 E isso é bom? Dependendo do que você quer fazer sim, ele dá maior liberdade para futuras modificações e maiores possibilidades de modelagem em comparação à relacional.
 
-####JSON/BSON
+###JSON/BSON
 ![](http://wp.clicrbs.com.br/infosfera/files/2014/04/jason-2.jpg)
 O MongoDb é um banco NoSQL orientado a documento [JSON](http://json.org/), ou seja, ele persiste os dados usando o formato [JSON](http://json.org/) criando assim um formato único de troca de dados em todo stack [MEAN](http://bemean.com.br/).
 
