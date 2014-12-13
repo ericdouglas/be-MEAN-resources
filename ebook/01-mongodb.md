@@ -525,6 +525,7 @@ Fetched 1 record(s) in 1ms -- Index[none]
 
 ```
 var query = {name: 'Vinho'}
+
 suissacorp(mongod-2.4.8) be-mean> db.products.find(query)
 {
   "_id": ObjectId("546157b75b9f2b586cb31d0c"),
@@ -533,21 +534,24 @@ suissacorp(mongod-2.4.8) be-mean> db.products.find(query)
   "description": "Suco de uva alcoolico"
 }
 Fetched 1 record(s) in 1ms -- Index[none]
+
 suissacorp(mongod-2.4.8) be-mean> var query = {name: 'vinho'}
+
 suissacorp(mongod-2.4.8) be-mean> db.products.find(query)
 Fetched 0 record(s) in 0ms -- Index[none]
 ```
 
-
-*Dica: para fazermos uma busca case insensitive usamos REGEX. Como no exemplo abaixo.*
-```
-var query = {name: /vinho/i}
-//o i que tonra insensitive
-```
-
+**Dica**: para fazermos uma busca *case insensitive* usamos **REGEX**. Como no exemplo abaixo:
 
 ```
 var query = {name: /vinho/i}
+// o "i" que torna insensitive
+```
+
+
+```
+var query = {name: /vinho/i}
+
 suissacorp(mongod-2.4.8) be-mean> db.products.find(query)
 {
   "_id": ObjectId("546157b75b9f2b586cb31d0c"),
@@ -559,20 +563,24 @@ Fetched 1 record(s) in 1ms -- Index[none]
 
 ```
 
-*Nota: caso você não passe uma query para o `findOne` ele irá retornar o primeiro registro inserido.*
+**Nota**: caso você não passe uma query para o `findOne`, ele irá retornar o primeiro registro inserido.
 
-Para limitarmos quais campos queremos trazer, passamos um objeto com o nome dos campos a serem retornados, no segundo parâmetro das funções `find` e `findOne`, é a mesma função do `SELECT` da SQL.
+Para limitarmos quais campos queremos trazer, passamos um objeto com o nome dos campos a serem retornados, no **segundo parâmetro** das funções `find` e `findOne`.
 
+É a mesma função do `SELECT` do SQL.
 
 ```
 var fields = {name: 1}
+
 suissacorp(mongod-2.4.8) be-mean> db.products.find(query, fields)
 {
   "_id": ObjectId("546157b75b9f2b586cb31d0c"),
   "name": "Vinho"
 }
 Fetched 1 record(s) in 43ms -- Index[none]
+
 suissacorp(mongod-2.4.8) be-mean> var fields = {name: 1, _id: 0}
+
 suissacorp(mongod-2.4.8) be-mean> db.products.find(query, fields)
 {
   "name": "Vinho"
@@ -580,7 +588,6 @@ suissacorp(mongod-2.4.8) be-mean> db.products.find(query, fields)
 Fetched 1 record(s) in 1ms -- Index[none]
 
 ```
-
 
 ###Operadores Aritiméticos
 
