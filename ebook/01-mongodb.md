@@ -278,15 +278,22 @@ system.indexes
 Para inserir um objeto no MongoDb podemos criá-lo em uma variável e depois passar como parâmetro para a função `insert` ou `save`:
 
 ```
-var product = {"name":"Cachaça","description":"Mé brasileiro","price":12.00 }
+var product = {
+  "name": "Cachaça",
+  "description": "Mé brasileiro",
+  "price": 12.00
+}
+
 suissacorp(mongod-2.4.8) be-mean> product
 {
   "name": "Cachaça",
   "description": "Mé brasileiro",
   "price": 12
 }
+
 suissacorp(mongod-2.4.8) be-mean> db.products.insert(product)
 Inserted 1 record(s) in 2ms
+
 suissacorp(mongod-2.4.8) be-mean> db.products.find()
 {
   "_id": ObjectId("54614a0a5b9f2b586cb31d08"),
@@ -300,7 +307,24 @@ Fetched 1 record(s) in 1ms -- Index[none]
 Para inserir diversos registros de uma só vez podemos criar um array com nossos objetos como abaixo:
 
 ```
-var ps = [{"name":"Pinga","description":"da braba po tubão","price": 4.50},{"name":"Uísque","description":"Pra preiboi toma com energético","price":80.00},{"name":"Champagne","description":"só podia ser saopaulino","price":130.00 }]
+var ps = [
+  {
+    "name":"Pinga",
+    "description":"da braba po tubão",
+    "price": 4.50
+  },
+  {
+    "name":"Uísque",
+    "description":"Pra preiboi toma com energético",
+    "price":80.00
+  },
+  {
+    "name":"Champagne",
+    "description":"só podia ser saopaulino",
+    "price":130.00
+  }
+]
+
 suissacorp(mongod-2.4.8) be-mean> ps
 [
   {
@@ -358,7 +382,6 @@ Fetched 4 record(s) in 1ms -- Index[none]
 ```
 find().pretty()
 ```
-
 
 Nós também podemos inserir objetos utilizando o `save`, ele tanto insere como altera valores.
 
