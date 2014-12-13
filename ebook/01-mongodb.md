@@ -66,9 +66,11 @@ Fortemente inspirados pelo *BigTable* do Google, eles suportam várias linhas e 
 - HiperTable 
 - Cassandra (Apache) 
 
-#####Document Store
+###Document Store
+
 Baseado em documentos XML ou JSON, podem ser localizados pelo seu id unico ou por qualquer registro que tenha no documento. 
-- CouchDB(Apache) 
+
+- CouchDB (Apache) 
 - MongoDB 
 - RavenDB 
 
