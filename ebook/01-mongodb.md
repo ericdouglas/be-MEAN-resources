@@ -1148,22 +1148,24 @@ db.professores.update( { name: 'Pinga' }, { $pull: { tags: 'marvada'} } );
 ```
 
 Arrays múltiplos podem ser alterados em uma única operação separando os pares de campo : valor por vírgula.
+
 ```
 { $pull : { campo1 : valor, campo2 : valor2 } }
 ```
 
-**$pullAll**
+###$pullAll
+
+Adiciona cada valor dentro de valor_array para o campo se o campo for um array existente. Caso contrário, seta o campo com o valor_array. Se o campo estiver presente mas não for um array, irá retornar um erro.
+
 ```
 { $pullAll : { campo : valor_array } }
 
 db.professores.update( { nome: ‘Suissa’}, { $pullAll: { cursos: [‘MongoDb’, ’AngularJs’, ‘Node.js’]  } } );
 ```
 
-Adiciona cada valor dentro de valor_array para o campo se o campo for um array existente. Caso contrário, seta o campo com o valor_array. Se o campo estiver presente mas não for um array, irá retornar um erro.
-
 ##Count
 
-Assim como temos no Relacional, também temos a função count que serve para retornar a quantidade de registros encontrados naquela query.
+Assim como temos no Relacional, também temos a função *count* que serve para retornar a quantidade de registros encontrados naquela query.
 
 ```
 select count(*) from products
