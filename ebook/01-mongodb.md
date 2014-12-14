@@ -1271,9 +1271,11 @@ Para deletar um índice usamos o seguinte comando
 db.products.dropIndex("name_1")
 ```
 
-##Explain
+###Explain
 
-Um ótimo comando para verificarmos como nossas queries estão sendo executadas também podemos usar o conhecido explain e ele será de grande utilidade quando precisarmos otimizar nossas queries.
+Um ótimo comando para verificarmos como nossas queries estão sendo executadas. Podemos usar o conhecido `explain`, e ele será de grande utilidade quando precisarmos otimizar nossas queries.
+
+```
 db.products.find({}).explain();
 {
     "cursor" : "BasicCursor",
@@ -1287,6 +1289,7 @@ db.products.find({}).explain();
     "isMultiKey" : false,
     "nChunkSkips" : 0
 }
+```
 
 Vamos entender um pouco melhor esses valores:
 
@@ -1300,7 +1303,7 @@ Vamos entender um pouco melhor esses valores:
 - n: número de documentos encontrados para a busca
 - milis: tempo de execução da query em milisegundos
 - indexOnly: verdadeiro se a busca pode ser feita apenas com índice
-- isMultiKey: verdadeiro de um índice múltiplo foi usado
+- isMultiKey: verdadeiro se um índice múltiplo foi usado
 - nChunkSkips: número de documentos ignorados por causa da migração de chunks de sharding
 
 
