@@ -1078,8 +1078,31 @@ db.products.find({ name: 'vinho' })
 
 ```
 
-**$unset**
+###$unset
 
+Deleta um campo em particular. Se não existir este campo, o operador não faz nada.
+
+```
+// vinho antes do $unset
+db.products.find({ name: 'vinho' })
+{
+  "_id": ObjectId("546157b75b9f2b586cb31d0c"),
+  "name": "vinho",
+  "price": 13,
+  "description": "Suco de uva alcoolico"
+}
+
+var query = { name: 'vinho' };
+var alt = { $unset: { "price": 13 }};
+
+db.products.find({ name: 'vinho' })
+{
+  "_id": ObjectId("546157b75b9f2b586cb31d0c"),
+  "name": "vinho",
+  "description": "Suco de uva alcoolico"
+}
+
+```
 
 **$inc**
 ```
