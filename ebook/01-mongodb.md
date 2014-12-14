@@ -1123,25 +1123,29 @@ Adiciona um valor ao campo se o campo for um array existente. Caso contrário, t
 
 ```
 { $push : { campo : valor } }
+
 db.professores.update( { name: 'Pinga' }, { $push: { tags: 'marvada'} } );
 ```
 
-**$pushAll**
+###$pushAll
+
+Adiciona cada valor dentro de valor_array para o campo se o campo for um array existente. Caso contrário, seta o campo com o valor_array. Se o campo estiver presente mas não for um array, irá retornar um erro.
+
 ```
 { $pushAll : { campo : valor_array } }
 
 db.professores.update( { nome: ‘Suissa’}, { $pushAll: { cursos: [‘MongoDb’, ’AngularJs’, ‘Node.js’]  } } );
 ```
 
+###$pull
 
-Adiciona cada valor dentro de valor_array para o campo se o campo for um array existente. Caso contrário, seta o campo com o valor_array. Se o campo estiver presente mas não for um array, irá retornar um erro.
+Remove um valor do campo se o campo for um array existente. Caso contrário, transforma o campo em um array com o valor como índice. Porém, se o campo existe e não for um array, irá retornar um erro.
 
-**$pull**
 ```
 { $pull : { campo : valor } }
+
 db.professores.update( { name: 'Pinga' }, { $pull: { tags: 'marvada'} } );
 ```
-Remove um valor ao campo se o campo for um array existente. Caso contrário, transforma o campo em um array com o valor como índice. Porém, se o campo existe e não for um array, irá retornar um erro.
 
 Arrays múltiplos podem ser alterados em uma única operação separando os pares de campo : valor por vírgula.
 ```
