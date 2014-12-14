@@ -1193,7 +1193,7 @@ select * from products order by idade DESC
 db.products.find().sort({price:-1})
 ```
 
-##Limit
+###Limit
 
 Serve para limitar a quantidade de valores retornados.
 
@@ -1202,7 +1202,7 @@ select * from products order by name ASC limit 0,2
 db.products.find().sort({name:1}).limit(2)
 ```
 
-##Skip
+###Skip
 
 O `skip` serve para pular uma quantidade X de elementos. 
 
@@ -1227,7 +1227,7 @@ var numero_pagina = 1
 db.products.find().limit(10).skip(10)
 ```
 
-##Remove
+###Remove
 
 Para remover os registros no MongoDb usamos o `remove`, passando uma query para remover apenas os registros desejados. 
 
