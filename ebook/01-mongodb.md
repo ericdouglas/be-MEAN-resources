@@ -1095,6 +1095,8 @@ db.products.find({ name: 'vinho' })
 var query = { name: 'vinho' };
 var alt = { $unset: { "price": 13 }};
 
+db.products.update(query, alt)
+
 db.products.find({ name: 'vinho' })
 {
   "_id": ObjectId("546157b75b9f2b586cb31d0c"),
