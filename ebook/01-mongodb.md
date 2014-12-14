@@ -1176,7 +1176,8 @@ db.products.count({price:{$gt: 2}})
 ```
 
 ##Ordenação
-Para ordenarmos uma consulta no MongoDB, precisamos apenas utilizar a função sort(), como no exemplo a seguir:
+
+Para ordenarmos uma consulta no MongoDB, precisamos apenas utilizar a função `sort()`, como no exemplo a seguir:
 
 ```
 db.products.find({}).sort({price: 1});
@@ -1192,8 +1193,10 @@ select * from products order by idade DESC
 db.products.find().sort({price:-1})
 ```
 
-
 ##Limit
+
+Serve para limitar a quantidade de valores retornados.
+
 ```
 select * from products order by name ASC limit 0,2
 db.products.find().sort({name:1}).limit(2)
