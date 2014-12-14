@@ -1004,41 +1004,42 @@ Em vez de alterarmos um valor usando o `save` usaremos agora a função `update`
 db.colecao.update(query, mod, upsert, multi);
 ```
 
-**query**
-
-```
-var query = {name: /vinho/i};
-db.colecao.update(query, mod);
-```
-
+###Query
 
 É o objeto que representa qual registro queremos alterar.
 
-**modificação**
+```
+var query = {name: /vinho/i};
 
+db.colecao.update(query, mod);
+```
 
-É o objeto contém a modificação desejada.
+###Modificação
+
+É o objeto que contém a modificação desejada.
 
 ```
 var mod = {$inc: {views: 1}};
+
 db.colecao.update({}, mod);
 ```
 
+###Upsert
 
-**upsert**
-
-É o parâmetro que vem por padrão falso, mas se mudado para verdadeiro vai inserir o objeto de modificação caso não ache o registro com a query passada.
+É o parâmetro que vem `false` por padrão, mas se mudado para `true`, vai inserir o objeto de modificação caso não ache o registro com a query passada.
 
 ```
 var query = {name: /vinho/i};
 var mod = {name: 'Vinho', price: '23'};
+
 db.colecao.update(query, mod, true, false);
 ```
 
+###Multi
 
-**multi**
+É o parâmetro que vem `false` por padrão, mas se mudado para `true` vai alterar todos os registro encontrados com a query passada. 
 
-É o parâmetro que vem por padrão falso, mas se mudado para verdadeiro vai alterar todos os registro encontrados com a query passada. Já que sem ele o MongoDb só irá alterar o primeiro registro encontrado.
+Sem ele o MongoDb só irá alterar o **primeiro registro encontrado**.
 
 ##Operadores de alteração
 
