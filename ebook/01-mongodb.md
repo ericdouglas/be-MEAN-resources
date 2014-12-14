@@ -1244,10 +1244,9 @@ db.products.remove({name: "Champagne"});
 
 Os índices são responsáveis por indexar nossos registros a partir de um campo ou mais, para que sejam rapidamente acessados por esse(s) valor(es).
 
-Eles fazem uma grande diferença no MongoDb ainda mais se o caso for de criar indíces múltiplos.
+Eles fazem uma grande diferença no MongoDb, ainda mais se o caso for de criar indíces múltiplos.
 
-Como dito anteriormente na modelagem nós pensamos nas perguntas do sistema para modelar o banco, logo se suas buscas principais
-
+Como dito anteriormente, na modelagem, nós pensamos nas perguntas do sistema para modelar o banco, no caso, quais serão suas buscas principais.
 
 Para criarmos um índice usamos o `ensureIndex`.
 
@@ -1256,12 +1255,13 @@ db.products.ensureIndex({ name:1 });
 db.products.ensureIndex({ name:1, price:-1 });
 ```
 
-Para pegarmos todos os índices da nossa collection professores usamos getIndexes().
+Para pegarmos todos os índices da nossa collection `professores` usamos getIndexes().
 ```
 db.products.getIndexes()
 ```
 
-Para pegar todos os índices da database usamos o find() em uma collection do sistema.
+Para pegar todos os índices do database usamos o `find()` em uma collection do sistema.
+
 ```
 db.system.indexes.find()
 ```
