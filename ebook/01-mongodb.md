@@ -1342,14 +1342,16 @@ Precisamos entender como é a arquitetura de um cluster com MongoDB, nele possu�
 ![](http://docs.mongodb.org/manual/_images/sharded-cluster.png)
 
 ###Shards
+
 Cada shard é uma instância do MongoDb que guarda um pedaço dos dados da coleção.
 
 ###Config Servers
+
 Cada config server é uma instância do MongoDb que guarda os metadados sobre o cluster. Os metadados mapeiam os pedaços de dados para os shards.
 
 ###Router
-Cada router é uma instância `mongos` que faz o roteamento das escritas e leituras para os shards. A aplicação não acessa diretamente os shards.
 
+Cada router é uma instância `mongos` que faz o roteamento das escritas e leituras para os shards. A aplicação não acessa diretamente os shards.
 
 ##GridFS
 
@@ -1372,7 +1374,7 @@ added file: {
   length: 1419631 }
 ```
 
-Ele automaticamente irá gerar 2 coleções dentro da database informada:
+Ele automaticamente irá gerar 2 coleções dentro do database informado:
 
 - fs.chunks
 - fs.files
@@ -1386,8 +1388,6 @@ Na coleção `fs.chunks` fica nosso arquivo binário divido em pequenas partes, 
 - md5
 - lenght
 
-Você deve ter notado que temos o campo md5, para que o md5 do arquivo pode ser interessante nesse caso? Bom você pode fazer uma busca pelo md5 e caso encontre mais de 1 registro é porque existem arquivos duplicados, ai você decide o que fazer com ele.
+Você deve ter notado que temos o campo md5, para que o md5 do arquivo pode ser interessante nesse caso? 
 
-
-
-
+Bom, você pode fazer uma busca pelo md5 e caso encontre mais de 1 registro, é porque existem arquivos duplicados, ai você decide o que fazer com ele.
