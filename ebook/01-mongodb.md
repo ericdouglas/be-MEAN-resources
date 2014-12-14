@@ -1106,13 +1106,14 @@ db.products.find({ name: 'vinho' })
 
 ```
 
-**$inc**
+###$inc
+
+Incrementa um valor no campo. Caso o campo não exista, ele irá criar o campo e setar o valor. Para decrementar, basta passar um valor negativo.
+
 ```
 { $inc : { campo : valor } }
 db.products.update( { name: 'Pinga'}, { $inc: { views: 1 } } );
 ```
-
-Incrementa um valor no campo; caso o campo não exista, ele irá criar o campo e setar o valor. Para decrementar, basta passar um valor negativo.
 
 ###Operadores de alteração em arrays
 
