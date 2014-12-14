@@ -1229,15 +1229,16 @@ db.products.find().limit(10).skip(10)
 
 ##Remove
 
-Para remover os registros no MongoDb usamos o `remove` passando uma query para remover apenas os registros desejados, caso não seja passada nenhuma query ele irá remover **TODOS OS REGISTROS DA COLEÇÃO** então muito cuidade que o `remove` não é como o `update` que o `multi` é false, aqui se rodar sem a query JÁ ERA!
+Para remover os registros no MongoDb usamos o `remove`, passando uma query para remover apenas os registros desejados. 
 
+Caso não seja passada nenhuma query, ele irá remover **TODOS OS REGISTROS DA COLEÇÃO**, então **muito cuidado**, pois o `remove` **não** é como o `update` que o `multi` é false, aqui se rodar sem a query **JÁ ERA**!
 
 ```
 db.products.remove({name: "Champagne"}); 
 // exclui todos os registro com name = Champagne
 ```
 
-Caso necessite remover um registro opte sempre pelo seu `_id`.
+**Caso necessite remover um registro opte sempre pelo seu `_id`.**
 
 ##Índices
 
