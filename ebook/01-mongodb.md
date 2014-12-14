@@ -588,7 +588,7 @@ suissacorp(mongod-2.4.8) be-mean> db.products.find(query, fields)
 Fetched 1 record(s) in 1ms -- Index[none]
 
 ```
-###Operadores Aritiméticos
+##Operadores Aritméticos
 
 Utilizamos esses operadores especiais como operadores de busca, já que não temos uma linguagem de query como a SQL e sim objetos JSON, para isso foi criado esse formato de query.
 
@@ -615,7 +615,7 @@ db.collection.find({ "campo" : { $gte: value } } );
 
 ```
 
-**$lt e $lte - "Menor que" e "Menor ou igual que"**
+**`$lt` e `$lte` - "Menor que" e "Menor ou igual que"**
 
 ```
 var query = {price: {$lt: 12}}
@@ -647,7 +647,7 @@ suissacorp(mongod-2.4.8) be-mean> db.products.find(query)
 Fetched 2 record(s) in 1ms -- Index[none]
 ```
 
-**$gt e $gte - "Maior que" e "Maior ou igual que"**
+**`$gt` e `$gte` - "Maior que" e "Maior ou igual que"**
 
 ```
 var query = {price: {$gt: 12}}
@@ -704,16 +704,13 @@ Fetched 4 record(s) in 1ms -- Index[none]
 
 ```
 
-###Operadores Lógicos
+##Operadores Lógicos
 
-<<<<<<< HEAD
-**$or - OR**
-=======
-**$or - OU**
->>>>>>> 7a872a32dae5a729b585b1f68efe19ad5d8f828c
+**`$or` - OR**
 
 ```
 var query = {$or: [{name: /vinho/i},{price: {$gte: 40}}]}
+
 suissacorp(mongod-2.4.8) be-mean> db.products.find(query)
 {
   "_id": ObjectId("54614d5c5b9f2b586cb31d0a"),
@@ -736,15 +733,11 @@ suissacorp(mongod-2.4.8) be-mean> db.products.find(query)
 
 ```
 
-
-<<<<<<< HEAD
-**$nor - Not OR**
-=======
-**$nor - Não OU**
->>>>>>> 7a872a32dae5a729b585b1f68efe19ad5d8f828c
+**`$nor` - Not OR**
 
 ```
 var query = {$nor: [{name: /vinho/i},{price: {$gte: 40}}]}
+
 suissacorp(mongod-2.4.8) be-mean> db.products.find(query)
 {
   "_id": ObjectId("54614a0a5b9f2b586cb31d08"),
@@ -763,10 +756,13 @@ Fetched 2 record(s) in 1ms -- Index[none]
 
 Para buscarmos uma faixa específica de preços podemos fazer a seguinte query:
 
+**`$and`**
+
 ```
-//maior ou igual que 12 E menor que 80
+// maior ou igual que 12 E menor que 80
 
 var query = {$and: [{price: {$lt: 80}},{price: {$gte: 12}}]}
+
 suissacorp(mongod-2.4.8) be-mean> db.products.find(query)
 {
   "_id": ObjectId("54614a0a5b9f2b586cb31d08"),
@@ -783,19 +779,21 @@ suissacorp(mongod-2.4.8) be-mean> db.products.find(query)
 Fetched 2 record(s) in 28ms -- Index[none]
 ```
 
-
-**$ne - Not equal**
+**`$ne` - Not equal**
 
 Não aceita REGEX.
 
 ```
 var query = {name: {$ne: /vinho/i}}
+
 suissacorp(mongod-2.4.8) be-mean> db.products.find(query)
 error: {
   "$err": "invalid regular expression operator",
   "code": 13454
 }
+
 suissacorp(mongod-2.4.8) be-mean> var query = {name: {$ne: 'Vinho'}}
+
 suissacorp(mongod-2.4.8) be-mean> db.products.find(query)
 {
   "_id": ObjectId("54614a0a5b9f2b586cb31d08"),
