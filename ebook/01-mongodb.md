@@ -588,29 +588,38 @@ suissacorp(mongod-2.4.8) be-mean> db.products.find(query, fields)
 Fetched 1 record(s) in 1ms -- Index[none]
 
 ```
-
 ###Operadores Aritiméticos
 
 Utilizamos esses operadores especiais como operadores de busca, já que não temos uma linguagem de query como a SQL e sim objetos JSON, para isso foi criado esse formato de query.
 
 ```
 < ou $lt
-db.collection.find({ "campo" : { $lt: value } } ); Retorna objetos com valores menores que value.
+Retorna objetos com valores menores que value.
+
+db.collection.find({ "campo" : { $lt: value } } ); 
+
 <= ou $lte
-db.collection.find({ "campo" : { $lte: value } } );
 Retorna objetos com valores menores ou igual que value.
+
+db.collection.find({ "campo" : { $lte: value } } );
+
 > ou $gt
-db.collection.find({ "campo" : { $gt: value } } ); Retorna objetos com valores maiores que value.
+Retorna objetos com valores maiores que value.
+
+db.collection.find({ "campo" : { $gt: value } } ); 
+
 >= ou $gte
-db.collection.find({ "campo" : { $gte: value } } );
 Retorna objetos com valores maiores ou igual que value
+
+db.collection.find({ "campo" : { $gte: value } } );
+
 ```
 
-
-**$lt e $lte - Menor que e Menor ou igual que**
+**$lt e $lte - "Menor que" e "Menor ou igual que"**
 
 ```
 var query = {price: {$lt: 12}}
+
 suissacorp(mongod-2.4.8) be-mean> db.products.find(query)
 {
   "_id": ObjectId("54614d5c5b9f2b586cb31d09"),
@@ -619,7 +628,9 @@ suissacorp(mongod-2.4.8) be-mean> db.products.find(query)
   "price": 4.5
 }
 Fetched 1 record(s) in 1ms -- Index[none]
+
 suissacorp(mongod-2.4.8) be-mean> var query = {price: {$lte: 12}}
+
 suissacorp(mongod-2.4.8) be-mean> db.products.find(query)
 {
   "_id": ObjectId("54614d5c5b9f2b586cb31d09"),
@@ -634,14 +645,13 @@ suissacorp(mongod-2.4.8) be-mean> db.products.find(query)
   "description": "Suco de uva alcoolico"
 }
 Fetched 2 record(s) in 1ms -- Index[none]
-
 ```
 
-
-**$gt e $gte - Maior que e Maior ou igual que**
+**$gt e $gte - "Maior que" e "Maior ou igual que"**
 
 ```
 var query = {price: {$gt: 12}}
+
 suissacorp(mongod-2.4.8) be-mean> db.products.find(query)
 {
   "_id": ObjectId("54614a0a5b9f2b586cb31d08"),
@@ -662,7 +672,9 @@ suissacorp(mongod-2.4.8) be-mean> db.products.find(query)
   "price": 130
 }
 Fetched 3 record(s) in 2ms -- Index[none]
+
 suissacorp(mongod-2.4.8) be-mean> var query = {price: {$gte: 12}}
+
 suissacorp(mongod-2.4.8) be-mean> db.products.find(query)
 {
   "_id": ObjectId("54614a0a5b9f2b586cb31d08"),
