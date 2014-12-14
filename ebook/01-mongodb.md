@@ -1311,24 +1311,25 @@ Vamos entender um pouco melhor esses valores:
 
 No MongoDb podemos utilizar 2 formas de relacionar os documentos. 
 
-Podemos usar seu ObjectId ligando diretamente pelo seu _id e fazendo uma segunda busca para retornar o documento relacionado ou podemos usar o DBRef que faz essa ligação automática.
+Podemos usar seu `ObjectId` ligando diretamente pelo seu `_id` e fazendo uma segunda busca para retornar o documento relacionado, ou podemos usar o `DBRef` que faz essa ligação automática.
 
-DBRef é o esquema nativo de referencia interna entre os documentos.
+`DBRef` é o esquema nativo de referência interna entre os documentos.
 
 ```
 db.professores.insert({login: "suissa"})
+
 db.professores.find()
 { "_id" : ObjectId("51ccffa2c49bec6fd946c929"), "login" : "suissa" }
+
 db.workshop.insert({nome: "Be MEAN", professor: {"$ref": "professores", "$id": "51ccffa2c49bec6fd946c929"} })
+
 var obj = db.workshop.findOne()
-obj
 {
 "_id" : ObjectId("51ccffe9c49bec6fd946c92a"),
 "nome" : "Be MEAN",
 "professor" : DBRef("users", "51ccffa2c49bec6fd946c929")
 }
 ```
-
 
 ##Sharding
 
