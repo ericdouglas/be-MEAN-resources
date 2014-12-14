@@ -804,14 +804,15 @@ suissacorp(mongod-2.4.8) be-mean> db.products.find(query)
 
 ```
 
-###Busca em Arrays
+##Busca em Arrays
 
-**$in e $nin - In e Not In**
+**`$in` e `$nin` - In e Not In**
 
 Para isso vamos adicionar um `Array` de tags em um objeto utilizando a técnica do `finOne` e `save`.
 
 ```
 var p = db.products.findOne()
+
 suissacorp(mongod-2.4.8) be-mean> p
 {
   "_id": ObjectId("54614a0a5b9f2b586cb31d08"),
@@ -819,13 +820,16 @@ suissacorp(mongod-2.4.8) be-mean> p
   "description": "Mé brasileiro",
   "price": 23
 }
+
 suissacorp(mongod-2.4.8) be-mean> p.tags = ['branquinha', 'marvada']
 [
   "branquinha",
   "marvada"
 ]
+
 suissacorp(mongod-2.4.8) be-mean> db.products.save(p)
 Updated 1 existing record(s) in 2ms
+
 suissacorp(mongod-2.4.8) be-mean> db.products.findOne({name: 'Cachaça'})
 {
   "_id": ObjectId("54614a0a5b9f2b586cb31d08"),
@@ -840,8 +844,7 @@ suissacorp(mongod-2.4.8) be-mean> db.products.findOne({name: 'Cachaça'})
 
 ```
 
-
-**$in - IN**
+**`$in` - IN**
 
 Retorna todos os objetos que possuem algum dos valores do `Array`.
 
@@ -858,7 +861,9 @@ db.products.find(query)
   ]
 }
 Fetched 1 record(s) in 1ms -- Index[none]
+
 suissacorp(mongod-2.4.8) be-mean> var query = {tags: {$in: ['branquinha', 'asduihasuihduia']}}
+
 suissacorp(mongod-2.4.8) be-mean> db.products.find(query)
 {
   "_id": ObjectId("54614a0a5b9f2b586cb31d08"),
@@ -873,12 +878,13 @@ suissacorp(mongod-2.4.8) be-mean> db.products.find(query)
 Fetched 1 record(s) in 0ms -- Index[none]
 ```
 
-**$nin - Not IN**
+**`$nin` - Not IN**
 
 Retorna todos os objetos que não possuem aqueles valores do `Array`.
 
 ```
 var query = {tags: {$nin: ['branquinha']}}
+
 suissacorp(mongod-2.4.8) be-mean> db.products.find(query)
 {
   "_id": ObjectId("54614d5c5b9f2b586cb31d09"),
@@ -908,13 +914,13 @@ Fetched 4 record(s) in 2ms -- Index[none]
 
 ```
 
+**`$all` - Todos**
 
-**all - Todos**
-
-Retorna todos os objetos que possuem todos os valores buscados, se um não validar a busca ele não retorna o objeto.
+Retorna todos os objetos que possuem todos os valores buscados. Se um não validar a busca, ele não retorna o objeto.
 
 ```
 var query = {tags: {$all: ['branquinha', 'marvada']}}
+
 suissacorp(mongod-2.4.8) be-mean> db.products.find(query)
 {
   "_id": ObjectId("54614a0a5b9f2b586cb31d08"),
@@ -927,21 +933,23 @@ suissacorp(mongod-2.4.8) be-mean> db.products.find(query)
   ]
 }
 Fetched 1 record(s) in 0ms -- Index[none]
+
 suissacorp(mongod-2.4.8) be-mean> var query = {tags: {$all: ['branquinha', 'BAZINGA']}}
+
 suissacorp(mongod-2.4.8) be-mean> db.products.find(query)
 Fetched 0 record(s) in 1ms -- Index[none]
 
 ```
 
-
-**$exists - Existe**
+**`$exists` - Existe**
 
 Retorna os objetos que possuem aquele campo. Muito útil em um sistema **Schemaless** e principalmente nesse exemplo com **tags**.
 
-Por exemplo em um blog onde você está servindo um JSON para montar uma nuvem de tags, com esse operador você irá retornar apenas os objetos que possuam tags, eliminando uma verificação adicional.
+**Por exemplo**: Em um blog onde você está servindo um JSON para montar uma nuvem de tags, com esse operador você irá retornar apenas os objetos que possuam tags, eliminando uma verificação adicional.
 
 ```
 var query = {tags: {$exists: 1}}
+
 suissacorp(mongod-2.4.8) be-mean> db.products.find(query)
 {
   "_id": ObjectId("54614a0a5b9f2b586cb31d08"),
@@ -954,16 +962,15 @@ suissacorp(mongod-2.4.8) be-mean> db.products.find(query)
   ]
 }
 Fetched 1 record(s) in 1ms -- Index[none]
-
 ```
 
-
-**$size - Tamanho**
+**`$size` - Tamanho**
 
 Retorna os objetos que possuem o tamanho exato do *Array* buscado.
 
 ```
 var query = {tags: {$size: 2}}
+
 suissacorp(mongod-2.4.8) be-mean> db.products.find(query)
 {
   "_id": ObjectId("54614a0a5b9f2b586cb31d08"),
@@ -976,13 +983,13 @@ suissacorp(mongod-2.4.8) be-mean> db.products.find(query)
   ]
 }
 Fetched 1 record(s) in 2ms -- Index[none]
+
 suissacorp(mongod-2.4.8) be-mean> var query = {tags: {$size: 1}}
+
 suissacorp(mongod-2.4.8) be-mean> db.products.find(query)
 Fetched 0 record(s) in 1ms -- Index[none]
 
 ```
-
-<<<<<<< HEAD
 
 ##Alteração
 
