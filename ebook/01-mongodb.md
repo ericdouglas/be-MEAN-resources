@@ -1115,15 +1115,16 @@ Incrementa um valor no campo. Caso o campo não exista, ele irá criar o campo e
 db.products.update( { name: 'Pinga'}, { $inc: { views: 1 } } );
 ```
 
-###Operadores de alteração em arrays
+##Operadores de alteração em arrays
 
-**$push**
+###$push
+
+Adiciona um valor ao campo se o campo for um array existente. Caso contrário, transforma o campo em um array com o valor como índice. Porém, se o campo existe e não for um array, irá retornar um erro.
+
 ```
 { $push : { campo : valor } }
 db.professores.update( { name: 'Pinga' }, { $push: { tags: 'marvada'} } );
 ```
-
-Adiciona um valor ao campo se o campo for um array existente. Caso contrário, transforma o campo em um array com o valor como índice. Porém, se o campo existe e não for um array, irá retornar um erro.
 
 **$pushAll**
 ```
