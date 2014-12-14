@@ -806,7 +806,7 @@ suissacorp(mongod-2.4.8) be-mean> db.products.find(query)
 
 ##Busca em Arrays
 
-**`$in` e `$nin` - In e Not In**
+###`$in` e `$nin` - In e Not In
 
 Para isso vamos adicionar um `Array` de tags em um objeto utilizando a técnica do `finOne` e `save`.
 
@@ -844,7 +844,7 @@ suissacorp(mongod-2.4.8) be-mean> db.products.findOne({name: 'Cachaça'})
 
 ```
 
-**`$in` - IN**
+###`$in` - IN
 
 Retorna todos os objetos que possuem algum dos valores do `Array`.
 
@@ -878,7 +878,7 @@ suissacorp(mongod-2.4.8) be-mean> db.products.find(query)
 Fetched 1 record(s) in 0ms -- Index[none]
 ```
 
-**`$nin` - Not IN**
+###`$nin` - Not IN
 
 Retorna todos os objetos que não possuem aqueles valores do `Array`.
 
@@ -914,7 +914,7 @@ Fetched 4 record(s) in 2ms -- Index[none]
 
 ```
 
-**`$all` - Todos**
+###`$all` - Todos
 
 Retorna todos os objetos que possuem todos os valores buscados. Se um não validar a busca, ele não retorna o objeto.
 
@@ -941,7 +941,7 @@ Fetched 0 record(s) in 1ms -- Index[none]
 
 ```
 
-**`$exists` - Existe**
+###`$exists` - Existe
 
 Retorna os objetos que possuem aquele campo. Muito útil em um sistema **Schemaless** e principalmente nesse exemplo com **tags**.
 
@@ -964,7 +964,7 @@ suissacorp(mongod-2.4.8) be-mean> db.products.find(query)
 Fetched 1 record(s) in 1ms -- Index[none]
 ```
 
-**`$size` - Tamanho**
+###`$size` - Tamanho
 
 Retorna os objetos que possuem o tamanho exato do *Array* buscado.
 
