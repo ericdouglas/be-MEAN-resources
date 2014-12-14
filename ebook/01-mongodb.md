@@ -1043,8 +1043,40 @@ Sem ele o MongoDb só irá alterar o **primeiro registro encontrado**.
 
 ##Operadores de alteração
 
-**$set**
+###$set
 
+É usado para atualizar uma determinada parte do objeto. Quando o objeto não contiver os atributos para serem atualizados, essas novas propriedades serão criadas.
+
+```
+// vinho antes do $set
+db.products.find({ name: 'Vinho' })
+{
+  "_id": ObjectId("546157b75b9f2b586cb31d0c"),
+  "name": "Vinho",
+  "price": 12,
+  "description": "Suco de uva alcoolico"
+}
+
+var query = { name: 'Vinho' };
+var alt = { $set: {
+  "name": "vinho",
+  "price": 13
+}};
+
+db.products.update(query, alt)
+
+db.products.find({ name: 'Vinho' })
+// busca não retorna nada
+
+db.products.find({ name: 'vinho' })
+{
+  "_id": ObjectId("546157b75b9f2b586cb31d0c"),
+  "name": "vinho",
+  "price": 13,
+  "description": "Suco de uva alcoolico"
+}
+
+```
 
 **$unset**
 
