@@ -60,7 +60,7 @@ Comecei a estudar HTML5, CSS3, Node.js e MongoDb um pouco antes de 2010 quando a
 
 Precisamos estar sempre nos atualizando e esse livro é um exemplo prático disso, espero que seja útil para você como foi para meus alunos.
 
-Para saber mais do [Workshop Be MEAN clique aqui](http://bemean.com.br/).
+Para saber mais do [Workshop Be MEAN entre aqui http://bemean.com.br/](http://bemean.com.br/).
 
 
 
