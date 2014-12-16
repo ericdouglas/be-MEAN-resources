@@ -46,9 +46,9 @@ http.createServer(function (req, res) {
 console.log('Server running at http://localhost:3000/');
 ```
 
-###Mongoose
+## Mongoose
 
-Para conectarmos no MongoDb utilizamos o módulo do `mongoose` com a função `connect`.
+Para conectarmos no MongoDb, utilizamos o módulo do `mongoose` com a função `connect`.
 
 ```
 var mongoose = require('mongoose');
