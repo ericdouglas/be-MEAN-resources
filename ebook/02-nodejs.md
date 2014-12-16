@@ -15,7 +15,7 @@ console.log('Server running at http://localhost:3000/');
 ```
 
 
-###EXPLICAR O REQ, RES, WRITE, END ETC
+## EXPLICAR O REQ, RES, WRITE, END ETC
 
 
 ```
@@ -29,7 +29,7 @@ http.createServer(function (req, res) {
 console.log('Server running at http://localhost:3000/');
 ```
 
-Para retornamos um HTML lido pelo Node.js utilizaremos o módulo `fs` (FileSystem) para ler/escrever arquivos. Esse módulo é um dos mais importantes do Node.js pois proporciona grandes poderes e com grandes poderes vem grandes responsabilidades :p
+Para retornamos um HTML lido pelo Node.js, utilizamos o módulo `fs` (FileSystem) para ler/escrever arquivos. Esse módulo é um dos mais importantes do Node.js, pois proporciona grandes poderes e com grandes poderes vem grandes responsabilidades :p
 
 ```
 var http = require('http')
