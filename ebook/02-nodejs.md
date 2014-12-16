@@ -52,14 +52,14 @@ Para conectarmos no MongoDb, utilizamos o módulo do `mongoose` com a função `
 
 ```js
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/workshop-be-mean');
+mongoose.connect('mongodb://localhost/be-mean-book');
 ```
 
 No Mongoose possuímos alguns eventos que nos auxiliam no gerenciamento da conexão com o Mongodb, para isso pegamos a informação do `mongoose.connection`, vamos ver alguns abaixo:
 
 ```js
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/workshop-be-mean');
+mongoose.connect('mongodb://localhost/be-mean-book');
 
 var db = mongoose.connection;
 
@@ -78,27 +78,27 @@ db.on('disconnected', function(err){
 ```
 
 
-###Rotas
+## Rotas
 
-Para iniciarmos nosso sistema de CRUD com rotas vamos abrir o `hello-world.js` do início e salvar ele como `app.js` em uma pasta nova chama `rotas`. Depois vamos jogar o código do `exe03.js` o qual cadastra uma cerveja. Ele deve ficar assim:
+Para iniciarmos nosso sistema de CRUD com rotas vamos abrir o `hello-world.js` do início e salvar ele como `app.js` em uma pasta nova chamada `rotas`. Depois vamos jogar o código do `exe03.js` o qual cadastra uma cerveja. Ele deve ficar assim:
 
 ```
 var http = require('http');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/workshop-online-novembro-2014');
+mongoose.connect('mongodb://localhost/be-mean-book');
 
 var db = mongoose.connection;
 db.on('error', function(err){
-    console.log('Erro de conexao.', err)
+    console.log('Erro de conexao.', err);
 });
 db.on('open', function () {
-  console.log('Conexão aberta.')
+  console.log('Conexão aberta.');
 });
 db.on('connected', function(err){
-    console.log('Conectado')
+    console.log('Conectado');
 });
 db.on('disconnected', function(err){
-    console.log('Desconectado')
+    console.log('Desconectado');
 });
 
 var Schema = mongoose.Schema;
