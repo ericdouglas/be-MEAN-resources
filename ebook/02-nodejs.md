@@ -4,7 +4,7 @@
 
 ### Hello World
 
-```
+```js
 var http = require('http');
 
 http.createServer(function (req, res) {
@@ -18,7 +18,7 @@ console.log('Server running at http://localhost:3000/');
 ## EXPLICAR O REQ, RES, WRITE, END ETC
 
 
-```
+```js
 var http = require('http');
 
 http.createServer(function (req, res) {
@@ -33,7 +33,7 @@ console.log('Server running at http://localhost:3000/');
 
 Para retornamos um HTML lido pelo Node.js, utilizamos o módulo `fs` (FileSystem) para ler/escrever arquivos. Esse módulo é um dos mais importantes do Node.js, pois proporciona grandes poderes e com grandes poderes vem grandes responsabilidades :p
 
-```
+```js
 var http = require('http')
   , fs = require('fs')
   ;
@@ -50,14 +50,14 @@ console.log('Server running at http://localhost:3000/');
 
 Para conectarmos no MongoDb, utilizamos o módulo do `mongoose` com a função `connect`.
 
-```
+```js
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/workshop-be-mean');
 ```
 
 No Mongoose possuímos alguns eventos que nos auxiliam no gerenciamento da conexão com o Mongodb, para isso pegamos a informação do `mongoose.connection`, vamos ver alguns abaixo:
 
-```
+```js
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/workshop-be-mean');
 
