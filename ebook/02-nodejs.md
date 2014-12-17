@@ -613,10 +613,9 @@ console.log('Server running at http://localhost:3000/');
 
 ```
 
-Mas nosso arquivo ainda está uma bagunça e é agora que vamos começar a modularizar nosso código.
+Mas nosso arquivo ainda está uma bagunça e é agora que vamos começar a modularizar nosso código!
 
-
-###Linkar sobre module.exports = exports
+## Linkar sobre module.exports = exports
 
 Vamos iniciar retirando a parte do MongoDb do nosso arquivo do servidor HTTP.
 

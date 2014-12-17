@@ -34,10 +34,77 @@ var BeerSchema = new Schema({
 
 var Beer = mongoose.model( 'Beer', BeerSchema );
 var _beer = {
-  create   : ,
-  retrieve : ,
-  update   : ,
-  delete   :
+  create : function( req, res ) {
+    var dados = {
+      name        : 'Skol',
+      description : 'Mijo de rato',
+      alcohol     : 4.5,
+      price       : 3.0,
+      category    : 'pilsen'
+    }
+
+    var model = new Beer( dados );
+
+    model.save( function( err, data ) {
+      if ( err ) {
+        console.log( 'Erro: ', err );
+        msg = 'Erro: ' + err;
+      } else {
+        console.log( 'Cerveja Inserida: ', data );
+        msg = 'Cerveja Inserida: ' + JSON.stringify( data );
+      }
+      res.end( msg );
+    });
+  },
+  retrieve : function( req, res ) {
+    var query = {};
+    Beer.find( query, function( err, data ) {
+      if ( err ) {
+        console.log( 'Erro: ', err );
+        msg = 'Erro: ' + err;
+      } else {
+        console.log( 'Listagem: ', data );
+        msg = 'Cervejas Listadas: ' + JSON.stringify( data );
+      }
+      res.end( msg );
+    });
+  },
+  update : function( req, res ) {
+    var query = { name : /skol/i };
+    var mod = {
+      alcohol : 666
+    };
+    var optional = {
+      upsert : false,
+      multi : true
+    };
+
+    Beer.update( query, mod, optional, function( err, data ) {
+      if ( err ) {
+        console.log( 'Erro: ', err );
+        msg = 'Erro: ' + err;
+      } else {
+        console.log( 'Cervejas atualizadas com sucesso: ', data );
+        msg = 'Cervejas alteradas: ' + data;
+      }
+      res.end( msg );
+    });
+  },
+  delete : function( req, res ) {
+    var query = { name : /skol/i };
+
+    // É multi: true CUIDADO!
+    Beer.remove( query, function( err, data ) {
+      if ( err ) {
+        console.log( err );
+        msg = 'Erro: ' + err;
+      } else {
+        console.log( 'Cerveja deletada com sucesso. Quantidade: ', data );
+        msg = 'Cervejas deletadas: ' + data;
+      }
+      res.end( msg );
+    });
+  }
 }
 
 http.createServer( function( req, res ) {
@@ -49,77 +116,19 @@ http.createServer( function( req, res ) {
 
   switch ( route ) {
     case '/beer/create':
-      var dados = {
-        name        : 'Skol',
-        description : 'Mijo de rato',
-        alcohol     : 4.5,
-        price       : 3.0,
-        category    : 'pilsen'
-      }
-
-      var model = new Beer( dados );
-
-      model.save( function( err, data ) {
-        if ( err ) {
-          console.log( 'Erro: ', err );
-          msg = 'Erro: ' + err;
-        } else {
-          console.log( 'Cerveja Inserida: ', data );
-          msg = 'Cerveja Inserida: ' + JSON.stringify( data );
-        }
-        res.end( msg );
-      });
+      _beer.create( req, res );
       break;
 
-    case 'beer/retrieve':
-      Beer.find( query, function( err, data ) {
-        if ( err ) {
-          console.log( 'Erro: ', err );
-          msg = 'Erro: ' + err;
-        } else {
-          console.log( 'Listagem: ', data );
-          msg = 'Cervejas Listadas: ' + JSON.stringify( data );
-        }
-        res.end( msg );
-      });
+    case '/beer/retrieve':
+      _beer.retrieve( req, res );
       break;
 
     case '/beer/update':
-      var query = { name : /skol/i };
-      var mod = {
-        alcohol : 666
-      }
-      var optional = {
-        upsert : false,
-        multi : true
-      }
-
-      Beer.update( query, mod, optional, function( err, data ) {
-        if ( err ) {
-          console.log( 'Erro: ', err );
-          msg = 'Erro: ' + err;
-        } else {
-          console.log( 'Cervejas atualizadas com sucesso: ', data );
-          msg = 'Cervejas alteradas: ' + data;
-        }
-        res.end( msg );
-      });
+      _beer.update( req, res );
       break;
 
     case '/beer/delete':
-      var query = { name : /skol/i };
-
-      // É mult: true CUIDADO!
-      Beer.remove( query, function( err, data ) {
-        if ( err ) {
-          console.log( err );
-          msg = 'Erro: ' + err;
-        } else {
-          console.log( 'Cerveja deletada com sucesso. Quantidade: ', data );
-          msg = 'Cervejas deletadas: ' + data;
-        }
-        res.end( msg );
-      });
+      _beer.delete( req, res );
       break;
 
     default: res.end( 'ROTA NÃO ENCONTRADA!' );
