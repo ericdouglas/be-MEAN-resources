@@ -82,7 +82,7 @@ db.on('disconnected', function(err){
 
 Para iniciarmos nosso sistema de CRUD com rotas vamos abrir o `hello-world.js` do início e salvar ele como `app.js` em uma pasta nova chamada `rotas`. Depois vamos jogar o código do `exe03.js` o qual cadastra uma cerveja. Ele deve ficar assim:
 
-```
+```js
 var http = require('http');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/be-mean-book');
@@ -141,10 +141,9 @@ http.createServer(function (req, res) {
 console.log('Server running at http://localhost:3000/');
 ```
 
+A informação de qual rota está sendo requisitada está em `req.url`, como podemos ver no código abaixo:
 
-A informação de qual rota está sendo requisitada está em `req.url` como podemos ver no código abaixo:
-
-```
+```js
 var http = require('http')
   , mongoose = require('mongoose');
 
@@ -206,7 +205,6 @@ http.createServer(function (req, res) {
 console.log('Server running at http://localhost:3000/');
 
 ```
-
 
 Agora criamos um teste para verificar se é a rota desejada, caso sim ele deve inserir a cerveja, se não deve mostrar `ROTA NAO ENCONTRADA`.
 
