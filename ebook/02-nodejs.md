@@ -284,19 +284,19 @@ Perceba onde está o `res.end` dentro da função assíncrona do mongoose, pois 
 
 ## DICA: Github
 
-Como esse material é baseado em um workshop, eu peço para meus alunos subirem os exerciícios no [Github](http://github.com) e alguns ainda não estão familiarizados então vamos lá.
+Como esse material é baseado em um workshop, eu peço para meus alunos subirem os exerciícios no [Github](http://github.com) e alguns ainda não estão familiarizados, então vamos lá.
 
 Primeiramente instale o git na sua máquina:
 
-- [MacOs]()
+- [MacOS]()
 - [Linux]()
 - [Windows]()
 
-Depois disso crie uma conta no Github e vamos adicionar uma chave para você poder acessar sua conta via ssh.
+Depois disso, crie uma conta no Github e vamos adicionar uma chave para você poder acessar sua conta via `ssh`.
 
-Lendo a documentação [Generating SSH keys](https://help.github.com/articles/generating-ssh-keys/) vemos como criamos uma chave ssh no terminal e depois adicionamos na nossa conta no Github.
+Lendo a documentação [Generating SSH keys](https://help.github.com/articles/generating-ssh-keys/), vemos como criamos uma chave ssh no terminal e depois adicionamos na nossa conta no Github.
 
-Depois de feito isso vamos criar nosso repositório git onde estão nosso arquivos:
+Depois de feito isso, vamos criar nosso repositório git onde estão nosso arquivos:
 
 ```
 cd /meus-exercicios
@@ -326,15 +326,15 @@ git remote add origin git@github.com:suissa/dica-be-mean.git
 git push origin master
 ```
 
-E está lá quando você der refresh na página do repositório já verá seus arquivos, fácil não?
+E está lá, quando você der refresh na página do repositório já verá seus arquivos, fácil não?
 
 
-####Voltando ao assunto
+## Voltando ao assunto
 
 
 Vamos refatorar para um objeto que encapsule toda a lógica do CRUD.
 
-```
+```js
 var http = require('http')
   , mongoose = require('mongoose');
 
