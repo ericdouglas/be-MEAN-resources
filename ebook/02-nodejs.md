@@ -405,25 +405,26 @@ http.createServer(function (req, res) {
         }
         res.end(msg);
       });
-    break;
+      break;
+
     case '/beer/retrieve':
       Beer.find(query, function (err, data) {
-      if (err) {
-        console.log('Erro: ', err);
-          msg = 'Erro: ' + err;
-      } else {
-        console.log('Listagem: ', data);
-          msg = 'Cervejas listadas: ' + JSON.stringify(data);
-      }
-      res.end(msg);
-    });
+        if (err) {
+          console.log('Erro: ', err);
+            msg = 'Erro: ' + err;
+        } else {
+          console.log('Listagem: ', data);
+            msg = 'Cervejas listadas: ' + JSON.stringify(data);
+        }
+        res.end(msg);
+      });
+      break;
 
-    break;
     case '/beer/update':
       var query = {name: /skol/i};
 
       var mod = {
-        alcohol: 666,
+        alcohol: 666
       };
 
       var optional = {

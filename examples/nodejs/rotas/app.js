@@ -33,39 +33,98 @@ var BeerSchema = new Schema({
 });
 
 var Beer = mongoose.model( 'Beer', BeerSchema );
+var _beer = {
+  create   : ,
+  retrieve : ,
+  update   : ,
+  delete   :
+}
 
 http.createServer( function( req, res ) {
   res.writeHead( 200, { 'Content-Type' : 'text/html;charset=utf-8' });
 
   console.log( 'URL: ', req.url );
   var route = req.url;
+  var msg = '';
 
-  if ( route === '/beer/create' ) {
-    var dados = {
-      name        : 'Skol',
-      description : 'Mijo de rato',
-      alcohol     : 4.5,
-      price       : 3.0,
-      category    : 'pilsen'
-    };
-
-    var model = new Beer( dados );
-    var msg = '';
-
-    model.save( function( err, data ) {
-      if ( err ) {
-        console.log( 'Erro: ', err );
-        msg = 'Erro: ' + err;
-      } else {
-        console.log( 'Cerveja Inserida: ', data );
-        msg = 'Cerveja Inserida: ' + JSON.stringify( data, null, 2 );
+  switch ( route ) {
+    case '/beer/create':
+      var dados = {
+        name        : 'Skol',
+        description : 'Mijo de rato',
+        alcohol     : 4.5,
+        price       : 3.0,
+        category    : 'pilsen'
       }
 
-      res.end( msg );
-    });
-  } else {
-    res.end( 'ROTA NÃO ENCONTRADA' );
+      var model = new Beer( dados );
+
+      model.save( function( err, data ) {
+        if ( err ) {
+          console.log( 'Erro: ', err );
+          msg = 'Erro: ' + err;
+        } else {
+          console.log( 'Cerveja Inserida: ', data );
+          msg = 'Cerveja Inserida: ' + JSON.stringify( data );
+        }
+        res.end( msg );
+      });
+      break;
+
+    case 'beer/retrieve':
+      Beer.find( query, function( err, data ) {
+        if ( err ) {
+          console.log( 'Erro: ', err );
+          msg = 'Erro: ' + err;
+        } else {
+          console.log( 'Listagem: ', data );
+          msg = 'Cervejas Listadas: ' + JSON.stringify( data );
+        }
+        res.end( msg );
+      });
+      break;
+
+    case '/beer/update':
+      var query = { name : /skol/i };
+      var mod = {
+        alcohol : 666
+      }
+      var optional = {
+        upsert : false,
+        multi : true
+      }
+
+      Beer.update( query, mod, optional, function( err, data ) {
+        if ( err ) {
+          console.log( 'Erro: ', err );
+          msg = 'Erro: ' + err;
+        } else {
+          console.log( 'Cervejas atualizadas com sucesso: ', data );
+          msg = 'Cervejas alteradas: ' + data;
+        }
+        res.end( msg );
+      });
+      break;
+
+    case '/beer/delete':
+      var query = { name : /skol/i };
+
+      // É mult: true CUIDADO!
+      Beer.remove( query, function( err, data ) {
+        if ( err ) {
+          console.log( err );
+          msg = 'Erro: ' + err;
+        } else {
+          console.log( 'Cerveja deletada com sucesso. Quantidade: ', data );
+          msg = 'Cervejas deletadas: ' + data;
+        }
+        res.end( msg );
+      });
+      break;
+
+    default: res.end( 'ROTA NÃO ENCONTRADA!' );
   }
+  
 }).listen( 3000 );
 
 console.log( 'Server running at http://localhost:3000/' );
