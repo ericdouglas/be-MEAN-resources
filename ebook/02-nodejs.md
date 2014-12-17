@@ -206,9 +206,9 @@ console.log('Server running at http://localhost:3000/');
 
 ```
 
-Agora criamos um teste para verificar se é a rota desejada, caso sim ele deve inserir a cerveja, se não deve mostrar `ROTA NAO ENCONTRADA`.
+Agora criamos um teste para verificar se é a rota desejada, caso sim ele, deve inserir a cerveja, se não, deve mostrar `ROTA NÃO ENCONTRADA`.
 
-```
+```js
 var http = require('http')
   , mongoose = require('mongoose');
 
@@ -279,11 +279,10 @@ console.log('Server running at http://localhost:3000/');
 
 ```
 
-
 Perceba onde está o `res.end` dentro da função assíncrona do mongoose, pois se ela estivesse fora você não conseguiria retornar os dados da função para o `response`.
 
 
-####DICA: Github
+## DICA: Github
 
 Como esse material é baseado em um workshop, eu peço para meus alunos subirem os exerciícios no [Github](http://github.com) e alguns ainda não estão familiarizados então vamos lá.
 
