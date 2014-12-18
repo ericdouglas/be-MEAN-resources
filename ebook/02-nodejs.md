@@ -808,7 +808,7 @@ console.log('Server running at http://localhost:3000/');
 
 Porém, ainda temos a lógica do CRUD no mesmo arquivo do servidor HTTP, então vamos modularizar ele também, removemos esse código do `app` e colocando em um arquivo novo chamado `beers.js`, criando uma pasta nova chamada `controllers`:
 
-```
+```js
 _beer = {
     create: function (req, res) {
 
@@ -894,7 +894,7 @@ _beer = {
 
 Só que ele ainda não é um módulo, então vamos exportar ele com `module.exports` e importar o módulo do Model `beer`:
 
-```
+```js
 var Beer = require('../models/beer')
   , msg = '';
 
@@ -983,7 +983,7 @@ module.exports = {
 
 Pronto! Agora voltamos no `app` e deixamos ele como no slide:
 
-```
+```js
 var http = require('http')
   , Beer = require('./controllers/beers');
 
@@ -1015,8 +1015,9 @@ console.log('Server running at http://localhost:3000/');
 
 ```
 
-Mas nosso código ainda pode melhorar, vamos separar a conexão do MongoDb do *Model*, para isso vamos retirar todo o código da conexão e salvar em `config/db`:
-```
+Mas nosso código ainda pode melhorar. Vamos separar a conexão do MongoDb do *Model*, para isso vamos retirar todo o código da conexão e salvar em `config/db`:
+
+```js
 var mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/workshop-online-novembro-2014');
@@ -1046,10 +1047,9 @@ process.on('SIGINT', function() {
 require('../models/index');
 ```
 
-
 Note a última linha onde eu chamo `require('../models/index');`, para que serve isso?
 
-Ai que está a jogada, para centralizarmos a conexão também centralizaremos a importação dos *Models* para o projeto, chamando esse `models/index.js`.
+Ai que está a jogada, para centralizarmos a conexão, também centralizaremos a importação dos *Models* para o projeto, chamando esse `models/index.js`.
 
 ```
 // index.js
