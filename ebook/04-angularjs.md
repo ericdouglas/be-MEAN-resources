@@ -98,7 +98,7 @@ Logo quando eu modificar o valor do meu `model` automagicamente a `view` será a
 
 Vamos pegar o exercício03 e salvar como exercício04 para ficar como abaixo:
 
-```
+```html
 <!doctype html>
 <html data-ng-app="workshopBeMEAN">
   <head>
@@ -130,24 +130,24 @@ Vamos pegar o exercício03 e salvar como exercício04 para ficar como abaixo:
 </html>
 ```
 
-Ai você me pergunta mas o que tem de mais nesse ex04?
+Ai você me pergunta: "mas o que tem de mais nesse ex04"?
 
-Bom primeiramente mudamos nosso `ng-app` para o `html` para que possamos ter controle das tags do AngularJs em qualquer parte do nosso documento html.
+Bom, primeiramente, mudamos nosso `ng-app` para o `html` para que possamos ter controle das tags do AngularJs em qualquer parte do nosso documento html.
 
-Além de mudarmos o `ng-app` colocamos uma expressão de variável na tag `title` a fim de mostrar como, dependendo de onde o `ng-app` é declarado, o AngularJs consegue parsear expressões em todo o documento.
+Além de mudarmos o `ng-app`, colocamos uma expressão de variável na tag `title` a fim de mostrar como, dependendo de onde o `ng-app` é declarado, o AngularJs consegue parsear expressões em todo o documento.
 
-Logo se você escrever qualquer valor no input do workshop você verá o título da sua página ser modificado enquanto você digita.
+Logo, se você escrever qualquer valor no input do workshop você verá o título da sua página ser modificado enquanto você digita.
 
 
-###Filters
+## Filters
 
-Os filtros são funções que servem para o tratamento visual de valores na view, logo eles não modificam o valor original, modificam apenas para exibição. Um exemplo simples disso é formatar uma data a partir de um timestamp. 
+Os filtros são funções que servem para o tratamento visual de valores na view, logo, eles não modificam o valor original, modificam apenas para exibição. Um exemplo simples disso é formatar uma data a partir de um timestamp. 
 
-Vamos agora para o exercício05 onde iremos utilizar um filtro padrão do AngularJs e um filtro criado por nós. Para utilizarmos um filtro, precisamos chamar o nome dele após o `|` quando estiver depois de uma variável ou diretiva.
+Vamos agora para o exercício05 onde iremos utilizar um filtro padrão do AngularJs e um filtro criado por nós. Para utilizarmos um filtro, precisamos chamar o nome dele após o `|`, quando estiver depois de uma variável ou diretiva.
 
-Podemos utilizar 1 ou mais filtros ao mesmo tempo, como podemos ver no código do exercício05:
+Podemos utilizar um ou mais filtros ao mesmo tempo, como podemos ver no código do exercício05:
 
-```
+```html
 <body>
     <p>
       <h3>Olá mundo, {{ nome | reverseName | uppercase }}</h3>
@@ -180,16 +180,15 @@ Podemos utilizar 1 ou mais filtros ao mesmo tempo, como podemos ver no código d
   </body>
 ```
 
-
 Aqui nós chamamos o filtro:
 
-```
+```html
 <h3>Olá mundo, {{ nome | reverseName | uppercase }}</h3>
 ```
 
-Logo após a variável `nome` estamos chamando o filtro `reverseName` e o `uppercase`. O filtro `reverseName` foi definido abaixo:
+Logo após a variável `nome`, chamamos o filtro `reverseName` e o `uppercase`. O filtro `reverseName` foi definido abaixo:
 
-```
+```html
 <script>
   angular.module('workshopBeMEAN', [])
   .filter('reverseName', function () {
@@ -201,13 +200,13 @@ Logo após a variável `nome` estamos chamando o filtro `reverseName` e o `upper
 </script>
 ```
 
-Todos os filtros precisam receber ao menos um parâmetro que será o valor a ser modificado por ele, porém também podemos utilizar mais paramêtros como veremos mais para frente.
+Todos os filtros precisam receber ao menos um parâmetro, que será o valor a ser modificado por ele, porém, também podemos utilizar mais paramêtros como veremos mais para frente.
 
-No filtro `reverseName` o texto se transforma em um `array` com `split("")` para depois ser invertido com `reverse()` e aí sim ser juntado novamente como uma `string`, pois o Javascript não possui um método nativo de inversão de strings.
+No filtro `reverseName`, o texto se transforma em um `array` com `split("")` para depois ser invertido com `reverse()`, e aí sim ser juntado novamente como uma `string`, pois o Javascript não possui um método nativo de inversão de strings.
 
 No exercício06 vamos ver alguns filtros simples e padrões do AngularJs:
 
-```
+```html
 <p>
   <label>Lower<input type="text" data-ng-model="lower"> </label>
   <br>
@@ -233,20 +232,17 @@ No exercício06 vamos ver alguns filtros simples e padrões do AngularJs:
 </p>
 ```
 
-
-##Não esquecer de falar um pouco dos filtros aqui
-
 ### Filtros - Parâmetros
 
-Para utilizarmos mais de um parâmetro em um filtro precisamos apenas passar o valor após um `:` como podemos ver no exemplo do exercício07:
+Para utilizarmos mais de um parâmetro em um filtro precisamos apenas passar o valor após um `:`, como podemos ver no exemplo do exercício07:
 
-```
+```html
 <h3>Olá mundo, {{ nome | truncate:4:'... veja mais' }}</h3>
 ```
 
 Sendo que nossa função do filtro fica assim:
 
-```
+```js
 .filter('truncate', function () {
   return function (text, length, end) {
     if(text){
@@ -268,20 +264,20 @@ Sendo que nossa função do filtro fica assim:
 
 Para utilizarmos parâmetros em nossos filtros precisamos apenas declarar mais argumentos na função do callback:
 
-```
+```js
 return function (text, length, end)
 ```
 
 E para passarmos os parâmetros na chamada do filtro precisamos apenas separá-los por `:` como no nosso exemplo:
 
-```
+```html
 {{ nome | truncate:4:'... veja mais' }}
 ```
 
 
 Perceba também que criamos um módulo para nossos filtros e apenas injetamos ele no módulo da nossa aplicação, será dessa forma que iremos modularizar nosso código no AngularJs.
 
-```
+```html
 <script>
   angular.module('workshopBeMEAN', ['workshopFilters']);
 
@@ -315,41 +311,51 @@ Perceba também que criamos um módulo para nossos filtros e apenas injetamos el
 
 ##Controllers
 
-Os Controllers trabalham diretamente com a `view` podendo setar novos valores que serão visíveis nela, porém não se aconselha adicionar muita lógica nele, pois não é re-usável. 
+Os Controllers trabalham diretamente com a `view`, podendo setar novos valores que serão visíveis nela, porém não se aconselha adicionar muita lógica nele, pois não é re-usável. 
 
 Além da discussão atual sobre, pois eles não existirão no AngularJs 2.0. Para isso devemos tentar utilizar o mínimo dele apenas para utilizarmos os `Services` os quais conterão nossa lógica, por isso o AngularJs é um MVVM (Mode, View, ViewModel) pois o `Controller` na verdade só liga os 2 sem realmente precisar conter lógica.
 
 Vamos criar um `Controller`e injetar o `$scope` para que ele possa criar variáveis acessíveis na nossa `View`:
 
-```
+```js
 angular.module('workshopBeMEAN', ['workshopFilters'])
 .controller('BeerController', ['$scope',
   function($scope){
     $scope.reverse = false;
     $scope.predicate = 'name';
-  // criamos um array de cervejas
-    var cervejas = [{
-      name: 'Kaiser', price: 2
-      }, {
-        name: 'Skol', price: 3
-      }, {
-        name: 'Glacial', price: 4
-      }, {
-        name: 'Polar', price: 6
-      }, {
-        name: 'Heineken', price: 10
+    // criamos um array de cervejas
+    var cervejas = [
+      {
+        name: 'Kaiser', 
+        price: 2
+      }, 
+      {
+        name: 'Skol', 
+        price: 3
+      }, 
+      {
+        name: 'Glacial', 
+        price: 4
+      }, 
+      {
+        name: 'Polar', 
+        price: 6
+      }, 
+      {
+        name: 'Heineken', 
+        price: 10
       }
     ];
-  // instanciamos nosso array no nosso scope
-  // para que tenhamos acesso à esse array na View
+    // instanciamos nosso array no nosso scope
+    // para que tenhamos acesso à esse array na View
     $scope.cervejas = cervejas;
 
 } ]);
 ```
 
-Na nossa `View` além de iterarmos no array de cervejas, também chamamos o filtro `orderBy` que irá ordenar a listagem das cervejas e também tem interação com um link que modifica sua ordenação.
+Na nossa `View`, além de iterarmos no array de cervejas, também chamamos o filtro `orderBy` que irá ordenar a listagem das cervejas, e também tem interação com um link que modifica sua ordenação.
 
-```
+```html
 <div data-ng-controller='BeerController'>
   {{ cervejas }}
 
@@ -367,22 +373,21 @@ Na nossa `View` além de iterarmos no array de cervejas, também chamamos o filt
 </div>
 ```
 
-Para utilizarmos o `Controller` criado precisamos apenas chamar a diretiva `ng-controller` na nossa `View`. Lembrando que o escopo criado existe apenas dentro desse `Controller`, logo o array de cervejas não existe fora dessa `div`:
+Para utilizarmos o `Controller` criado, precisamos apenas chamar a diretiva `ng-controller` na nossa `View`. Lembrando que o escopo criado existe apenas dentro desse `Controller`, logo o array de cervejas não existe fora dessa `div`:
 
-```
+```html
 <div data-ng-controller='BeerController'>
 ```
 
-No exercício09 nós criamos um módulo apenas para nossos `Controllers`, pois eles irão crescer e também criei a função `ordenar` no `Controller` para ser chamada no `ng-click` do botão:
+No exercício09 nós criamos um módulo apenas para nossos `Controllers`, pois eles irão crescer, e também criei a função `ordenar` no `Controller` para ser chamada no `ng-click` do botão:
 
-```
+```html
 <button data-ng-click='ordenar()'>Ordenar</button>
 ```
 
+## $http
 
-###$http
-
-O `$http` é o responsável pelas nossas requisições `HTTP` que nada mais é que o módulo utilizado para integramos com alguma `API`.
+O `$http` é o responsável pelas nossas requisições `HTTP`, que nada mais é que o módulo utilizado para integrarmos com alguma `API`.
 
 No exercício010 iremos ver como utilizar o `$http` para consumirmos a `API` do [github](https://github.com).
 
@@ -392,20 +397,19 @@ var method = 'GET';
 $http({
   url: url,
   method: method
-}).
-success(function(data){
+})
+.success(function(data){
   console.log('Data: ', data);
   $scope.user = data;
-}).
-error(function(err){
+})
+.error(function(err){
   console.log('Erro: ', err);
 });
 ```
 
-
 E na nossa `View` nós mostramos:
 
-```
+```html
 <div data-ng-controller='UserController'>
   <button data-ng-click='rodar()'>Usuario</button>
   <p data-ng-show='mostraUser'>
@@ -426,7 +430,7 @@ E na nossa `View` nós mostramos:
 </div>
 ```
 
-Perceba que ao iniciar a página ele não mostra o usuário, paenas se clickar no botão `Usuario` que mostra os dados abaixo. Para que isso aconteça usamos a diretiva `ng-show` que irá mostrar o conteúdo caso receba `true`, porém nós iniciamos ela com `false` no nosso `Controller`:
+Perceba que ao iniciar a página ele não mostra o usuário, apenas se clickar no botão `Usuario` que mostra os dados abaixo. Para que isso aconteça, usamos a diretiva `ng-show` que irá mostrar o conteúdo caso receba `true`, porém nós iniciamos ela com `false` no nosso `Controller`:
 
 ```
 $scope.mostraUser = false;
@@ -440,7 +444,7 @@ $scope.rodar = function(){
 }
 ```
 
-##Rotas
+## Rotas
 
 Para começarmos o assunto das rotas iremos utilizar um projeto que vai iniciar um boilerplate com AngularJs para trabalharmos, o [angular-seed](https://github.com/angular/angular-seed). Basta clonarmos o repositório:
 
@@ -478,7 +482,7 @@ config(['$routeProvider', function($routeProvider) {
 }]);
 ```
 
-E depois abrir o `view1/view1.js` vai perceber que o próprio módulo `myApp.view1` possui sua rota, isso deixa nosso código bem modular e não polui o arquivo principal.
+E depois que você abrir o `view1/view1.js` vai perceber que o próprio módulo `myApp.view1` possui sua rota, isso deixa nosso código bem modular e não polui o arquivo principal.
 
 ```
 angular.module('myApp.view1', ['ngRoute'])
@@ -491,21 +495,5 @@ angular.module('myApp.view1', ['ngRoute'])
 }])
 ```
 
-
-
-
-
-
-
 **Style Guide: https://github.com/johnpapa/angularjs-styleguide**
-
-
-
-
-
-
-
-
-
-
 
