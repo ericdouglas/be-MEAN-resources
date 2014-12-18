@@ -619,7 +619,7 @@ Mas nosso arquivo ainda está uma bagunça, e é agora que vamos começar a **mo
 
 Vamos iniciar retirando a parte do MongoDb do nosso arquivo do servidor HTTP.
 
-```
+```js
 
   , mongoose = require('mongoose');
 
@@ -690,7 +690,6 @@ var BeerSchema = new Schema({
 module.exports = mongoose.model('Beer', BeerSchema);
 
 ```
-
 
 Retirando o nosso Model do `app`, precisamos importá-lo para que o código continue funcionando, por isso vamos chamá-lo com `require`:
 
@@ -779,8 +778,6 @@ var http = require('http')
     }
   };
 
-
-
 http.createServer(function (req, res) {
   res.writeHead(200, {'Content-Type': 'text/html;charset=utf-8'});
 
@@ -809,7 +806,7 @@ console.log('Server running at http://localhost:3000/');
 
 ```
 
-Porém, ainda temos a lógica do CRUD no mesmo arquivo do servidor HTTP, então vamos modularizar ele também, removemos esse código do `app` e colamos em um arquivo novo chamado `beers.js` criando uma pasta nova chama `controllers`:
+Porém, ainda temos a lógica do CRUD no mesmo arquivo do servidor HTTP, então vamos modularizar ele também, removemos esse código do `app` e colocando em um arquivo novo chamado `beers.js`, criando uma pasta nova chamada `controllers`:
 
 ```
 _beer = {
