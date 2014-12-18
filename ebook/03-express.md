@@ -28,13 +28,13 @@ Com isso criamos uma rota `/hello` que será acessada via `GET` e executará a s
 
 Tudo bem isso ainda está muito básico então vamos usar o `express-generator`. Para isso vamos instalá-lo globalmente.
 
-```
+```sh
 npm i -g express-generator
 ```
 
 Depois vamos gerar nosso *boilerplate* com o comando `express`:
 
-```
+```sh
 express nome-projeto
 cd nome-projeto
 npm install
@@ -42,6 +42,6 @@ npm install
 
 Após instaladas as dependências locais podemos rodar o projeto com:
 
-```
+```sh
 npm start
 ```
