@@ -1,4 +1,5 @@
 var http = require( 'http' );
+var db = require( './config/db' );
 var Beer = require( './controllers/beers' );
 
 http.createServer( function( req, res ) {

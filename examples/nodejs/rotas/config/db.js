@@ -21,7 +21,7 @@ db.on( 'disconnected', function( err ) {
 });
 
 // If the Node process ends, close the Mongoose connection
-procces.on( 'SIGINT', function() {
+process.on( 'SIGINT', function() {
   mongoose.connection.close( function() {
     console.log( 'Mongoose default connection disconnected through app termination');
     process.exit( 0 );
