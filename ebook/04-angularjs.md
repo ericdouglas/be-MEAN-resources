@@ -1,8 +1,38 @@
 # AngularJs
 
-## INTRO - Teoria
+![Angularjs](https://i.cloudup.com/_O1Y7F0CfP.png)
 
-## Iniciando
+## Introdução
+
+O AngularJS é um framework criado por Misko Hevery e mantido pelo Google.
+
+Ele trabalha com uma estrutura de MVC e um ótimo sistema de two way
+data-bindings, além de suas diretivas darem super-poderes ao HTML.
+
+Como o AngularJs é um framework e não uma biblioteca como o jQuery, o modo
+de se trabalhar com ele é um pouco diferente do que éramos acostumados.
+
+Para iniciarmos uma aplicação com o AngularJs, precisamos adicionar
+o atributo ng-app em alguma tag do nosso HTML, normalmente em body ou html.
+
+### Dica
+
+Vamos instalar um servidor web em Node.js para que possamos rodar nossos
+arquivos com AngularJs:
+
+```sh
+npm install -g http-server
+```
+
+E para rodarmos, basta ir na pasta onde estão nosso arquivos e rodar:
+
+```sh
+http-server
+Starting up http-server, serving ./ on port: 8080
+Hit CTRL-C to stop the server
+```
+
+## Iniciando - Guia Rápido
 
 Para iniciar uma aplicação com o AngularJs possuímos 3 formas: 
 
@@ -496,4 +526,6 @@ angular.module('myApp.view1', ['ngRoute'])
 ```
 
 **Style Guide: https://github.com/johnpapa/angularjs-styleguide**
+
+
 
