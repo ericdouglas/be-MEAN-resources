@@ -1,4 +1,7 @@
-var _beer = {
+var Beer = require( '../models/beer' );
+var msg = '';
+
+module.exports = {
   create : function( req, res ) {
     var dados = {
       name        : 'Skol',

@@ -1,28 +1,27 @@
 var http = require( 'http' );
-var Beer = require( './models/beer' );
+var Beer = require( './controllers/beers' );
 
 http.createServer( function( req, res ) {
   res.writeHead( 200, { 'Content-Type' : 'text/html;charset=utf-8' });
 
   console.log( 'URL: ', req.url );
   var route = req.url;
-  var msg = '';
 
   switch ( route ) {
     case '/beer/create':
-      _beer.create( req, res );
+      Beer.create( req, res );
       break;
 
     case '/beer/retrieve':
-      _beer.retrieve( req, res );
+      Beer.retrieve( req, res );
       break;
 
     case '/beer/update':
-      _beer.update( req, res );
+      Beer.update( req, res );
       break;
 
     case '/beer/delete':
-      _beer.delete( req, res );
+      Beer.delete( req, res );
       break;
 
     default: res.end( 'ROTA NÃO ENCONTRADA!' );
