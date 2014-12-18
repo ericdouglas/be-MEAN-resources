@@ -57,14 +57,14 @@ Iremos trabalhar com uma API REST no Express, e para isso iremos utilizar 4 verb
 
 Para iniciarmos qualquer funcionalidade vamos pensar no seguinte workflow:
 
-1. Criar uma rota no módulo. Ex.: `/routes/beers`
+1. Criar uma rota no módulo. Ex.: `/routes/beers.js`
 
 ```js
 // Rota para consulta da cerveja   
 router.get('/show', beer.show);
 ```
 
-2 Criar a view a ser renderizada
+2. Criar a view a ser renderizada:
 
 ```jade
 p.show
@@ -78,14 +78,14 @@ p.show
     | Description: #{cerveja.description}
 ```
 
-3 cria uma função no controller. Ex.: /controllers/beer
+3. Criar uma função no controller. Ex.: `/controllers/beer.js`
 
 ```js
 function(req, res){
-// Primeiramente precisamos consultar ae cerveja
+// Primeiramente precisamos consultar a cerveja
 var query = {_id: req.params.id};
 Beer.findOne(query, function (err, data) {
-  if (err){
+  if (err) {
     console.log('Erro: ', err);
     msg = 'Erro ao listar as cervejas!';
     res.render('beer/show', 
@@ -94,7 +94,7 @@ Beer.findOne(query, function (err, data) {
         msg: msg
       }
     );
-  }else{
+  } else {
     console.log('Listagem: ', data);  
     msg = 'Cerveja: ' + data.name; 
     // Enviamos a cerveja para view
@@ -109,7 +109,7 @@ Beer.findOne(query, function (err, data) {
 });
 ```
 
-Com o show funcionando podemos refatorar nossa view `beer/index.jade` para:
+Com o `show` funcionando podemos refatorar nossa view `beer/index.jade` para:
 
 ```jade
 ul

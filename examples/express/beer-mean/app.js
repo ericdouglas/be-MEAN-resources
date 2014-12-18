@@ -5,23 +5,28 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+// requerindo os módulos de rotas
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
+// criando o servidor do express
 var app = express();
 
+// setando qual será o sistema de templates
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+// utilizando os módulos como middlewares
 // uncomment after placing your favicon in /public
-//app.use(favicon(__dirname + '/public/favicon.ico'));
+app.use(favicon());
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// usando os módulos de rotas
 app.use('/', routes);
 app.use('/users', users);
 
