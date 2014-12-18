@@ -470,7 +470,7 @@ console.log('Server running at http://localhost:3000/');
 
 Agora nós passamos a lógica que está no switch para uma `function` para cada ação do nosso objeto `_beer`.
 
-```
+```js
 var http = require('http')
   , mongoose = require('mongoose');
 
@@ -613,9 +613,9 @@ console.log('Server running at http://localhost:3000/');
 
 ```
 
-Mas nosso arquivo ainda está uma bagunça e é agora que vamos começar a modularizar nosso código!
+Mas nosso arquivo ainda está uma bagunça, e é agora que vamos começar a **modularizar** nosso código!
 
-## Linkar sobre module.exports = exports
+## Linkar sobre `module.exports = exports`
 
 Vamos iniciar retirando a parte do MongoDb do nosso arquivo do servidor HTTP.
 
@@ -655,7 +655,9 @@ var Beer = mongoose.model('Beer', BeerSchema)
 
 Agora temos um Model porém ele ainda não é um módulo do Node.js, para isso precisamos exportar o objeto Beer utilizando `module.exports`:
 
-```
+`models/beer.js`
+
+```js
 var mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/workshop-online-novembro-2014');
@@ -690,9 +692,9 @@ module.exports = mongoose.model('Beer', BeerSchema);
 ```
 
 
-Retirando o nosso Model do `app` precisamos importar ele para que o código continue funcionando por isso vamos chamar ele com `require`:
+Retirando o nosso Model do `app`, precisamos importá-lo para que o código continue funcionando, por isso vamos chamá-lo com `require`:
 
-```
+```js
 var http = require('http')
   , Beer = require('./models/beer')
   , _beer = {
@@ -807,7 +809,7 @@ console.log('Server running at http://localhost:3000/');
 
 ```
 
-Porém ainda temos a lógica do CRUD no mesmo arquivo do servidor HTTP, então vamos modularizar ele também, removemos esse código do `app` e colamos em um arquivo novo chamado `beers.js` criando uma pasta nova chama `controllers`:
+Porém, ainda temos a lógica do CRUD no mesmo arquivo do servidor HTTP, então vamos modularizar ele também, removemos esse código do `app` e colamos em um arquivo novo chamado `beers.js` criando uma pasta nova chama `controllers`:
 
 ```
 _beer = {
