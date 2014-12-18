@@ -1051,20 +1051,22 @@ Note a última linha onde eu chamo `require('../models/index');`, para que serve
 
 Ai que está a jogada, para centralizarmos a conexão, também centralizaremos a importação dos *Models* para o projeto, chamando esse `models/index.js`.
 
-```
+```js
 // index.js
 var MODELS_FOLDER = './models';
-require('fs').readdirSync(MODELS_FOLDER).forEach(function(file) {
-  // Remove index from models
-  if(file !== 'index.js'){
-    require('./'+file);
-    console.log('Addd model: ', file);
-  }
-});
+require('fs')
+  .readdirSync(MODELS_FOLDER)
+  .forEach(function(file) {
+    // Remove index from models
+    if(file !== 'index.js'){
+      require('./'+file);
+      console.log('Add model: ', file);
+    }
+  });
 
 ```
 
-Esse arquivo apenas lê os arquivos da pasta `models` e da um require para que não precisemos fazer isso nos *Controllers* que os forem usar.
+Esse arquivo apenas lê os arquivos da pasta `models`, e dá um `require` para que não precisemos fazer isso nos *Controllers* que os forem usar.
 
 Agora no nosso *Controller* precisamos mudar a chamada do *Model* para:
 
