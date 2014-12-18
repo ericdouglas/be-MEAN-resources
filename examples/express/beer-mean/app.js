@@ -19,7 +19,7 @@ app.set('view engine', 'jade');
 
 // utilizando os módulos como middlewares
 // uncomment after placing your favicon in /public
-app.use(favicon());
+// app.use(favicon());
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

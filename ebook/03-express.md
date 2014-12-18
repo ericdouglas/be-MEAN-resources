@@ -120,7 +120,7 @@ ul
 ```
 
 Para iniciarmos a função de update, precisamos criar a rota da renderização
-da sua view, /routes/beers.js
+da sua view, `/routes/beers.js`
 
 ```js
 // Rota para alteração da cerveja
@@ -200,7 +200,7 @@ Não esquecer de instalar localmente:
 npm install --save method-override
 ```
 
-Para usarmos o method override com o nosso input, precisamos chamá-lo:
+Para usarmos o *method override* com o nosso input, precisamos chamá-lo:
 
 ```js
 app.use(
@@ -216,7 +216,7 @@ app.use(
 ```
 
 Após criarmos o UPDATE, vamos criar o DELETE. Criando inicialmente a 
-nossa rota em routes/beers.js:
+nossa rota em `routes/beers.js`:
 
 ```js
 // Rota para remoção da cerveja
@@ -227,35 +227,36 @@ Depois criamos a função no controller que essencialmente é igual ao show:
 
 ```js
 function(req, res){
-    // criando o objeto de query
-    // para fazer a busca da cerveja a ser alterada
-    var query = {_id: req.params.id};
+  // criando o objeto de query
+  // para fazer a busca da cerveja a ser alterada
+  var query = {_id: req.params.id};
 
-    Beer.findOne(query, function (err, data) {
-      if (err){
-        console.log('Erro: ', err);
-        msg = 'Erro ao buscar a cerveja!';
-        // Enviamos a msg para view
-        res.render('beer/remove', 
-          {
-            title: 'Adega Be MEAN', 
-            cerveja: data,
-            msg: msg
-          }
-        );
-      }else{
-        console.log('Cerveja removida com sucesso', data);
-        msg = 'Cerveja: ' + data.name; 
-        // Enviamos a cerveja para view
-        res.render('beer/remove', 
-          {
-            title: 'Adega Be MEAN', 
-            cerveja: data,
-            msg: msg
-          }
-        );
-      } 
-    });
+  Beer.findOne(query, function (err, data) {
+    if (err){
+      console.log('Erro: ', err);
+      msg = 'Erro ao buscar a cerveja!';
+      // Enviamos a msg para view
+      res.render('beer/remove', 
+        {
+          title: 'Adega Be MEAN', 
+          cerveja: data,
+          msg: msg
+        }
+      );
+    }else{
+      console.log('Cerveja removida com sucesso', data);
+      msg = 'Cerveja: ' + data.name; 
+      // Enviamos a cerveja para view
+      res.render('beer/remove', 
+        {
+          title: 'Adega Be MEAN', 
+          cerveja: data,
+          msg: msg
+        }
+      );
+    } 
+  });
+}
 ```
 
 Agora criamos nossa view que também é parecida com o a save.jade:
