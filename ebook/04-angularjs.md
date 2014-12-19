@@ -1318,15 +1318,18 @@ Onde:
 
 Depois de listarmos e criarmos nossas cervejas precisamos poder alterá-las também, então dentro da nossa view `show` vamos adicionar um link para o `UPDATE` e para o `DELETE`:
 
+```jade
 p
   a(data-ng-href='beers/{{cerveja._id}}/edit')
     | Alterar
 p 
   a(data-ng-href='beers/{{cerveja._id}}/remove')
     | Excluir
+```
 
 Após adicionarmos esses links precisamos criar suas respectivas rotas:
 
+```js
 when('/beers/:id/edit', {
   templateUrl: 'expose/beers/edit',
   controller: 'BeersEditCtrl'
@@ -1335,9 +1338,11 @@ when('/beers/:id/remove', {
   templateUrl: 'expose/beers/remove',
   controller: 'BeersRemoveCtrl'
 })
+```
 
 E agora vamos criar seus controllers:
 
+```js
 controller('BeersEditCtrl', ['$scope', '$http', '$routeParams', 
   function ($scope, $http, $routeParams) {
   $scope.workshop = 'Workshop Be MEAN';
@@ -1356,9 +1361,11 @@ controller('BeersRemoveCtrl', ['$scope', '$http', '$routeParams',
   var url = '/api/beers/'+id;
 
 }])
+```
 
 Vamos iniciar pela criação da view `edit.jade`:
 
+```jade
 h3 {{ workshop }}
 h4 {{ msg }}
 form.container-small
@@ -1384,14 +1391,20 @@ form.container-small
             data-ng-model='cerveja.description')
   button(data-ng-click='update(cerveja)')
     | Salvar
+```
 
-Agora vamos no nosso controller `BeersEditCtrl` e criar a função que vai consultar a cerveja a ser alterada, ou seja, re-usar a função onde mostramos os dados da cerveja. Para isso inicialmente adicionamos o `$routeParams`:
+Agora vamos no nosso controller `BeersEditCtrl` e criar a função que vai consultar a cerveja a ser alterada, ou seja, re-usar a função onde mostramos os dados da cerveja. 
 
-    controller('BeersCreateCtrl', ['$scope', '$http', '$routeParams', 
-      function ($scope, $http, $routeParams)
+Para isso, inicialmente, adicionamos o `$routeParams`:
+
+```js
+  controller('BeersCreateCtrl', ['$scope', '$http', '$routeParams', 
+    function ($scope, $http, $routeParams)
+```
 
 E chamamos a cerveja a ser alterada para mostrar os valores na view:
 
+```js
 // Precisamos buscar nosssa cerveja na nossa API
 var id = $routeParams.id;
 var url = '/api/beers/'+id;
@@ -1408,9 +1421,11 @@ $http({
   console.log('Error: ', err);
   $scope.msg = 'Error:  ' + err;
 });
+```
 
-Após buscarmos nossa cerveja a ser alterada, precisamos criar a função de  `UPDATE`:
+Após buscarmos nossa cerveja a ser alterada, precisamos criar a função de `UPDATE`:
 
+```js
 // Função de alterar
 $scope.update = function(cerveja){    
   method = 'PUT';
@@ -1427,13 +1442,13 @@ $scope.update = function(cerveja){
     $scope.msg = 'Error:  ' + err;
   });
 }
-
+```
 
 Depois da view vamos criar a função `update` no controller `BeersEditCtrl`:
 
-Porém vamos fazer uma modificação no controller da nossa API `controllers/api/beer.js`:
+Porém, vamos fazer uma modificação no controller da nossa API `controllers/api/beer.js`:
 
-
+```js
 update: function(req, res){
   // criando o objeto de query
   // para fazer a busca da cerveja a ser alterada
@@ -1456,9 +1471,9 @@ update: function(req, res){
     res.json(msg);
   });
 }
+```
 
 Mudamos o `res.send` para `res.json` para que nossa requisição do AngularJs não caia no `error`.
-
 
 ###DELETE
 Como já havíamos criado a rota do `DELETE` vamos agora criar nossa view, que basicamente é a mesma do show apenas com o botão para deletar.
