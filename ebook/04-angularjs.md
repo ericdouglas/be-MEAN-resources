@@ -1161,23 +1161,28 @@ Pronto. Agora sempre vamos buscar nossas views utilizando a rota `expose/:dir:na
 
 Nesse ponto já integramos nossa listagem em MEAN, precisamos agora fazer a consulta individual de cada cerveja, então vamos refatorar nossa view `list`:
 
+```jade
 tr(data-ng-repeat='cerveja in cervejas | orderBy:predicate:reverse')
-td 
-a(data-ng-href='/beers/{{cerveja._id}}')
-  {{ cerveja.name }}
-td 
-a(data-ng-href='/beers/{{cerveja._id}}')
-  {{ cerveja.category }}
+  td 
+    a(data-ng-href='/beers/{{cerveja._id}}')
+      {{ cerveja.name }}
+  td 
+    a(data-ng-href='/beers/{{cerveja._id}}')
+      {{ cerveja.category }}
+```
 
-Depois de colocarmos um link para cada cerveja no formato `/beers/:id` precisamos criar essa rota no AngularJs:
+Depois de colocarmos um link para cada cerveja no formato `/beers/:id`, precisamos criar essa rota no AngularJs:
 
+```js
 .when('/beers/:id', {
-templateUrl: 'expose/beers/show',
-controller: 'BeersShowCtrl'
-}).
+  templateUrl: 'expose/beers/show',
+  controller: 'BeersShowCtrl'
+})
+```
 
 Vamos criar a nossa view `beers/show.jade`:
-    
+
+```jade 
 h3
 | {{ workshop }}
 
@@ -1193,33 +1198,37 @@ li
 | Price: {{ cerveja.price }}
 li
 | Description: {{ cerveja.description }}
+```
 
 Depois disso criar o controller `BeersShowCtrl`:
 
+```js
 controller('BeersShowCtrl', ['$scope', '$http', '$routeParams', 
 function ($scope, $http, $routeParams) {
-$scope.workshop = 'Workshop Be MEAN';
+  $scope.workshop = 'Workshop Be MEAN';
 
-// Precisamos buscar nosssa cerveja na nossa API
-var id = $routeParams.id;
-var url = '/api/beers/'+id;
+  // Precisamos buscar nosssa cerveja na nossa API
+  var id = $routeParams.id;
+  var url = '/api/beers/'+id;
 
-$http.get(url)
-.success(function(data){
-$scope.cerveja = data;
-console.log('Cerveja', $scope.cerveja);
-})
-.error(function(err){
-console.log('Error: ', err);
-});
+  $http.get(url)
+    .success(function(data){
+      $scope.cerveja = data;
+      console.log('Cerveja', $scope.cerveja);
+    })
+    .error(function(err){
+      console.log('Error: ', err);
+    });
 
 }])
+```
 
-Nesse controller usamos o $routeParams do AngularJs para pegar as variáveis da rota, igual o `request.params` do Express.
+Nesse controller usamos o `$routeParams` do AngularJs para pegar as variáveis da rota, igual o `request.params` do Express.
 
-E pronto quando clickarmos em qualquer link da nossa listagem das cervejas vamos entrar na rota que irá mostrar os dados da cerveja.
+E pronto, quando clickarmos em qualquer link da nossa listagem das cervejas vamos entrar na rota que irá mostrar os dados da cerveja.
 
-###CREATE
+## CREATE
+
 Antes de criarmos nossas funcionalidades de `UPDATE` e `DELETE` vamos criar a funcionalidade de criação da cerveja, primeiramente criando sua rota no AngularJs:
 
 when('/beers/create', {
