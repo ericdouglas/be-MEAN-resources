@@ -957,29 +957,29 @@ Copiamos o código do controller também, ficando assim:
 
 ```js
 controller('BeersIndexCtrl', ['$scope', function ($scope) {
-$scope.workshop = 'Workshop Be MEAN';
+  $scope.workshop = 'Workshop Be MEAN';
 
-// Código colado do exercicio 08
-$scope.reverse = false;
-$scope.predicate = 'name';
+  // Código colado do exercicio 08
+  $scope.reverse = false;
+  $scope.predicate = 'name';
 
-// criamos um array de cervejas
-var cervejas = [{
-name: 'Kaiser', price: 2
-}, {
-  name: 'Skol', price: 3
-}, {
-  name: 'Glacial', price: 4
-}, {
-  name: 'Polar', price: 6
-}, {
-  name: 'Heineken', price: 10
-}
-];
+  // criamos um array de cervejas
+  var cervejas = [{
+  name: 'Kaiser', price: 2
+  }, {
+    name: 'Skol', price: 3
+  }, {
+    name: 'Glacial', price: 4
+  }, {
+    name: 'Polar', price: 6
+  }, {
+    name: 'Heineken', price: 10
+  }
+  ];
 
-// instanciamos nosso array no nosso scope
-// para que tenhamos acesso à esse array na View
-$scope.cervejas = cervejas;
+  // instanciamos nosso array no nosso scope
+  // para que tenhamos acesso à esse array na View
+  $scope.cervejas = cervejas;
 
 }])
 ```
@@ -996,10 +996,10 @@ var url = '/api/beers';
 $http.get(url)
 .success(function(data){
 $scope.cervejas = data;
-console.log('Cervejas', $scope.cervejas);
+  console.log('Cervejas', $scope.cervejas);
 })
 .error(function(err){
-console.log('Error: ', err);
+  console.log('Error: ', err);
 });
 ```
 
@@ -1028,8 +1028,8 @@ Então vamos ver como vai ficar nossa função `orderBy` no controller `BeersInd
 
 ```js
 $scope.orderBy = function(predicate){
-$scope.predicate = predicate;
-$scope.reverse = !$scope.reverse;
+  $scope.predicate = predicate;
+  $scope.reverse = !$scope.reverse;
 }
 ```
 
@@ -1045,7 +1045,7 @@ Agora vamos integrar a nossa API que criamos no Express anteriormente, basta seg
 
 As rotas vamos precisar integrar manualmente, então nosso `app.js` do Angular Express Seed ficará assim:
 
-
+```js
 /**
 * Routes
 */
@@ -1070,81 +1070,95 @@ app.delete('/api/beers/:id', api.beer.delete);
 
 // redirect all others to the index (HTML5 history)
 app.get('*', routes.index);
+```
 
-Você percebeu que estamos requisitando nossa view do AngularJs para o Node.js?
-Olhe nas nossas rotas do AngularJs:
+Você percebeu que estamos requisitando nossa view do AngularJs para o Node.js? Olhe nas nossas rotas do AngularJs:
 
+```js
 when('/view1', {
-templateUrl: 'partials/partial1',
-controller: 'MyCtrl1'
+  templateUrl: 'partials/partial1',
+  controller: 'MyCtrl1'
 }).
 when('/view2', {
-templateUrl: 'partials/partial2',
-controller: 'MyCtrl2'
+  templateUrl: 'partials/partial2',
+  controller: 'MyCtrl2'
 }).
 // criando a rota de listagem das cervejas
 when('/beers', {
-templateUrl: 'partials/list',
-controller: 'BeersIndexCtrl'
+  templateUrl: 'partials/list',
+  controller: 'BeersIndexCtrl'
 })
 
-Todo `templateUrl` bate em `partials/:name` o que é descrito no `app.js` do Express: 
+Todo `templateUrl` bate em `partials/:name`, o que é descrito no `app.js` do Express: 
 
+```js
 app.get('/partials/:name', routes.partials);
+```
 
 Então vamos ver o que essa função `routes.partials` faz. Primeiramente vemos que ela vem do objeto `routes`:
 
+```js
 routes = require('./routes'),
+```
 
 Isso quer dizer que estamos importando o arquivo `routes/index.js`:
 
+```js
 exports.index = function(req, res){
-res.render('index');
+  res.render('index');
 };
 
 exports.partials = function (req, res) {
-var name = req.params.name;
-res.render('partials/' + name);
+  var name = req.params.name;
+  res.render('partials/' + name);
 };
+```
 
 Com isso conseguimos entender o que nossa função `partials` faz, ela renderiza qualquer nome de view repassada na URL, exemplo:
 
-/routes/list
+`/routes/list`
 
 Vai renderizar:
 
-/views/partials/list.jade
+`/views/partials/list.jade`
 
 Agora vamos criar nossa própria função de renderização de views genéricas:
 
+```js
 exports.expose = function(req, res) {
-// pego o diretório da view
-var dir = req.params.dir;
-// pego o nome da view
-var name = req.params.name;
-// crio o nome completo da view
-var view = dir + '/' + name;
+  // pego o diretório da view
+  var dir = req.params.dir;
+  // pego o nome da view
+  var name = req.params.name;
+  // crio o nome completo da view
+  var view = dir + '/' + name;
 
-// renderizo a view
-res.render(view);
+  // renderizo a view
+  res.render(view);
 }
+```
 
-Depois de criamos nossa função `expose` vamos criar a rota que será responsável por executar essa função em app.js do Express:
+Depois de criamos nossa função `expose` vamos criar a rota que será responsável por executar essa função em `app.js` do Express:
 
+```js
 app.get('/expose/:dir/:name', routes.expose);
+```
 
 Depois disso podemos salvar o `list.jade` na pasta `/views/beers/`.
 
 E agora corrigimos nossa rota `/beers` no app do AngularJs:
 
+```js
 when('/beers', {
-templateUrl: 'expose/beers/list',
-controller: 'BeersIndexCtrl'
-}).
+  templateUrl: 'expose/beers/list',
+  controller: 'BeersIndexCtrl'
+})
+```
 
 Pronto. Agora sempre vamos buscar nossas views utilizando a rota `expose/:dir:name` deixando assim nossa função de partials mais genérica.
 
-####Consultar
+## Consultar
+
 Nesse ponto já integramos nossa listagem em MEAN, precisamos agora fazer a consulta individual de cada cerveja, então vamos refatorar nossa view `list`:
 
 tr(data-ng-repeat='cerveja in cervejas | orderBy:predicate:reverse')
