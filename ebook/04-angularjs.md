@@ -1231,13 +1231,16 @@ E pronto, quando clickarmos em qualquer link da nossa listagem das cervejas vamo
 
 Antes de criarmos nossas funcionalidades de `UPDATE` e `DELETE` vamos criar a funcionalidade de criação da cerveja, primeiramente criando sua rota no AngularJs:
 
+```js
 when('/beers/create', {
-templateUrl: 'expose/beers/create',
-controller: 'BeersCreateCtrl'
-}).
+  templateUrl: 'expose/beers/create',
+  controller: 'BeersCreateCtrl'
+})
+```
 
 Agora vamos criar nossa view `create.jade`:
-    
+
+```jade   
 h3 {{ workshop }}
 h4 {{ msg }}
 form.container-small
@@ -1263,35 +1266,38 @@ textarea(name='description',
         data-ng-model='cerveja.description')
 button(data-ng-click='create(cerveja)')
 | Criar
-
+```
 
 Logo precisamos ir no nosso controller `BeersCreateCtrl` e adicionar a função `create`:
 
+```js
 controller('BeersCreateCtrl', ['$scope', '$http', function ($scope, $http) {
-$scope.workshop = 'Workshop Be MEAN';
-$scope.msg = 'Cadastro de cerveja'
-var url = '/api/beers/';
-$scope.create = function(cerveja){
-var method = 'POST';
-console.table(cerveja);
-$http({
-  method: method,
-  url: url,
-  data: cerveja
-}).
-success(function(data){
-  $scope.msg = 'Cerveja ' + cerveja.name + ' criada com SUCESSO';
-}).
-error(function(err){
-  console.log('Error: ', err);
-  $scope.msg = 'Error:  ' + err;
-});
-}
+  $scope.workshop = 'Workshop Be MEAN';
+  $scope.msg = 'Cadastro de cerveja'
+  var url = '/api/beers/';
+  $scope.create = function(cerveja){
+    var method = 'POST';
+    console.table(cerveja);
+    $http({
+      method: method,
+      url: url,
+      data: cerveja
+    }).
+    success(function(data){
+      $scope.msg = 'Cerveja ' + cerveja.name + ' criada com SUCESSO';
+    }).
+    error(function(err){
+      console.log('Error: ', err);
+      $scope.msg = 'Error:  ' + err;
+    });
+  }
 }])
+```
 
-Criei um $scope.msg para dar um feedback da ação para o usuário de forma simples. E pronto após isso podemos ir na nossa rota `beers/create` e criarmos nossa cerveja.
+Criei um `$scope.msg` para dar um feedback da ação para o usuário de forma simples. E pronto após isso podemos ir na nossa rota `beers/create` e criarmos nossa cerveja.
 
-####$http
+## $http
+
 No `$http` agora estamos passando um objeto com as configurações da requisição:
     
 {
