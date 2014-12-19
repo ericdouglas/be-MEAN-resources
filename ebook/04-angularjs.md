@@ -1299,19 +1299,23 @@ Criei um `$scope.msg` para dar um feedback da ação para o usuário de forma si
 ## $http
 
 No `$http` agora estamos passando um objeto com as configurações da requisição:
-    
+
+```js
 {
   method: method,
   url: url,
   data: cerveja
 }
+```
 
 Onde:
+
 - method: é o verbo do HTTP que vamos usar
 - url: é a url que nossa requisição utilizará
 - data: é o objeto a ser enviado pela requisição
 
-###UPDATE
+## UPDATE
+
 Depois de listarmos e criarmos nossas cervejas precisamos poder alterá-las também, então dentro da nossa view `show` vamos adicionar um link para o `UPDATE` e para o `DELETE`:
 
 p
