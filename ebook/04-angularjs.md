@@ -624,7 +624,7 @@ angular.module('workshopBeMEAN', ['filters'])
   }]);
 ```
 
-Em cada controller nós precisaremos injetar suas dependências, principalmente o $scope que é o nosso Model.
+Em cada controller, nós precisaremos injetar suas dependências, principalmente o `$scope` que é o nosso Model.
 
 ```js
 ['$scope', function($scope)
@@ -638,7 +638,7 @@ function($scope)
 
 Porém quando eu for minificar meu arquivo isso poderá gerar problemas, pois todos os outros controllers também possuem seus scopes. Logo, a melhor forma e a mais indicada para injetar as dependências é listá-las antes como string.
 
-Para que eu consiga acessar dados da minha View, preciso adicionar os valores no $scope:
+Para que eu consiga acessar dados da minha View, preciso adicionar os valores no `$scope`:
 
 ```js
 var cervejas = [{
@@ -846,82 +846,94 @@ Vamos iniciar esse módulo clonando o seed do AngularJs.
 git clone git://github.com/angular/angular-seed.git
 ```
 
-Depois de entrar na pasta angular-seed, você verá o arquivo `bower.json`.
-Para instalarmos nossos assets de frontend, precisamos instalar o Bower antes.
+Depois de entrar na pasta angular-seed, você verá o arquivo `bower.json`. Para instalarmos nossos assets de frontend, precisamos instalar o Bower antes.
 
+```
 npm install -g bower
+```
 
 Agora localmente primeiro vamos rodar:
 
+```
 npm install
+```
 
 Para iniciar nosso projeto precisamos apenas rodar:
 
+```
 npm start
+```
 
-Depois conferir me `localhost:8000/app`.
+Depois conferir em `localhost:8000/app`.
 
-O nosso roteamento se dá apenas no navegador sem que precisemos requisitar 
-nenhum dado no nosso servidor. Já que o AngularJs é um framework para 
-Single Page Applications ele irá gerenciar todas essas rotas localmente, 
-emulando a troca das URL utilizando a History API e PushState.
+O nosso roteamento se dá apenas no navegador, sem que precisemos requisitar nenhum dado no nosso servidor. Já que o AngularJs é um framework para Single Page Applications ele irá gerenciar todas essas rotas localmente, emulando a troca das URLs utilizando a History API e PushState.
 
-Para definirmos nossas rotas iremos utilizar o `$routeProvider`.
+Para definirmos nossas rotas, iremos utilizar o `$routeProvider`.
 
+```js
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/view1', {templateUrl: 'partials/partial1.html', controller: 'MyCtrl1'});
   $routeProvider.when('/view2', {templateUrl: 'partials/partial2.html', controller: 'MyCtrl2'});
   $routeProvider.otherwise({redirectTo: '/view1'});
 }])
+```
 
-Onde em `when` eu irei setar minha rota, passando sua url e um objeto com 
-meu Template, `templateUrl`, e meu Controller, `controller`.
+Onde em `when` eu irei setar minha rota, passando sua url e um objeto com meu Template, `templateUrl`, e meu Controller, `controller`.
 
-####templateUrl
-O templateUrl é a URL para a nossa View a ser renderizada.
+### templateUrl
 
-####controller
-O controller irá chamar a função setada nele.
+O `templateUrl` é a URL para a nossa View a ser renderizada.
 
-####otherwise
-É a função parecida com o default do switch, ou seja, caso a rota 
-requisitada não exista ele irá redireciar para essa.
+### controller
 
-Após criarmos nossa rota em config, precisamos criar nossa view em
-`partials/beers/index.html`
+O `controller` irá chamar a função setada nele.
 
+### otherwise
+
+É a função parecida com o default do switch, ou seja, caso a rota requisitada não exista, ele irá redireciar para essa.
+
+Após criarmos nossa rota em `config`, precisamos criar nossa view em `partials/beers/index.html`
+
+```html
 <h3>
   {{ workshop }}
 </h3>
 
     INDEX DAS CERVEJAS
+```
 
 Depois vamos criar nosso controller `BeersIndexCtrl`:
 
+```js
 .controller('BeersIndexCtrl', ['$scope', function ($scope) {
   $scope.workshop = 'Workshop Be MEAN';
 }])
+```
 
 Passando apenas a variável workshop para ser mostrada na View.
 
-No `app/index.html` a linha mais importante para renderizar as views é 
-a seguinte:
+No `app/index.html`, a linha mais importante para renderizar as views é a seguinte:
 
+```html
 <div ng-view></div>
+```
 
 Pois o `ng-view` é o responsável por renderizar as views.
 
+## RETRIEVE
 
-###RETRIEVE
-Agora vamos criar a View list.html e modificar na nossa rota.
+Agora vamos criar a View `list.html` e modificar na nossa rota.
 
+```js
 $routeProvider.when('/beers', {
     templateUrl: 'partials/beers/list.html', 
     controller: 'BeersIndexCtrl'
   });
+```
 
 Copiando o código do nosso exercício 08 nossa View lista ficará:
 
+```html
 <h3>
   {{ workshop }}
 </h3>
@@ -939,86 +951,93 @@ Copiando o código do nosso exercício 08 nossa View lista ficará:
     {{ beer.name }} - {{ beer.price }}
   </li>
 </ul>
+```
 
-Copiamos o código do controller também ficando assim:
+Copiamos o código do controller também, ficando assim:
 
+```js
 controller('BeersIndexCtrl', ['$scope', function ($scope) {
-  $scope.workshop = 'Workshop Be MEAN';
-  
-  // Código colado do exercicio 08
-  $scope.reverse = false;
-  $scope.predicate = 'name';
+$scope.workshop = 'Workshop Be MEAN';
 
-  // criamos um array de cervejas
-  var cervejas = [{
-    name: 'Kaiser', price: 2
-    }, {
-      name: 'Skol', price: 3
-    }, {
-      name: 'Glacial', price: 4
-    }, {
-      name: 'Polar', price: 6
-    }, {
-      name: 'Heineken', price: 10
-    }
-  ];
+// Código colado do exercicio 08
+$scope.reverse = false;
+$scope.predicate = 'name';
 
-  // instanciamos nosso array no nosso scope
-  // para que tenhamos acesso à esse array na View
-  $scope.cervejas = cervejas;
-  
-  }])
+// criamos um array de cervejas
+var cervejas = [{
+name: 'Kaiser', price: 2
+}, {
+  name: 'Skol', price: 3
+}, {
+  name: 'Glacial', price: 4
+}, {
+  name: 'Polar', price: 6
+}, {
+  name: 'Heineken', price: 10
+}
+];
 
-Com isso na nossa rota /beers já temos uma listagem das cervejas com 
-ordenção por nome.
+// instanciamos nosso array no nosso scope
+// para que tenhamos acesso à esse array na View
+$scope.cervejas = cervejas;
 
-Para entendermos mais um pouco como as coisas funcionam no AngularJs 
-vamos pegar nosso exercicio 10 e copiar seu código do $http.
+}])
+```
 
-E vamos substituir essas cervejas setadas na mão por uma consulta na nossa 
-API do Node.js
+Com isso, na nossa rota `/beers` já temos uma listagem das cervejas com ordenção por nome.
 
+Para entendermos mais um pouco como as coisas funcionam no AngularJs vamos pegar nosso outro exercício e copiar seu código do $http.
+
+Vamos substituir essas cervejas setadas na mão por uma consulta na nossa API do Node.js
+
+```js
 var url = '/api/beers';
 
 $http.get(url)
 .success(function(data){
-  $scope.cervejas = data;
-  console.log('Cervejas', $scope.cervejas);
+$scope.cervejas = data;
+console.log('Cervejas', $scope.cervejas);
 })
 .error(function(err){
-  console.log('Error: ', err);
+console.log('Error: ', err);
 });
+```
 
 E corrigimos nossa view `list.jade`:
 
+```jade
 h3
-  | {{ workshop }}
+| {{ workshop }}
 h4 Listagem das cervejas
 table
-  thead
-    tr
-      th 
-        a.order(data-ng-click='orderBy(\'name\')') Name
-      th
-        a.order(data-ng-click='orderBy(\'category\')') Category
-  tbody
-    tr(data-ng-repeat='cerveja in cervejas | orderBy:predicate:reverse')
-      td {{ cerveja.name }}
-      td {{ cerveja.category }}
+thead
+tr
+  th 
+    a.order(data-ng-click='orderBy(\'name\')') Name
+  th
+    a.order(data-ng-click='orderBy(\'category\')') Category
+tbody
+tr(data-ng-repeat='cerveja in cervejas | orderBy:predicate:reverse')
+  td {{ cerveja.name }}
+  td {{ cerveja.category }}
+```
 
-Como você deve ter percebido estamos chamando a função orderBy, onde ela 
-irá ordernar nossa tabela a partir dos campos name e categoruy. Então 
-vamos ver como vai ficar nossa função `orderBy` no controller `BeersIndexCtrl`:
+Como você deve ter percebido, estamos chamando a função `orderBy`, onde ela irá ordernar nossa tabela a partir dos campos `name` e `category`. 
 
+Então vamos ver como vai ficar nossa função `orderBy` no controller `BeersIndexCtrl`:
+
+```js
 $scope.orderBy = function(predicate){
-  $scope.predicate = predicate;
-  $scope.reverse = !$scope.reverse;
+$scope.predicate = predicate;
+$scope.reverse = !$scope.reverse;
 }
+```
 
 Setando o `$scope.reverse = !scope.reverse` estamos invertendo a nossa listagem, então quando você clickar novamente no mesmo campo ele apenas inverterá a seleção.
 
-####Integração com o exercício do Express
-Agora vamos integrar a nossa API que criamos no Express anteriormente,  basta seguir esses passos:
+## Integração com o exercício do Express
+
+Agora vamos integrar a nossa API que criamos no Express anteriormente, basta seguir esses passos:
 
 1 - Copiar a pasta controllers do Express para o Angular Express Seed
 2 - Copiar a pasta models do Express para o Angular Express Seed
@@ -1028,8 +1047,8 @@ As rotas vamos precisar integrar manualmente, então nosso `app.js` do Angular E
 
 
 /**
- * Routes
- */
+* Routes
+*/
 
 // serve index and view partials
 app.get('/', routes.index);
@@ -1056,17 +1075,17 @@ Você percebeu que estamos requisitando nossa view do AngularJs para o Node.js?
 Olhe nas nossas rotas do AngularJs:
 
 when('/view1', {
-  templateUrl: 'partials/partial1',
-  controller: 'MyCtrl1'
+templateUrl: 'partials/partial1',
+controller: 'MyCtrl1'
 }).
 when('/view2', {
-  templateUrl: 'partials/partial2',
-  controller: 'MyCtrl2'
+templateUrl: 'partials/partial2',
+controller: 'MyCtrl2'
 }).
 // criando a rota de listagem das cervejas
 when('/beers', {
-  templateUrl: 'partials/list',
-  controller: 'BeersIndexCtrl'
+templateUrl: 'partials/list',
+controller: 'BeersIndexCtrl'
 })
 
 Todo `templateUrl` bate em `partials/:name` o que é descrito no `app.js` do Express: 
@@ -1080,12 +1099,12 @@ routes = require('./routes'),
 Isso quer dizer que estamos importando o arquivo `routes/index.js`:
 
 exports.index = function(req, res){
-  res.render('index');
+res.render('index');
 };
 
 exports.partials = function (req, res) {
-  var name = req.params.name;
-  res.render('partials/' + name);
+var name = req.params.name;
+res.render('partials/' + name);
 };
 
 Com isso conseguimos entender o que nossa função `partials` faz, ela renderiza qualquer nome de view repassada na URL, exemplo:
@@ -1099,15 +1118,15 @@ Vai renderizar:
 Agora vamos criar nossa própria função de renderização de views genéricas:
 
 exports.expose = function(req, res) {
-  // pego o diretório da view
-  var dir = req.params.dir;
-  // pego o nome da view
-  var name = req.params.name;
-  // crio o nome completo da view
-  var view = dir + '/' + name;
+// pego o diretório da view
+var dir = req.params.dir;
+// pego o nome da view
+var name = req.params.name;
+// crio o nome completo da view
+var view = dir + '/' + name;
 
-  // renderizo a view
-  res.render(view);
+// renderizo a view
+res.render(view);
 }
 
 Depois de criamos nossa função `expose` vamos criar a rota que será responsável por executar essa função em app.js do Express:
@@ -1119,8 +1138,8 @@ Depois disso podemos salvar o `list.jade` na pasta `/views/beers/`.
 E agora corrigimos nossa rota `/beers` no app do AngularJs:
 
 when('/beers', {
-  templateUrl: 'expose/beers/list',
-  controller: 'BeersIndexCtrl'
+templateUrl: 'expose/beers/list',
+controller: 'BeersIndexCtrl'
 }).
 
 Pronto. Agora sempre vamos buscar nossas views utilizando a rota `expose/:dir:name` deixando assim nossa função de partials mais genérica.
@@ -1129,56 +1148,56 @@ Pronto. Agora sempre vamos buscar nossas views utilizando a rota `expose/:dir:na
 Nesse ponto já integramos nossa listagem em MEAN, precisamos agora fazer a consulta individual de cada cerveja, então vamos refatorar nossa view `list`:
 
 tr(data-ng-repeat='cerveja in cervejas | orderBy:predicate:reverse')
-  td 
-    a(data-ng-href='/beers/{{cerveja._id}}')
-      {{ cerveja.name }}
-  td 
-    a(data-ng-href='/beers/{{cerveja._id}}')
-      {{ cerveja.category }}
+td 
+a(data-ng-href='/beers/{{cerveja._id}}')
+  {{ cerveja.name }}
+td 
+a(data-ng-href='/beers/{{cerveja._id}}')
+  {{ cerveja.category }}
 
 Depois de colocarmos um link para cada cerveja no formato `/beers/:id` precisamos criar essa rota no AngularJs:
 
 .when('/beers/:id', {
-  templateUrl: 'expose/beers/show',
-  controller: 'BeersShowCtrl'
+templateUrl: 'expose/beers/show',
+controller: 'BeersShowCtrl'
 }).
 
 Vamos criar a nossa view `beers/show.jade`:
     
 h3
-  | {{ workshop }}
+| {{ workshop }}
 
 ul
-  h4 {{ cerveja.name }}
-  li
-    | Name: {{ cerveja.name }}
-  li
-    | Category: {{ cerveja.category }}
-  li
-    | Alcohol: {{ cerveja.alcohol }}
-  li
-    | Price: {{ cerveja.price }}
-  li
-    | Description: {{ cerveja.description }}
+h4 {{ cerveja.name }}
+li
+| Name: {{ cerveja.name }}
+li
+| Category: {{ cerveja.category }}
+li
+| Alcohol: {{ cerveja.alcohol }}
+li
+| Price: {{ cerveja.price }}
+li
+| Description: {{ cerveja.description }}
 
 Depois disso criar o controller `BeersShowCtrl`:
 
 controller('BeersShowCtrl', ['$scope', '$http', '$routeParams', 
-  function ($scope, $http, $routeParams) {
-  $scope.workshop = 'Workshop Be MEAN';
+function ($scope, $http, $routeParams) {
+$scope.workshop = 'Workshop Be MEAN';
 
-  // Precisamos buscar nosssa cerveja na nossa API
-  var id = $routeParams.id;
-  var url = '/api/beers/'+id;
+// Precisamos buscar nosssa cerveja na nossa API
+var id = $routeParams.id;
+var url = '/api/beers/'+id;
 
-  $http.get(url)
-  .success(function(data){
-    $scope.cerveja = data;
-    console.log('Cerveja', $scope.cerveja);
-  })
-  .error(function(err){
-    console.log('Error: ', err);
-  });
+$http.get(url)
+.success(function(data){
+$scope.cerveja = data;
+console.log('Cerveja', $scope.cerveja);
+})
+.error(function(err){
+console.log('Error: ', err);
+});
 
 }])
 
@@ -1190,12 +1209,123 @@ E pronto quando clickarmos em qualquer link da nossa listagem das cervejas vamos
 Antes de criarmos nossas funcionalidades de `UPDATE` e `DELETE` vamos criar a funcionalidade de criação da cerveja, primeiramente criando sua rota no AngularJs:
 
 when('/beers/create', {
-  templateUrl: 'expose/beers/create',
-  controller: 'BeersCreateCtrl'
+templateUrl: 'expose/beers/create',
+controller: 'BeersCreateCtrl'
 }).
 
 Agora vamos criar nossa view `create.jade`:
     
+h3 {{ workshop }}
+h4 {{ msg }}
+form.container-small
+label
+| Name:
+input(type='text', name='cerveja.name', 
+      data-ng-model='cerveja.name')
+label
+| Category:
+input(type='text', name='cerveja.category', 
+      data-ng-model='cerveja.category')
+label
+| Price:
+input(type='text', name='cerveja.price', 
+      data-ng-model='cerveja.price')
+label
+| Alcohol:
+input(type='text', name='cerveja.alcohol', 
+      data-ng-model='cerveja.alcohol')
+label
+| Description:
+textarea(name='description', 
+        data-ng-model='cerveja.description')
+button(data-ng-click='create(cerveja)')
+| Criar
+
+
+Logo precisamos ir no nosso controller `BeersCreateCtrl` e adicionar a função `create`:
+
+controller('BeersCreateCtrl', ['$scope', '$http', function ($scope, $http) {
+$scope.workshop = 'Workshop Be MEAN';
+$scope.msg = 'Cadastro de cerveja'
+var url = '/api/beers/';
+$scope.create = function(cerveja){
+var method = 'POST';
+console.table(cerveja);
+$http({
+  method: method,
+  url: url,
+  data: cerveja
+}).
+success(function(data){
+  $scope.msg = 'Cerveja ' + cerveja.name + ' criada com SUCESSO';
+}).
+error(function(err){
+  console.log('Error: ', err);
+  $scope.msg = 'Error:  ' + err;
+});
+}
+}])
+
+Criei um $scope.msg para dar um feedback da ação para o usuário de forma simples. E pronto após isso podemos ir na nossa rota `beers/create` e criarmos nossa cerveja.
+
+####$http
+No `$http` agora estamos passando um objeto com as configurações da requisição:
+    
+{
+  method: method,
+  url: url,
+  data: cerveja
+}
+
+Onde:
+- method: é o verbo do HTTP que vamos usar
+- url: é a url que nossa requisição utilizará
+- data: é o objeto a ser enviado pela requisição
+
+###UPDATE
+Depois de listarmos e criarmos nossas cervejas precisamos poder alterá-las também, então dentro da nossa view `show` vamos adicionar um link para o `UPDATE` e para o `DELETE`:
+
+p
+  a(data-ng-href='beers/{{cerveja._id}}/edit')
+    | Alterar
+p 
+  a(data-ng-href='beers/{{cerveja._id}}/remove')
+    | Excluir
+
+Após adicionarmos esses links precisamos criar suas respectivas rotas:
+
+when('/beers/:id/edit', {
+  templateUrl: 'expose/beers/edit',
+  controller: 'BeersEditCtrl'
+}).
+when('/beers/:id/remove', {
+  templateUrl: 'expose/beers/remove',
+  controller: 'BeersRemoveCtrl'
+})
+
+E agora vamos criar seus controllers:
+
+controller('BeersEditCtrl', ['$scope', '$http', '$routeParams', 
+  function ($scope, $http, $routeParams) {
+  $scope.workshop = 'Workshop Be MEAN';
+
+  // Precisamos buscar nosssa cerveja na nossa API
+  var id = $routeParams.id;
+  var url = '/api/beers/'+id;
+
+}]).
+controller('BeersRemoveCtrl', ['$scope', '$http', '$routeParams', 
+  function ($scope, $http, $routeParams) {
+  $scope.workshop = 'Workshop Be MEAN';
+
+  // Precisamos buscar nosssa cerveja na nossa API
+  var id = $routeParams.id;
+  var url = '/api/beers/'+id;
+
+}])
+
+Vamos iniciar pela criação da view `edit.jade`:
+
 h3 {{ workshop }}
 h4 {{ msg }}
 form.container-small
@@ -1219,119 +1349,8 @@ form.container-small
     | Description:
     textarea(name='description', 
             data-ng-model='cerveja.description')
-  button(data-ng-click='create(cerveja)')
-    | Criar
-
-
-Logo precisamos ir no nosso controller `BeersCreateCtrl` e adicionar a função `create`:
-
-controller('BeersCreateCtrl', ['$scope', '$http', function ($scope, $http) {
-  $scope.workshop = 'Workshop Be MEAN';
-  $scope.msg = 'Cadastro de cerveja'
-  var url = '/api/beers/';
-  $scope.create = function(cerveja){
-    var method = 'POST';
-    console.table(cerveja);
-    $http({
-      method: method,
-      url: url,
-      data: cerveja
-    }).
-    success(function(data){
-      $scope.msg = 'Cerveja ' + cerveja.name + ' criada com SUCESSO';
-    }).
-    error(function(err){
-      console.log('Error: ', err);
-      $scope.msg = 'Error:  ' + err;
-    });
-  }
-}])
-
-Criei um $scope.msg para dar um feedback da ação para o usuário de forma simples. E pronto após isso podemos ir na nossa rota `beers/create` e criarmos nossa cerveja.
-
-####$http
-No `$http` agora estamos passando um objeto com as configurações da requisição:
-    
-    {
-      method: method,
-      url: url,
-      data: cerveja
-    }
-
-Onde:
-- method: é o verbo do HTTP que vamos usar
-- url: é a url que nossa requisição utilizará
-- data: é o objeto a ser enviado pela requisição
-
-###UPDATE
-Depois de listarmos e criarmos nossas cervejas precisamos poder alterá-las também, então dentro da nossa view `show` vamos adicionar um link para o `UPDATE` e para o `DELETE`:
-
-    p
-      a(data-ng-href='beers/{{cerveja._id}}/edit')
-        | Alterar
-    p 
-      a(data-ng-href='beers/{{cerveja._id}}/remove')
-        | Excluir
-
-Após adicionarmos esses links precisamos criar suas respectivas rotas:
-
-    when('/beers/:id/edit', {
-      templateUrl: 'expose/beers/edit',
-      controller: 'BeersEditCtrl'
-    }).
-    when('/beers/:id/remove', {
-      templateUrl: 'expose/beers/remove',
-      controller: 'BeersRemoveCtrl'
-    })
-
-E agora vamos criar seus controllers:
-
-    controller('BeersEditCtrl', ['$scope', '$http', '$routeParams', 
-      function ($scope, $http, $routeParams) {
-      $scope.workshop = 'Workshop Be MEAN';
-
-      // Precisamos buscar nosssa cerveja na nossa API
-      var id = $routeParams.id;
-      var url = '/api/beers/'+id;
-
-    }]).
-    controller('BeersRemoveCtrl', ['$scope', '$http', '$routeParams', 
-      function ($scope, $http, $routeParams) {
-      $scope.workshop = 'Workshop Be MEAN';
-
-      // Precisamos buscar nosssa cerveja na nossa API
-      var id = $routeParams.id;
-      var url = '/api/beers/'+id;
-
-    }])
-
-Vamos iniciar pela criação da view `edit.jade`:
-
-    h3 {{ workshop }}
-    h4 {{ msg }}
-    form.container-small
-      label
-        | Name:
-        input(type='text', name='cerveja.name', 
-              data-ng-model='cerveja.name')
-      label
-        | Category:
-        input(type='text', name='cerveja.category', 
-              data-ng-model='cerveja.category')
-      label
-        | Price:
-        input(type='text', name='cerveja.price', 
-              data-ng-model='cerveja.price')
-      label
-        | Alcohol:
-        input(type='text', name='cerveja.alcohol', 
-              data-ng-model='cerveja.alcohol')
-      label
-        | Description:
-        textarea(name='description', 
-                data-ng-model='cerveja.description')
-      button(data-ng-click='update(cerveja)')
-        | Salvar
+  button(data-ng-click='update(cerveja)')
+    | Salvar
 
 Agora vamos no nosso controller `BeersEditCtrl` e criar a função que vai consultar a cerveja a ser alterada, ou seja, re-usar a função onde mostramos os dados da cerveja. Para isso inicialmente adicionamos o `$routeParams`:
 
@@ -1340,41 +1359,41 @@ Agora vamos no nosso controller `BeersEditCtrl` e criar a função que vai consu
 
 E chamamos a cerveja a ser alterada para mostrar os valores na view:
 
-    // Precisamos buscar nosssa cerveja na nossa API
-    var id = $routeParams.id;
-    var url = '/api/beers/'+id;
-    var method = 'GET';
-    $http({
-      method: method,
-      url: url
-    })
-    .success(function(data){
-      $scope.msg = 'Cerveja ' + data.name;
-      $scope.cerveja = data;
-    })
-    .error(function(err){
-      console.log('Error: ', err);
-      $scope.msg = 'Error:  ' + err;
-    });
+// Precisamos buscar nosssa cerveja na nossa API
+var id = $routeParams.id;
+var url = '/api/beers/'+id;
+var method = 'GET';
+$http({
+  method: method,
+  url: url
+})
+.success(function(data){
+  $scope.msg = 'Cerveja ' + data.name;
+  $scope.cerveja = data;
+})
+.error(function(err){
+  console.log('Error: ', err);
+  $scope.msg = 'Error:  ' + err;
+});
 
 Após buscarmos nossa cerveja a ser alterada, precisamos criar a função de  `UPDATE`:
 
-    // Função de alterar
-    $scope.update = function(cerveja){    
-      method = 'PUT';
-      $http({
-        method: method,
-        url: url,
-        data: cerveja
-      })
-      .success(function(data){
-        $scope.msg = 'Cerveja ' + cerveja.name + ' alterada com SUCESSO';
-      })
-      .error(function(err){
-        console.log('Error: ', err);
-        $scope.msg = 'Error:  ' + err;
-      });
-    }
+// Função de alterar
+$scope.update = function(cerveja){    
+  method = 'PUT';
+  $http({
+    method: method,
+    url: url,
+    data: cerveja
+  })
+  .success(function(data){
+    $scope.msg = 'Cerveja ' + cerveja.name + ' alterada com SUCESSO';
+  })
+  .error(function(err){
+    console.log('Error: ', err);
+    $scope.msg = 'Error:  ' + err;
+  });
+}
 
 
 Depois da view vamos criar a função `update` no controller `BeersEditCtrl`:
@@ -1382,28 +1401,28 @@ Depois da view vamos criar a função `update` no controller `BeersEditCtrl`:
 Porém vamos fazer uma modificação no controller da nossa API `controllers/api/beer.js`:
 
 
-    update: function(req, res){
-      // criando o objeto de query
-      // para fazer a busca da cerveja a ser alterada
-      var query = {_id: req.params.id};
-      // crio o objeto de modificação da cerveja
-      // recebendo os dados via req.body
-      var mod = req.body;
-      Beer.update(query, mod, function (err, data) {
-        if (err){
-          console.log('Erro: ', err);
-          // msg = 'Erro ao atualizar a cerveja!';
-          msg = 0;
-        }else{
-          console.log('Cerveja atualizada com sucesso', data);
-          // msg = 'Cerveja atualizada com sucesso!';    
-          // retorna quantidade de cervejas atualizadas
-          msg = data;
-        } 
-        // enviando a msg para o cliente
-        res.json(msg);
-      });
-    }
+update: function(req, res){
+  // criando o objeto de query
+  // para fazer a busca da cerveja a ser alterada
+  var query = {_id: req.params.id};
+  // crio o objeto de modificação da cerveja
+  // recebendo os dados via req.body
+  var mod = req.body;
+  Beer.update(query, mod, function (err, data) {
+    if (err){
+      console.log('Erro: ', err);
+      // msg = 'Erro ao atualizar a cerveja!';
+      msg = 0;
+    }else{
+      console.log('Cerveja atualizada com sucesso', data);
+      // msg = 'Cerveja atualizada com sucesso!';    
+      // retorna quantidade de cervejas atualizadas
+      msg = data;
+    } 
+    // enviando a msg para o cliente
+    res.json(msg);
+  });
+}
 
 Mudamos o `res.send` para `res.json` para que nossa requisição do AngularJs não caia no `error`.
 
@@ -1411,97 +1430,94 @@ Mudamos o `res.send` para `res.json` para que nossa requisição do AngularJs n�
 ###DELETE
 Como já havíamos criado a rota do `DELETE` vamos agora criar nossa view, que basicamente é a mesma do show apenas com o botão para deletar.
 
-    h3 {{ workshop }}
-    h4 {{ msg }}
+h3 {{ workshop }}
+h4 {{ msg }}
 
-    ul
-      h4 {{ cerveja.name }}
-      li
-        | Name: {{ cerveja.name }}
-      li
-        | Category: {{ cerveja.category }}
-      li
-        | Alcohol: {{ cerveja.alcohol }}
-      li
-        | Price: {{ cerveja.price }}
-      li
-        | Description: {{ cerveja.description }}
+ul
+  h4 {{ cerveja.name }}
+  li
+    | Name: {{ cerveja.name }}
+  li
+    | Category: {{ cerveja.category }}
+  li
+    | Alcohol: {{ cerveja.alcohol }}
+  li
+    | Price: {{ cerveja.price }}
+  li
+    | Description: {{ cerveja.description }}
 
-    p 
-      button(data-ng-click='remove(cerveja)')
-        | Excluir
+p 
+  button(data-ng-click='remove(cerveja)')
+    | Excluir
 
 Depois alteramos o controller `BeersRemoveCtrl`:
 
-    controller('BeersRemoveCtrl', ['$scope', '$http', '$routeParams', 
-      function ($scope, $http, $routeParams) {
-      $scope.workshop = 'Workshop Be MEAN';
+controller('BeersRemoveCtrl', ['$scope', '$http', '$routeParams', 
+  function ($scope, $http, $routeParams) {
+  $scope.workshop = 'Workshop Be MEAN';
 
-      // Precisamos buscar nosssa cerveja na nossa API
-      var id = $routeParams.id;
-      var url = '/api/beers/'+id;
-      var method = 'GET';
-      $http({
-        method: method,
-        url: url
-      })
-      .success(function(data){
-        $scope.msg = 'Cerveja ' + data.name;
-        $scope.cerveja = data;
-      })
-      .error(function(err){
-        console.log('Error: ', err);
-        $scope.msg = 'Error:  ' + err;
-      });
+  // Precisamos buscar nosssa cerveja na nossa API
+  var id = $routeParams.id;
+  var url = '/api/beers/'+id;
+  var method = 'GET';
+  $http({
+    method: method,
+    url: url
+  })
+  .success(function(data){
+    $scope.msg = 'Cerveja ' + data.name;
+    $scope.cerveja = data;
+  })
+  .error(function(err){
+    console.log('Error: ', err);
+    $scope.msg = 'Error:  ' + err;
+  });
 
-      // Função de deletar
-      $scope.remove = function(cerveja){    
-        var method = 'DELETE';
-        var query = {
-          _id: cerveja._id
-        };
+  // Função de deletar
+  $scope.remove = function(cerveja){    
+    var method = 'DELETE';
+    var query = {
+      _id: cerveja._id
+    };
 
-        var http_settings = {
-          method: method,
-          url: url,
-          data: query
-        };
-        console.log('alterando', http_settings);
-        $http(http_settings)
-        .success(function(data){
-          $scope.msg = 'Cerveja ' + cerveja.name + ' deletada com SUCESSO';
-        })
-        .error(function(err){
-          console.log('Error: ', err);
-          $scope.msg = 'Error:  ' + err;
-        });
-      }
-    }])
+    var http_settings = {
+      method: method,
+      url: url,
+      data: query
+    };
+    console.log('alterando', http_settings);
+    $http(http_settings)
+    .success(function(data){
+      $scope.msg = 'Cerveja ' + cerveja.name + ' deletada com SUCESSO';
+    })
+    .error(function(err){
+      console.log('Error: ', err);
+      $scope.msg = 'Error:  ' + err;
+    });
+  }
+}])
 
 Lembrando que precisamos editar o `controllers/api/beer.js` na função `delete` para usa o `res.json` em vez do `res.send`:
 
-    delete: function(req, res){
-      // Criando a query para remover a cerveja pelo _id
-      var query = {_id: req.params.id};
+delete: function(req, res){
+  // Criando a query para remover a cerveja pelo _id
+  var query = {_id: req.params.id};
 
-      Beer.remove(query, function(err, data) {
-        if(err) {
-          console.log(err);
-          // msg = 'Erro ao deletar a cerveja!';
-          msg = 0;
-        } else {
-          console.log('Cerveja deletada com sucesso', data);
-          // msg = 'Cerveja deletada com sucesso!';
-          // retorna a quantidade de elementos deletados
-          msg = data;
-        }
-        // enviando a msg para o cliente
-        res.json(msg);
-      });
+  Beer.remove(query, function(err, data) {
+    if(err) {
+      console.log(err);
+      // msg = 'Erro ao deletar a cerveja!';
+      msg = 0;
+    } else {
+      console.log('Cerveja deletada com sucesso', data);
+      // msg = 'Cerveja deletada com sucesso!';
+      // retorna a quantidade de elementos deletados
+      msg = data;
     }
-
-
-
+    // enviando a msg para o cliente
+    res.json(msg);
+  });
+}
 
 ##Projeto Final 29/JUlHO/2014
 Criar um sistema que seja composto de lojas de cervejas, onde os usuários poderão se cadastrar e falar que tomaram as cervejas. Nisso teremos basiacamente 3 coleções:
