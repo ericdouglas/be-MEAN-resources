@@ -1475,9 +1475,11 @@ update: function(req, res){
 
 Mudamos o `res.send` para `res.json` para que nossa requisição do AngularJs não caia no `error`.
 
-###DELETE
+## DELETE
+
 Como já havíamos criado a rota do `DELETE` vamos agora criar nossa view, que basicamente é a mesma do show apenas com o botão para deletar.
 
+```jade
 h3 {{ workshop }}
 h4 {{ msg }}
 
@@ -1497,9 +1499,11 @@ ul
 p 
   button(data-ng-click='remove(cerveja)')
     | Excluir
+```
 
 Depois alteramos o controller `BeersRemoveCtrl`:
 
+```js
 controller('BeersRemoveCtrl', ['$scope', '$http', '$routeParams', 
   function ($scope, $http, $routeParams) {
   $scope.workshop = 'Workshop Be MEAN';
@@ -1544,9 +1548,11 @@ controller('BeersRemoveCtrl', ['$scope', '$http', '$routeParams',
     });
   }
 }])
+```
 
 Lembrando que precisamos editar o `controllers/api/beer.js` na função `delete` para usa o `res.json` em vez do `res.send`:
 
+```js
 delete: function(req, res){
   // Criando a query para remover a cerveja pelo _id
   var query = {_id: req.params.id};
@@ -1566,8 +1572,10 @@ delete: function(req, res){
     res.json(msg);
   });
 }
+```
 
-##Projeto Final 29/JUlHO/2014
+## Projeto Final
+
 Criar um sistema que seja composto de lojas de cervejas, onde os usuários poderão se cadastrar e falar que tomaram as cervejas. Nisso teremos basiacamente 3 coleções:
 
 - users
@@ -1578,19 +1586,19 @@ Onde beers terá um array que conterá o ObjectId de cada cerveja que eles venda
 
 O sistema deverá ser um Single Page App onde o usuário se cadastrará e pesquisará pelas cervejas, **dica: use regex na query**, a cerveja que ele quiser poderá adicionar em sua coleção. E nessa cerveja além dos seus dados também mostrará quais lojas vendem.
 
-####Model beer
+###Model beer
 - name
 - price
 - alcohol
 - category
 - description
 
-####Model shop
+###Model shop
 - name
 - address //object {logradouro, nome, numero, complemento, bairro, cidade, estado, país}
 - beers
 
-####Model user
+###Model user
 - login
 - email
 - password //criptografado
@@ -1598,16 +1606,3 @@ O sistema deverá ser um Single Page App onde o usuário se cadastrará e pesqui
 - beers
 
 Na parte de user pode ser usado o Passport ou diretamente o mean.io que já possui um boilerplate usável com o Passport já integrado.
-
-Além dos CRUDs a interface também contará pontos e todos os projetos deverão ser enviados via [github](http://github.com).
-
-Podendo usar boilerplates de css como: Boostrap, Foundation e outros.
-
-
-####Tópicos a serem explicados via Hangouts:
-
-- Node.js: crypt
-- Mongoose: pre save
-- Mongoose: populate
-- MEAN.io: arquitetura, passport
-
