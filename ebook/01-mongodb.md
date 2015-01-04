@@ -6,9 +6,9 @@ O termo NoSQL foi usado pela primeira vez em 1998 como o nome de um banco de dad
 
 NoSQL são diferentes sistemas de armazenamento que vieram para suprir necessidades onde os bancos de dados tradicionais (relacionais) são ineficazes. Muitas dessas bases apresentam características muito interessantes como **alta performance**, **escalabilidade**, **replicação**, **suporte à dados estruturados**, **grafos** e **sub-colunas**. 
 
-O NoSQL surgiu da necessidade de uma performance superior e de alta escalabilidade. Os atuais bancos de dados relacionais são muito restritos a isso, sendo necessário a distribuição vertical de servidores, ou seja, quanto mais dados, mais memória e mais disco um servidor precisa. O NoSQL tem uma grande facilidade na distribuição horizontal, ou seja, mais dados, mais servidores, não necessariamente de alta performance. Um grande utilizador desse conceito é o google, que usa computadores de pequeno e médio porte, para a distribuição dos dados, essa forma de utilização e muito mais eficiente e econômica. Alem disso, os bancos de dados NoSQL são muito tolerantes a erros. 
+O NoSQL surgiu da necessidade de uma performance superior e de alta escalabilidade. Os atuais bancos de dados relacionais são muito restritos a isso, sendo necessário a distribuição vertical de servidores, ou seja, quanto mais dados, mais memória e mais disco um servidor precisa. O NoSQL tem uma grande facilidade na distribuição horizontal, ou seja, mais dados, mais servidores, não necessariamente de alta performance. Um grande utilizador desse conceito é o Google, que usa computadores de pequeno e médio porte, para a distribuição dos dados, essa forma de utilização é muito mais eficiente e econômica. Alem disso, os bancos de dados NoSQL são muito tolerantes a erros.
 
-No caso dos bancos NoSQL, toda a a informação necessária estará agrupada no mesmo registro, ou seja, em vez de você ter o relacionamento entre várias tabelas para formar uma informação, ela estará em sua totalidade no **mesmo registro**. 
+No caso dos bancos NoSQL, toda a informação necessária estará agrupada no mesmo registro, ou seja, em vez de você ter o relacionamento entre várias tabelas para formar uma informação, ela estará em sua totalidade no **mesmo registro**.
 
 ##Por que usar?
 
@@ -26,7 +26,7 @@ Agora se o seu sistema é alguma rede social, ou algum site que necessite de alt
 
 Entretanto, não precisamos mudar todo o sistema para algum banco NoSQL, podemos muito bem utilizar um banco NoSQL e um relacional em conjunto. Como muitos já fazem hoje em dia mas nem percebem. 
 
-Por exemplo, um sistema que utiliza cache, com certeza esta usando um banco NoSQL no cache como o mais conhecido Memcached. A Api Storage do HTML5 também utiliza um sistema de banco NoSQL do tipo chave-valor.
+Por exemplo, um sistema que utiliza cache, com certeza esta usando um banco NoSQL no cache como o mais conhecido Memcached. A API Storage do HTML5 também utiliza um sistema de banco NoSQL do tipo chave-valor.
 
 ##Tipos de armazenamento
 
@@ -60,7 +60,7 @@ Esse é o tipo de banco de dados NoSQL mais simples. O conceito dele é uma chav
 
 ###Wide Columns Store
 
-Fortemente inspirados pelo *BigTable* do Google, eles suportam várias linhas e colunas, além disso ele permite subcolunas. Alem do BigTable do google outros que usam essa tecnologia são:
+Fortemente inspirados pelo *BigTable* do Google, eles suportam várias linhas e colunas, além disso ele permite subcolunas. Alem do BigTable do Google outros que usam essa tecnologia são:
 
 - HBase (Apache) 
 - HiperTable 
