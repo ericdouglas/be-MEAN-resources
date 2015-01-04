@@ -1188,17 +1188,17 @@ h3
 | {{ workshop }}
 
 ul
-h4 {{ cerveja.name }}
-li
-| Name: {{ cerveja.name }}
-li
-| Category: {{ cerveja.category }}
-li
-| Alcohol: {{ cerveja.alcohol }}
-li
-| Price: {{ cerveja.price }}
-li
-| Description: {{ cerveja.description }}
+  h4 {{ cerveja.name }}
+  li
+  | Name: {{ cerveja.name }}
+  li
+  | Category: {{ cerveja.category }}
+  li
+  | Alcohol: {{ cerveja.alcohol }}
+  li
+  | Price: {{ cerveja.price }}
+  li
+  | Description: {{ cerveja.description }}
 ```
 
 Depois disso criar o controller `BeersShowCtrl`:
