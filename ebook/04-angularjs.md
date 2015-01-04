@@ -1011,15 +1011,15 @@ h3
 h4 Listagem das cervejas
 table
 thead
-tr
-  th 
-    a.order(data-ng-click='orderBy(\'name\')') Name
-  th
-    a.order(data-ng-click='orderBy(\'category\')') Category
+  tr
+    th 
+      a.order(data-ng-click='orderBy(\'name\')') Name
+    th
+      a.order(data-ng-click='orderBy(\'category\')') Category
 tbody
-tr(data-ng-repeat='cerveja in cervejas | orderBy:predicate:reverse')
-  td {{ cerveja.name }}
-  td {{ cerveja.category }}
+  tr(data-ng-repeat='cerveja in cervejas | orderBy:predicate:reverse')
+    td {{ cerveja.name }}
+    td {{ cerveja.category }}
 ```
 
 Como você deve ter percebido, estamos chamando a função `orderBy`, onde ela irá ordernar nossa tabela a partir dos campos `name` e `category`. 
