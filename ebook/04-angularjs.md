@@ -994,20 +994,20 @@ Vamos substituir essas cervejas setadas na mão por uma consulta na nossa API do
 var url = '/api/beers';
 
 $http.get(url)
-.success(function(data){
-$scope.cervejas = data;
-  console.log('Cervejas', $scope.cervejas);
-})
-.error(function(err){
-  console.log('Error: ', err);
-});
+  .success(function(data){
+    $scope.cervejas = data;
+    console.log('Cervejas', $scope.cervejas);
+  })
+  .error(function(err){
+    console.log('Error: ', err);
+  });
 ```
 
 E corrigimos nossa view `list.jade`:
 
 ```jade
 h3
-| {{ workshop }}
+  | {{ workshop }}
 h4 Listagem das cervejas
 table
   thead
@@ -1190,15 +1190,15 @@ h3
 ul
   h4 {{ cerveja.name }}
   li
-  | Name: {{ cerveja.name }}
+    | Name: {{ cerveja.name }}
   li
-  | Category: {{ cerveja.category }}
+    | Category: {{ cerveja.category }}
   li
-  | Alcohol: {{ cerveja.alcohol }}
+    | Alcohol: {{ cerveja.alcohol }}
   li
-  | Price: {{ cerveja.price }}
+    | Price: {{ cerveja.price }}
   li
-  | Description: {{ cerveja.description }}
+    | Description: {{ cerveja.description }}
 ```
 
 Depois disso criar o controller `BeersShowCtrl`:
@@ -1245,28 +1245,28 @@ Agora vamos criar nossa view `create.jade`:
 h3 {{ workshop }}
 h4 {{ msg }}
 form.container-small
-label
-| Name:
-input(type='text', name='cerveja.name', 
-      data-ng-model='cerveja.name')
-label
-| Category:
-input(type='text', name='cerveja.category', 
-      data-ng-model='cerveja.category')
-label
-| Price:
-input(type='text', name='cerveja.price', 
-      data-ng-model='cerveja.price')
-label
-| Alcohol:
-input(type='text', name='cerveja.alcohol', 
-      data-ng-model='cerveja.alcohol')
-label
-| Description:
-textarea(name='description', 
-        data-ng-model='cerveja.description')
-button(data-ng-click='create(cerveja)')
-| Criar
+  label
+    | Name:
+  input(type='text', name='cerveja.name', 
+        data-ng-model='cerveja.name')
+  label
+    | Category:
+  input(type='text', name='cerveja.category', 
+        data-ng-model='cerveja.category')
+  label
+    | Price:
+  input(type='text', name='cerveja.price', 
+        data-ng-model='cerveja.price')
+  label
+    | Alcohol:
+  input(type='text', name='cerveja.alcohol', 
+        data-ng-model='cerveja.alcohol')
+  label
+    | Description:
+  textarea(name='description', 
+          data-ng-model='cerveja.description')
+  button(data-ng-click='create(cerveja)')
+    | Criar
 ```
 
 Logo precisamos ir no nosso controller `BeersCreateCtrl` e adicionar a função `create`:
