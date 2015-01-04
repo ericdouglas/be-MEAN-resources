@@ -421,7 +421,7 @@ O `$http` é o responsável pelas nossas requisições `HTTP`, que nada mais é 
 
 No exercício010 iremos ver como utilizar o `$http` para consumirmos a `API` do [github](https://github.com).
 
-```
+```js
 var url = 'https://api.github.com/users/suissa';
 var method = 'GET';
 $http({
@@ -462,13 +462,13 @@ E na nossa `View` nós mostramos:
 
 Perceba que ao iniciar a página ele não mostra o usuário, apenas se clickar no botão `Usuario` que mostra os dados abaixo. Para que isso aconteça, usamos a diretiva `ng-show` que irá mostrar o conteúdo caso receba `true`, porém nós iniciamos ela com `false` no nosso `Controller`:
 
-```
+```js
 $scope.mostraUser = false;
 ```
 
 Porém após clickar no botão e chamar a função `rodar()` ele muda esse valor e mostra o conteúdo abaixo. Ele serve como um toggle, pois a cada click ele irá inverter o valor de `mostraUser`.
 
-```
+```js
 $scope.rodar = function(){
   $scope.mostraUser = !$scope.mostraUser;
 }
@@ -497,7 +497,7 @@ npm start
 
 Depois de ver rodando em `localhost:8000` vamos ver o arquivo `app.js`:
 
-```
+```js
 'use strict';
 
 // Declare app level module which depends on views, and components
@@ -514,7 +514,7 @@ config(['$routeProvider', function($routeProvider) {
 
 E depois que você abrir o `view1/view1.js` vai perceber que o próprio módulo `myApp.view1` possui sua rota, isso deixa nosso código bem modular e não polui o arquivo principal.
 
-```
+```js
 angular.module('myApp.view1', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
