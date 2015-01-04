@@ -1088,6 +1088,7 @@ when('/beers', {
   templateUrl: 'partials/list',
   controller: 'BeersIndexCtrl'
 })
+```
 
 Todo `templateUrl` bate em `partials/:name`, o que é descrito no `app.js` do Express: 
 
