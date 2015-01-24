@@ -137,7 +137,7 @@ Quando uma coleção começar a atingir o limite daquele servidor, você poderá
 
 ###GridFs
 
-![](http://www.kratedesign.com/wp-content/uploads/2012/11/less-files-more-miles.jpg)
+![](http://www.windream.com/uploads/media/windream_Filesystem-Archivierung_Header_01.jpg)
 
 É o sistema de armazenamento de aquivos binários do MongoDb, com ele você poderá distribuir seus arquivos binários pelos seus servidores, dando assim alta disponibilidade de acesso a eles.
 
