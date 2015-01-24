@@ -1,8 +1,29 @@
 #Be MEAN - Criando sistemas inteiros apenas com JavaScript
 
-Vamos aprender com esse material a criar um sistema inteiro utilizando apenas nosso querido e amado JavaScript. Desde o Frontend até o Banco de Dados. 
+Esse material tem a intenção de ensinar como criar um sistema inteiro utilizando apenas nosso querido e amado JavaScript, desde o Frontend até o Banco de Dados. <3
 
-![](https://i.cloudup.com/WI6pC8JKia.png) 
+![](https://i.cloudup.com/WI6pC8JKia.png)
+
+##Agradecimentos
+
+Gostaria aqui de agradecer as mesmas pessoas que fizeram que meu TCC na UTF-PR fosse possível, Sergey Bin e Larry Page. Muito obrigado por criarem o Google isso mudou minha vida tanto na parte de buscar conhecimento, 
+
+
+##O Autor
+
+Nunca esquecerei quando sabia que minha vida seria na informática.
+
+Quando ainda era um criança de uns 10/11 anos, um cara foi instalar a BBS no IBM 486 do meu pai e quando olhei no monitor ele estava conversando via chat com uma outra operadora de suporte, isso deve ter sido em meados de 94, naquela época ninguém tinha celular aqui, malemal o telefone funcionava bem naquela época.
+
+Perguntei incautamente :
+
+- Você esta escrevendo para ela agora e ela responde no mesmo momento?
+
+Quando ele disse:
+
+- Sim.
+
+![](http://wersm.com/wp-content/uploads/2013/08/Mind-Blowing-EMR-and-Meaningful-Use-Stats-and-Facts.gif)
 
 ##MEAN
 ![](https://i.cloudup.com/Taslszh86K.jpg)
