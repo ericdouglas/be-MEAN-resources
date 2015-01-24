@@ -115,7 +115,7 @@ E isso é bom? Dependendo do que você quer fazer sim, ele dá maior liberdade p
 
 ###JSON/BSON
 
-![](http://wp.clicrbs.com.br/infosfera/files/2014/04/jason-2.jpg)
+![](https://cldup.com/HZhJhq6zRZ.jpg)
 
 O MongoDb é um banco NoSQL orientado a documento [JSON](http://json.org/), ou seja, ele persiste os dados usando o formato JSON, criando assim um formato único de troca de dados em toda stack [MEAN](http://bemean.com.br/).
 
