@@ -360,7 +360,7 @@ Inserted 1 record(s) in 1ms
 
 Na versão 2.6 para cima ainda recebemos o retorno de nossas ações, como nessa:
 
-````
+```
 BulkWriteResult({
   "writeErrors": [ ],
   "writeConcernErrors": [ ],
@@ -371,7 +371,7 @@ BulkWriteResult({
   "nRemoved": 0,
   "upserted": [ ]
 })
-````
+```
 
 Logo podemos ver que foram inseridos 3 registros, esse tipo de retorno só aconteceu após a versão 2.6, **em uma próxima atualização todos os códigos estarão na versão mais atual**.
 
@@ -408,7 +408,7 @@ Fetched 4 record(s) in 1ms -- Index[none]
 **Dica**: quando utilizar o comando `find` ou `findOne` e não tiver o mongo-hacker, utilize no final a função `pretty()`.
 
 ```
-find().pretty()
+db.products.find().pretty()
 ```
 
 Nós também podemos inserir objetos utilizando o `save`, ele tanto insere como altera valores.
