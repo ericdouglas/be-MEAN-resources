@@ -129,7 +129,7 @@ No MongoDb funciona da mesma forma, porém podemos replicar também os shardings
 
 ###Sharding
 
-![Sharding chapter's image](http://www.codefutures.com/img/dbshards-shardit.gif)
+![Sharding chapter's image](https://cldup.com/CKCcVAXuE6.jpg)
 
 O [Sharding](http://docs.mongodb.org/manual/sharding/) é um mecanismo de distribuição de dados entre os servidores para persistir grandes volumes de dados. 
 
