@@ -119,6 +119,17 @@ E isso é bom? Dependendo do que você quer fazer sim, ele dá maior liberdade p
 
 O MongoDb é um banco NoSQL orientado a documento [JSON](http://json.org/), ou seja, ele persiste os dados usando o formato JSON, criando assim um formato único de troca de dados em toda stack [MEAN](http://bemean.com.br/).
 
+O [BSON](http://bsonspec.org/) nada mais é que uma versão serializada e "binarizada", transformada em binário, do JSON. Ele possui diversos tipos caso queira conhecer mais sobre esses tipos [visite http://docs.mongodb.org/manual/reference/bson-types/](http://docs.mongodb.org/manual/reference/bson-types/).
+
+
+###Sharding
+
+![Sharding chapter's image](https://cldup.com/lJu6dj3bpy.png)
+
+O [Sharding](http://docs.mongodb.org/manual/sharding/) é um mecanismo de distribuição de dados entre os servidores para persistir grandes volumes de dados. 
+
+Quando uma coleção começar a atingir o limite daquele servidor, você poderá adicionar outro servidor e colocar essa coleção como **sharding** para que ela distribua uma quantidade de seus dados para esse outro servidor ou servidores.
+
 ###Replica
 
 ![Replica chapter's image](http://images.freshnessmag.com/wp-content/uploads/2010/07/bat-pod-replica-1.jpg)
@@ -127,13 +138,11 @@ Possuímos réplicas na maioria dos bancos de dados relacionais também, ela ape
 
 No MongoDb funciona da mesma forma, porém podemos replicar também os shardings.
 
-###Sharding
+A ideia por trás de replicar os shardings nos remete ao conceito largamente utilizado pelo MongoDb que é a alta disponibilidade.
 
-![Sharding chapter's image](https://cldup.com/CKCcVAXuE6.jpg)
+Vamos ver isso graficamente.
 
-O [Sharding](http://docs.mongodb.org/manual/sharding/) é um mecanismo de distribuição de dados entre os servidores para persistir grandes volumes de dados. 
 
-Quando uma coleção começar a atingir o limite daquele servidor, você poderá adicionar outro servidor e colocar essa coleção como **sharding** para que ela distribua uma quantidade de seus dados para esse outro servidor ou servidores.
 
 ###GridFs
 
