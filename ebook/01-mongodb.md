@@ -124,7 +124,7 @@ O [BSON](http://bsonspec.org/) nada mais é que uma versão serializada e "binar
 
 ###Sharding
 
-![Sharding chapter's image](https://cldup.com/lJu6dj3bpy.png)
+![Sharding chapter's image](https://cldup.com/CKCcVAXuE6.jpg)
 
 O [Sharding](http://docs.mongodb.org/manual/sharding/) é um mecanismo de distribuição de dados entre os servidores para persistir grandes volumes de dados. 
 
