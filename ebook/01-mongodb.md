@@ -124,7 +124,7 @@ O [BSON](http://bsonspec.org/) nada mais é que uma versão serializada e "binar
 
 ###Sharding
 
-![Sharding chapter's image](http://docs.mongodb.org/manual/_images/sharded-cluster.png)
+![Sharding chapter's image](https://cldup.com/lJu6dj3bpy.png)
 
 O [Sharding](http://docs.mongodb.org/manual/sharding/) é um mecanismo de distribuição de dados entre os servidores para persistir grandes volumes de dados. 
 
@@ -145,6 +145,7 @@ A ideia por trás de replicar os shardings nos remete ao conceito largamente uti
 Vamos ver isso graficamente.
 
 ![Sharding with Replica cluster](https://cldup.com/_aT9Si2PTY.gif)
+
 
 ###GridFs
 
