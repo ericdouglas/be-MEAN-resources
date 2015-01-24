@@ -86,7 +86,7 @@ Na imagem abaixo podemos ver um gráfico demonstrando a diferença entre o taman
 
 Assim podemos perceber que os bancos do tipo **chave-valor** conseguem aguentar mais dados, sendo que seus dados são mais simples, enquanto que os banco do tipo **grafo** aguentam menos dados porém seus dados são mais complexos.
 
-![](http://blog.3pillarglobal.com/sites/default/files/nosql-3a.png)
+![](http://www.slantmagazine.com/assets/film/mongol.jpg)
 
 ##Introdução ao MongoDB
 
@@ -97,7 +97,9 @@ Ele é um banco de dados **orientado a documentos**, **escalável**, **livre de 
 Algumas funcionalidades interessantes do MongoDB são: 
 
 * orientação a documentos(JSON/BSON)
-* suporte a index, replicação e alta disponibilidade
+* suporte a index
+* replicação
+* alta disponibilidade
 * auto-sharding
 * map/reduce 
 * GridFS

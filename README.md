@@ -2,7 +2,7 @@
 
 # Be MEAN - Resources
 
-Arquivos do livro **Be MEAN** criado por [Suissa](https://github.com/suissa) e liberado gratuitamente pela Webschool.
+Arquivos do livro **Be MEAN - O básico** criado por [Suissa](https://github.com/suissa) e liberado gratuitamente pela Webschool.
 
 * **Autor**: [Jean Carlo Nascimento](https://github.com/suissa) (Suissa)
 * **Edição/Revisão**: [Eric Douglas](https://github.com/ericdouglas)
