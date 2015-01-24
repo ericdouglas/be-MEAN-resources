@@ -254,7 +254,10 @@ Você deve ter percebido esse campo após listarmos os objetos da nossa coleçã
 
 *Documentação do [ObjectId](http://docs.mongodb.org/manual/reference/object-id/).*
 
-Para apagarmos os dados dessa coleção de teste possuímos 2 comandos: `remove` e `drop`.
+Para apagarmos os dados dessa coleção de teste possuímos 2 comandos:
+
+- `remove`
+- `drop`.
 
 O `remove` apenas apaga os dados, porém a coleção continua existindo, já com o `drop` ele apaga a coleção inteira, como podemos ver abaixo:
 
@@ -351,8 +354,26 @@ suissacorp(mongod-2.4.8) be-mean> ps
   }
 ]
 
+suissacorp(mongod-2.4.8) be-mean> db.products.insert(ps)
+Inserted 1 record(s) in 1ms
 ```
 
+Na versão 2.6 para cima ainda recebemos o retorno de nossas ações, como nessa:
+
+````
+BulkWriteResult({
+  "writeErrors": [ ],
+  "writeConcernErrors": [ ],
+  "nInserted": 3,
+  "nUpserted": 0,
+  "nMatched": 0,
+  "nModified": 0,
+  "nRemoved": 0,
+  "upserted": [ ]
+})
+````
+
+Logo podemos ver que foram inseridos 3 registros, esse tipo de retorno só aconteceu após a versão 2.6, **em uma próxima atualização todos os códigos estarão na versão mais atual**.
 
 ```
 suissacorp(mongod-2.4.8) be-mean> db.products.find()
