@@ -124,11 +124,13 @@ O [BSON](http://bsonspec.org/) nada mais é que uma versão serializada e "binar
 
 ###Sharding
 
-![Sharding chapter's image](https://cldup.com/lJu6dj3bpy.png)
+![Sharding chapter's image](http://docs.mongodb.org/manual/_images/sharded-cluster.png)
 
 O [Sharding](http://docs.mongodb.org/manual/sharding/) é um mecanismo de distribuição de dados entre os servidores para persistir grandes volumes de dados. 
 
 Quando uma coleção começar a atingir o limite daquele servidor, você poderá adicionar outro servidor e colocar essa coleção como **sharding** para que ela distribua uma quantidade de seus dados para esse outro servidor ou servidores.
+
+Os `Config Server`s são servidores que armazenam os dados sobre o cluster e que são consultados pelo `mongos`, nosso router, para saber onde buscar a informação requisitada pelo `mongos` que será a porta de entrada de qualquer requisição no cluster.
 
 ###Replica
 
@@ -142,7 +144,7 @@ A ideia por trás de replicar os shardings nos remete ao conceito largamente uti
 
 Vamos ver isso graficamente.
 
-
+![Sharding with Replica cluster](https://cldup.com/_aT9Si2PTY.gif)
 
 ###GridFs
 
