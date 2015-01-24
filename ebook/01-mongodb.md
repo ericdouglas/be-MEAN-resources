@@ -132,6 +132,10 @@ Quando uma coleção começar a atingir o limite daquele servidor, você poderá
 
 Os `Config Server`s são servidores que armazenam os dados sobre o cluster e que são consultados pelo `mongos`, nosso router, para saber onde buscar a informação requisitada pelo `mongos` que será a porta de entrada de qualquer requisição no cluster.
 
+![Simple example with Sharding](http://docs.mongodb.org/manual/_images/sharded-cluster-test-architecture.png)
+
+Veremos um exemplo simples de implementação local mais para frente.
+
 ###Replica
 
 ![Replica chapter's image](http://images.freshnessmag.com/wp-content/uploads/2010/07/bat-pod-replica-1.jpg)
