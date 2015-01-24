@@ -228,7 +228,7 @@ be-mean
 
 ```
 
-**Dica**: instale o `mongo-hacker`, ver no github, manualmente
+**Dica**: instale o `mongo-hacker`, ver no github, manualmente. NÃO RODA EM WINDOWS.
 
 ```
 db.teste.find()
@@ -245,9 +245,14 @@ db.teste.find()
 
 ###ObjectId
 
-Você deve ter percebido esse campo após listarmos os objetos da nossa coleção
+Você deve ter percebido esse campo após listarmos os objetos da nossa coleção, ele é o ID único gerado pelo MongoDb, na verdade ele é um [UUID - Universally unique identifier](http://en.wikipedia.org/wiki/Universally_unique_identifier) gerado a partir de 4 dados:
 
-* [ObjectId](http://docs.mongodb.org/manual/reference/object-id/)
+- 4-byte é o timestamp,
+- 3-byte é o identificador da máquina,
+- 2-byte é o id do processo
+- 3-byte é o contador que começa com valor randômico
+
+Para saber mais entre na documentação do [ObjectId](http://docs.mongodb.org/manual/reference/object-id/).
 
 Para apagarmos os dados dessa coleção de teste possuímos 2 comandos: `remove` e `drop`.
 
