@@ -150,6 +150,7 @@ Vamos ver isso graficamente.
 
 ![Sharding with Replica cluster](https://cldup.com/_aT9Si2PTY.gif)
 
+Nesse caso um mesmo servidor físico pode estar rodando uma instância de `sharding` e uma de `replica`, porém a réplica é de um `sharding` externo àquele servidor, pois caso ele caia derrubará apenas um `sharding` que terá sua `replica` em outro servidor, podendo facilmente levantar um novo servidor com os dados do servidor que caiu, lindo não?
 
 ###GridFs
 
