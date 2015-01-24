@@ -86,7 +86,7 @@ Na imagem abaixo podemos ver um gráfico demonstrando a diferença entre o taman
 
 Assim podemos perceber que os bancos do tipo **chave-valor** conseguem aguentar mais dados, sendo que seus dados são mais simples, enquanto que os banco do tipo **grafo** aguentam menos dados porém seus dados são mais complexos.
 
-![](http://www.slantmagazine.com/assets/film/mongol.jpg)
+![](http://img.genbetadev.com/2014/02/logo-mongodb-tagline-2.png)
 
 ##Introdução ao MongoDB
 
