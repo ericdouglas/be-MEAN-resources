@@ -30,13 +30,13 @@ Quando ele disse:
 
 ![](http://wersm.com/wp-content/uploads/2013/08/Mind-Blowing-EMR-and-Meaningful-Use-Stats-and-Facts.gif)
 
-Hoje em dia odeio falar no celular, fixo, skype para me comunicar diretamente com alguém, sempre prefiro o texto escrito. Mas minha vida na Web mesmo começou aos 14 anos quando ganhei um Pentium 3 500 MHz do meu avô pq eu iria fazer 15 anos, melhor presente que tive na vida!
+Hoje em dia odeio falar no celular, fixo, skype para me comunicar diretamente com alguém, sempre prefiro o texto escrito. Mas minha vida na Web mesmo começou aos 14 anos quando ganhei um Pentium 3 500 MHz do meu avô porque iria fazer 15 anos, melhor presente que ganhei na vida!
 
-Naquela época o Google ainda não existia, era quase uma Deep Web se vc não fosse catalogado pelo Yahoo ou Cadê, mas as 2 permitiam que você mesmo adicionasse seu site, pelo menos o Cadê. 
+Naquela época o Google ainda não existia, era quase uma Deep Web se você não fosse catalogado pelo Yahoo ou Cadê, mas as 2 permitiam que você mesmo adicionasse seu site, pelo menos o Cadê.
 
 Um filme que eu tinha visto entre o tempo de ter o primeiro computador na família, com uns 12 anos, e depois ficar sem até os 14; foi [Hackers - Piratas de Computador](http://pt.wikipedia.org/wiki/Hackers_%28filme%29), esse filme que me fez ter a gana de virar um [Hacker](http://pt.wikipedia.org/wiki/Hacker).
 
-Em 6 meses que eu tinha ganho o computador já tinha começado a hackear sites por um bug ESCROTO para caraleo do FrontPage, na época você podia instalar um módulo do FrontPage no IIS, da Microsoft óbvio, que deixava você editar seu site diretamente do FrontPage, porém qualquer pessoa que soubesse aquilo e também usasse o FrontPage poderia alterar, não existia nenhum tipo de autenticação.
+Em 6 meses que eu tinha ganho o computador já tinha começado a hackear sites por um bug ESCROTO demais do FrontPage, na época você podia instalar um módulo do FrontPage no IIS, da Microsoft óbvio, que deixava você editar seu site diretamente do FrontPage, porém qualquer pessoa que soubesse aquilo e também usasse o FrontPage poderia alterar, não existia nenhum tipo de autenticação.
 
 ![WAT](https://cldup.com/BOagKEB49C.gif)
 
@@ -46,7 +46,7 @@ Nunca vou esquecer quando usava conexão discada entrava só depois da meia noit
 
 Depois de começar a fazer *defaces* que me interessei em aprender HTML e CSS para deixar mensagens mais bonitas nos sites hackeados. Nessa época eu já usava Linux o dia todo, só ia para o Windows conectar na Internet porque meu modem era um lixo de um WinModem, como eu usava direto o Linux comecei a brincar no GIMP e comecei a fazer várias montagens muito loucas e a galera me perguntava onde eu tinha feito e eu falava:
 
-- GIMP.
+\- GIMP.
 
 Só faltava a pessoa me dar um tiro na cara.
 
@@ -54,7 +54,7 @@ Só faltava a pessoa me dar um tiro na cara.
 
 É lógico que eu perguntava o que eles usavam e todos eram metódicos:
 
-- PhotoShop.
+\- PhotoShop.
 
 Ai fui obrigado pela minha mente a testar esse PhotoShop, nunca mais larguei. Até fui em uma FENASOFT que na época era maior convenção de Informática e vi nesse evento o PhotoShop 7 ser lançado, era meu primeiro ano na Faculdade e minha palestra que vi já foi sobre Computação Quântica, imagine se o [piá](http://pt.wiktionary.org/wiki/pi%C3%A1) não estava todo empolgado.
 
