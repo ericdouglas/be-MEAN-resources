@@ -50,7 +50,7 @@ Depois de começar a fazer *defaces* que me interessei em aprender HTML e CSS pa
 
 Só faltava a pessoa me dar um tiro na cara.
 
-![Imagem de um homem apontando uma arma](http://www.imfdb.org/images/thumb/0/0e/BulletInTheFace01-SW-19SN.jpg/400px-BulletInTheFace01-SW-19SN.jpg)
+![Imagem de um revólver apontado para sua cara](https://cldup.com/2z7f942RUz.gif)
 
 É lógico que eu perguntava o que eles usavam e todos eram metódicos:
 
