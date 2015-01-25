@@ -6,7 +6,11 @@ Esse material tem a intenção de ensinar como criar um sistema inteiro utilizan
 
 ##Agradecimentos
 
-Gostaria aqui de agradecer as mesmas pessoas que fizeram que meu TCC na UTF-PR fosse possível, Sergey Bin e Larry Page. Muito obrigado por criarem o Google isso mudou minha vida tanto na parte de buscar conhecimento, 
+Gostaria aqui de agradecer as mesmas pessoas que fizeram que meu TCC na UTF-PR fosse possível, Sergey Bin e Larry Page. Muito obrigado por criarem o Google isso mudou minha vida tanto na parte de buscar conhecimento, como nas tecnologias que ensino como: V8(MongoDb e Node.js) e AngularJs.
+
+Agradecer principalmente a galera que me segue no Facebook/Twitter e me vê *floodando* a timeline por eu trabalhar basicamente a noite/madrugada, mas todo dia um post o bicho pega, botar gasolina no fogo é comigo mesmo. :p
+
+![Beijinho no ombro](http://imguol.com/c/bol/fotos/2014/03/01/01fev2014---sempre-ligada-ao-que-esta-acontecendo-no-momento-a-apresentadora-palmirinha-aproveitou-um-de-seus-quitutes-e-posou-com-um-doce-de-beijinho-no-ombro-a-foto-foi-postada-na-pagina-do-1393701655008_300x200.jpg)
 
 
 ##MEAN
