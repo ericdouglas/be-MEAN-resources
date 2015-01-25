@@ -79,10 +79,10 @@ Para saber mais do [Workshop Be MEAN, entre aqui http://bemean.com.br/](http://b
 ###O que siginifica MEAN?
 
 Nada mais que a sigla das tecnologias utilizadas:
-- [MongoDb](http://mongodb.org/);
-- [Express](http://expressjs.com/);
-- [AngularJS](https://angularjs.org/);
-- [Node.js](http://nodejs.org/).
+- [MongoDb](http://mongodb.org/)
+- [Express](http://expressjs.com/)
+- [AngularJS](https://angularjs.org/)
+- [Node.js](http://nodejs.org/)
 
 ##Por que usar MEAN?
 
@@ -98,17 +98,17 @@ Nesse livro iremos criar uma *Single Page Application* (SPA), onde nosso Fronten
 
 Como podemos ver na imagem acima, nosso sistema será dividido em 3 áreas:
 
-- Frontend;
-- Backend;
-- Banco de dados;
+- Frontend
+- Backend
+- Banco de dados
 
 Nesse exemplo estamos fazendo a listagem de cervejas. A sequência de eventos é a seguinte:
 
-1. Usuário entra na listagem;
-2. AngularJS consulta a view no Node.js;
-3. Node.js compila o Jade e entrega o HTML com marcações do AngularJS;
-4. AngularJS consulta na API do Node.js a listagem das cervejas;
-5. Node.js consulta no MongoDb todas as cervejas;
-6. MongoDb retorna um JSON;
-7. Node.js retorna um JSON;
-8. AngularJS recebe e trabalha com o retorno;
+1. Usuário entra na listagem
+2. AngularJS consulta a view no Node.js
+3. Node.js compila o Jade e entrega o HTML com marcações do AngularJS
+4. AngularJS consulta na API do Node.js a listagem das cervejas
+5. Node.js consulta no MongoDb todas as cervejas
+6. MongoDb retorna um JSON
+7. Node.js retorna um JSON
+8. AngularJS recebe e trabalha com o retorno
