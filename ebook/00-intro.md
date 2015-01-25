@@ -9,22 +9,6 @@ Esse material tem a intenção de ensinar como criar um sistema inteiro utilizan
 Gostaria aqui de agradecer as mesmas pessoas que fizeram que meu TCC na UTF-PR fosse possível, Sergey Bin e Larry Page. Muito obrigado por criarem o Google isso mudou minha vida tanto na parte de buscar conhecimento, 
 
 
-##O Autor
-
-Nunca esquecerei quando sabia que minha vida seria na informática.
-
-Quando ainda era um criança de uns 10/11 anos, um cara foi instalar a BBS no IBM 486 do meu pai e quando olhei no monitor ele estava conversando via chat com uma outra operadora de suporte, isso deve ter sido em meados de 94, naquela época ninguém tinha celular aqui, malemal o telefone funcionava bem naquela época.
-
-Perguntei incautamente :
-
-- Você esta escrevendo para ela agora e ela responde no mesmo momento?
-
-Quando ele disse:
-
-- Sim.
-
-![](http://wersm.com/wp-content/uploads/2013/08/Mind-Blowing-EMR-and-Meaningful-Use-Stats-and-Facts.gif)
-
 ##MEAN
 ![](https://i.cloudup.com/Taslszh86K.jpg)
 
@@ -66,7 +50,52 @@ Nesse exemplo estamos fazendo a listagem de cervejas. A sequência de eventos é
 8. AngularJS recebe e trabalha com o retorno;
 
 ## Sobre o autor
-Comecei a estudar HTML5, CSS3, Node.js e MongoDB um pouco antes de 2010, quando ainda era professor na [FAFIT](http://www.fafit.com.br/). Antes de sair de lá, para ir trabalhar em São Paulo, dei aula para o oitavo semestre na disciplina de Tópicos Avançados, na qual pude criar a ementa e ensinei exatamente isso: HTML5, CSS3, Node.js e MongoDb. Porém na época só existia 1 livro, e em inglês, de HTML5, mas nem por isso deixei de estudar e ensinar os outros.
+
+Nunca esquecerei quando sabia que minha vida seria na informática.
+
+Quando ainda era um criança de uns 10/11 anos, um cara foi instalar uma [BBS](http://pt.wikipedia.org/wiki/Bulletin_board_system) no IBM 486 do meu pai e quando olhei no monitor ele estava conversando via chat com uma outra operadora de suporte, isso deve ter sido em meados de 94, naquela época ninguém tinha celular aqui, malemal o telefone funcionava bem naquela época.
+
+Perguntei incautamente :
+
+- Você esta escrevendo para ela agora e ela responde no mesmo momento?
+
+Quando ele disse:
+
+- Sim.
+
+![](http://wersm.com/wp-content/uploads/2013/08/Mind-Blowing-EMR-and-Meaningful-Use-Stats-and-Facts.gif)
+
+Hoje em dia odeio falar no celular, fixo, skype para me comunicar diretamente com alguém, sempre prefiro o texto escrito. Mas minha vida na Web mesmo começou aos 14 anos quando ganhei um Pentium 3 500 MHz do meu avô pq eu iria fazer 15 anos, melhor presente que tive na vida!
+
+Naquela época o Google ainda não existia, era quase uma Deep Web se vc não fosse catalogado pelo Yahoo ou Cadê, mas as 2 permitiam que você mesmo adicionasse seu site, pelo menos o Cadê. 
+
+Um filme que eu tinha visto entre o tempo de ter o primeiro computador na família, com uns 12 anos, e depois ficar sem até os 14; foi [Hackers - Piratas de Computador](http://pt.wikipedia.org/wiki/Hackers_%28filme%29), esse filme que me fez ter a gana de virar um [Hacker](http://pt.wikipedia.org/wiki/Hacker).
+
+Em 6 meses que eu tinha ganho o computador já tinha começado a hackear sites por um bug ESCROTO para caraleo do FrontPage, na época você podia instalar um módulo do FrontPage no IIS, da Microsoft óbvio, que deixava você editar seu site diretamente do FrontPage, porém qualquer pessoa que soubesse aquilo e também usasse o FrontPage poderia alterar, não existia nenhum tipo de autenticação.
+
+![WAT](https://cldup.com/BOagKEB49C.gif)
+
+Esse foi apenas o início para começar a usar Trojans, Port Scanners e programas de DoS, naquel época ainda não existia o DDOS.
+
+Nunca vou esquecer quando usava conexão discada entrava só depois da meia noite e passava a madrugada procurando servidores vulneráveis para os exploits que eu rodava via Cygwin no Windows, para rodar exploits em C. Toda madruga era no mínimo UM deface, termo usado na época para o "pixamento" de algum site.
+
+Depois de começar a fazer *defaces* que me interessei em aprender HTML e CSS para deixar mensagens mais bonitas nos sites hackeados. Nessa época eu já usava Linux o dia todo, só ia para o Windows conectar na Internet porque meu modem era um lixo de um WinModem, como eu usava direto o Linux comecei a brincar no GIMP e comecei a fazer várias montagens muito loucas e a galera me perguntava onde eu tinha feito e eu falava:
+
+- GIMP.
+
+Só faltava a pessoa me dar um tiro na cara.
+
+![Imagem de um homem apontando uma arma](http://www.imfdb.org/images/thumb/0/0e/BulletInTheFace01-SW-19SN.jpg/400px-BulletInTheFace01-SW-19SN.jpg)
+
+É lógico que eu perguntava o que eles usavam e todos eram metódicos:
+
+- PhotoShop.
+
+Ai fui obrigado pela minha mente a testar esse PhotoShop, nunca mais larguei. Até fui em uma FENASOFT que na época era maior convenção de Informática e vi nesse evento o PhotoShop 7 ser lançado, era meu primeiro ano na Faculdade e minha palestra que vi já foi sobre Computação Quântica, imagine se o [piá](http://pt.wiktionary.org/wiki/pi%C3%A1) não estava todo empolgado.
+
+Mas a faculdade em si foi chata para caraleo! Pois na minha época não existia nada para WEB, só não conto minha saga nas Faculdades pois daria outro livro.
+
+Depois de já estar formado e trabalhando com HTML/CSS/jQuery/PHP/MySQL comecei a estudar HTML5, CSS3, Node.js e MongoDB um pouco antes de 2010, quando ainda era professor na [FAFIT](http://www.fafit.com.br/). Antes de sair de lá, para ir trabalhar em São Paulo, dei aula para o oitavo semestre na disciplina de Tópicos Avançados, na qual pude criar a ementa e ensinei exatamente isso: HTML5, CSS3, Node.js e MongoDb. Porém na época só existia 1 livro, e em inglês, de HTML5, mas nem por isso deixei de estudar e ensinar os outros.
 
 Desde 2010 muitas coisas mudaram e tive que me atualizar várias vezes. Em 2015 não será diferente, mas nunca podemos deixar de estudar. Precisamos estar sempre nos atualizando e este livro é um exemplo prático disso, espero que seja útil para você como foi para meus alunos.
 
