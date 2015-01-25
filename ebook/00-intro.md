@@ -34,7 +34,9 @@ Hoje em dia odeio falar no celular, fixo, skype para me comunicar diretamente co
 
 Naquela época o Google ainda não existia, era quase uma Deep Web se você não fosse catalogado pelo Yahoo ou Cadê, mas as 2 permitiam que você mesmo adicionasse seu site, pelo menos o Cadê.
 
-Um filme que eu tinha visto entre o tempo de ter o primeiro computador na família, com uns 12 anos, e depois ficar sem até os 14; foi [Hackers - Piratas de Computador](http://pt.wikipedia.org/wiki/Hackers_%28filme%29), esse filme que me fez ter a gana de virar um [Hacker](http://pt.wikipedia.org/wiki/Hacker).
+Não esqueço de um jogo tipo RPG que eu jogava via TELNET, passei MUITAS horas na madrugada jogando. Era bem simples a mecânica do jogo, cada letra (a,s,d,w) ia para uma direção e vinha um texto com a descrição do lugar, desde pia já brincava com telnet.
+
+Mas o que me marcou mesmo foi um filme que eu tinha visto entre o tempo de ter o primeiro computador na família, com uns 12 anos, e depois ficar sem até os 14; foi [Hackers - Piratas de Computador](http://pt.wikipedia.org/wiki/Hackers_%28filme%29), esse filme que me fez ter a gana de virar um [Hacker](http://pt.wikipedia.org/wiki/Hacker).
 
 Em 6 meses que eu tinha ganho o computador já tinha começado a hackear sites por um bug ESCROTO demais do FrontPage, na época você podia instalar um módulo do FrontPage no IIS, da Microsoft óbvio, que deixava você editar seu site diretamente do FrontPage, porém qualquer pessoa que soubesse aquilo e também usasse o FrontPage poderia alterar, não existia nenhum tipo de autenticação.
 
