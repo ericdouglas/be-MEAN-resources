@@ -22,11 +22,11 @@ Quando ainda era um criança de uns 10/11 anos, um cara foi instalar uma [BBS](h
 
 Perguntei incautamente :
 
-- Você esta escrevendo para ela agora e ela responde no mesmo momento?
+\- Você esta escrevendo para ela agora e ela responde no mesmo momento?
 
 Quando ele disse:
 
-- Sim.
+\- Sim.
 
 ![](http://wersm.com/wp-content/uploads/2013/08/Mind-Blowing-EMR-and-Meaningful-Use-Stats-and-Facts.gif)
 
