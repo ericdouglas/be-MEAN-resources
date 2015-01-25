@@ -52,7 +52,7 @@ Depois de começar a fazer *defaces* que me interessei em aprender HTML e CSS pa
 
 Só faltava a pessoa me dar um tiro na cara.
 
-![Imagem de um revólver apontado para sua cara](https://cldup.com/2z7f942RUz.gif)
+![Imagem de um revólver apontado para sua cara](https://cldup.com/AGDclYl_vR.gif)
 
 É lógico que eu perguntava o que eles usavam e todos eram metódicos:
 
