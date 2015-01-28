@@ -29,6 +29,7 @@ Dentro dessa função primeiramente estamos setando o [código 200](http://pt.wi
 
 Logo após temos o `res.end('Hello World');` que irá fechar a conexão do cliente com o servidor, enviando o texto `Hello World`. Depois iniciamos o servidor, propriamente dito, na porta 3000.
 
+Vamos fazer uma pequena modificação:
 
 ```js
 var http = require('http');
@@ -40,6 +41,8 @@ http.createServer(function (req, res) {
 }).listen(3000);
 console.log('Server running at http://localhost:3000/');
 ```
+
+Agora além de modificarmos o cabeçalho para retornar HTML em UTF-8, também enviamos a tag `<h1>Hello World</h1>` via `res.write` e `<h2>Hoje está um belo dia :p</h2>` via `res.end`. Como vimos anteriormente o `res.end` envia uma mensagem finalizando a conexão e esse `res.send`?
 
 ## FileSystem
 
