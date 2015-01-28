@@ -121,6 +121,23 @@ O MongoDb é um banco NoSQL orientado a documento [JSON](http://json.org/), ou s
 
 O [BSON](http://bsonspec.org/) nada mais é que uma versão serializada e "binarizada", transformada em binário, do JSON. Ele possui diversos tipos caso queira conhecer mais sobre esses tipos [visite http://docs.mongodb.org/manual/reference/bson-types/](http://docs.mongodb.org/manual/reference/bson-types/).
 
+Comparativo de estruturas JSON e BSON:
+
+```javascript
+// JSON
+{
+  "curso": "beMEAN by Jean"
+}
+
+// BSON
+{
+  "_id": ObjectId("54be9c3a9b7269ae5d93ed94"),
+  "curso": "beMEAN by Jean"
+}
+```
+
+O [MongoDB](http://www.mongodb.com/json-and-bson) usa o [BSON](http://docs.mongodb.org/manual/reference/bson-types/) para estende o modelo de [JSON](http://json-schema.org/latest/json-schema-core.html#anchor8) para fornecer tipos de dados adicionais e para ser eficiente na codificação e decodificação em diferentes idiomas.db.teste.insert(json)
+
 
 ###Sharding
 
@@ -234,7 +251,20 @@ db.teste.insert({a: true})
 // Inserindo via variável
 var json = {b: 'TESTE'}
 db.teste.insert(json)
+Inserted 1 record(s) in 250ms
+WriteResult({
+  "nInserted": 1
+})
 
+// Inserindo um segundo registro
+db.teste.insert(json)
+Inserted 1 record(s) in 2ms
+WriteResult({
+  "nInserted": 1
+})
+
+// perceba que a primeira vez que foi inserido ele demora mais
+// pois ele está criando a estrutura da colletion
 ```
 
 Quando usamos o comando `use`, ele muda nosso database e o aponta para a variável `db` usada no inicio dos comandos, então ela sempre apontará para e database atual, como podemos ver executando apenas seu nome:
@@ -275,8 +305,9 @@ Para apagarmos os dados dessa coleção de teste possuímos 2 comandos:
 
 - `remove`
 - `drop`.
+- `dropDatabase`.
 
-O `remove` apenas apaga os dados, porém a coleção continua existindo, já com o `drop` ele apaga a coleção inteira, como podemos ver abaixo:
+O `remove` apenas apaga os dados, porém a coleção continua existindo, já com o `drop` ele apaga a coleção inteira e o `dropDatabase` como o próprio nome diz ele apaga o banco, como podemos ver abaixo:
 
 ```
 suissacorp(mongod-2.4.8) be-mean> db.teste.remove({})
@@ -294,6 +325,13 @@ true
 
 suissacorp(mongod-2.4.8) be-mean> show collections
 system.indexes
+
+suissacorp(mongod-2.4.8) be-mean> db.dropDatabase()
+{
+  "dropped": "be-mean",
+  "ok": 1
+}
+
 
 ```
 
@@ -420,6 +458,46 @@ suissacorp(mongod-2.4.8) be-mean> db.products.find()
 }
 Fetched 4 record(s) in 1ms -- Index[none]
 
+// navegando de coleção em coleção
+suissacorp(mongod-2.4.8) be-mean> var produtos = db.products.find()
+suissacorp(mongod-2.4.8) be-mean> produtos.next()
+{
+  "_id": ObjectId("54614a0a5b9f2b586cb31d08"),
+  "name": "Cachaça",
+  "description": "Mé brasileiro",
+  "price": 12
+}
+suissacorp(mongod-2.4.8) be-mean> produtos.next()
+{
+  "_id": ObjectId("54614d5c5b9f2b586cb31d09"),
+  "name": "Pinga",
+  "description": "da braba po tubão",
+  "price": 4.5
+}
+suissacorp(mongod-2.4.8) be-mean> produtos.next()
+{
+  "_id": ObjectId("54614d5c5b9f2b586cb31d0a"),
+  "name": "Uísque",
+  "description": "Pra preiboi toma com energético",
+  "price": 80
+}
+suissacorp(mongod-2.4.8) be-mean> produtos.next()
+{
+  "_id": ObjectId("54614d5c5b9f2b586cb31d0b"),
+  "name": "Champagne",
+  "description": "só podia ser saopaulino",
+  "price": 130
+}
+suissacorp(mongod-2.4.8) be-mean> produtos.next()
+error hasNext: false at src/mongo/shell/query.js:127
+// este erro é porque não há mais elementos para serem percorrido
+// hasNext retorna false se não tivesse mais elementos para serem percorrido
+// e returna true se tiver elementos para serem percorrido
+suissacorp(mongod-2.4.8) be-mean> produtos.hasNext()
+false
+suissacorp(mongod-2.4.8) be-mean> var produtos = db.products.find()
+suissacorp(mongod-2.4.8) be-mean> produtos.hasNext()
+true
 ```
 
 **Dica**: quando utilizar o comando `find` ou `findOne` e não tiver o mongo-hacker, utilize no final a função `pretty()`.
@@ -1315,6 +1393,34 @@ Para deletar um índice usamos o seguinte comando
 ```
 db.products.dropIndex("name_1")
 ```
+
+Para criar índices únicos.
+```
+db.products.ensureIndex( { name: 1 }, { unique: true })
+{
+  "createdCollectionAutomatically": false,
+  "numIndexesBefore": 1,
+  "numIndexesAfter": 2,
+  "ok": 1
+}
+
+db.products.getIndices()
+[
+  {
+    ...
+  },
+  {
+    "v": 1,
+    "unique": true,
+    "key": {
+      "name": 1
+    },
+    "name": "name_1",
+    "ns": "bemean.products"
+  }
+]
+```
+Veja que passamos como segundo parâmetro um JSON com a chave `unique` com valor `true`. Existem outras possibilidade para a criação de [índices](http://docs.mongodb.org/manual/reference/method/db.collection.ensureIndex/).
 
 ###Explain
 
