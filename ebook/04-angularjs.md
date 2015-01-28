@@ -1241,7 +1241,7 @@ when('/beers/create', {
 
 Agora vamos criar nossa view `create.jade`:
 
-```jade   
+```jade
 h3 {{ workshop }}
 h4 {{ msg }}
 form.container-small
@@ -1314,6 +1314,8 @@ Onde:
 - method: é o verbo do HTTP que vamos usar
 - url: é a url que nossa requisição utilizará
 - data: é o objeto a ser enviado pela requisição
+
+**Exercício:** mudar o create do click do botão para o submit do form e mudar o button para um input[type=submit]
 
 ## UPDATE
 
@@ -1577,7 +1579,7 @@ delete: function(req, res){
 
 ## Projeto Final
 
-Criar um sistema que seja composto de lojas de cervejas, onde os usuários poderão se cadastrar e falar que tomaram as cervejas. Nisso teremos basiacamente 3 coleções:
+Criar um sistema que seja composto de lojas de cervejas, onde os usuários poderão se cadastrar e falar que tomaram as cervejas. Nisso teremos basicamente 3 coleções:
 
 - users
 - shops
@@ -1606,4 +1608,5 @@ O sistema deverá ser um Single Page App onde o usuário se cadastrará e pesqui
 - birth //data de nascimento
 - beers
 
-Na parte de user pode ser usado o Passport ou diretamente o mean.io que já possui um boilerplate usável com o Passport já integrado.
+
+

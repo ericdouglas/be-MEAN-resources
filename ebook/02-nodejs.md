@@ -4,6 +4,8 @@
 
 ### Hello World
 
+Vamos ao código do nosso Hello World:
+
 ```js
 var http = require('http');
 
@@ -14,8 +16,18 @@ http.createServer(function (req, res) {
 console.log('Server running at http://localhost:3000/');
 ```
 
+Na primeira linha estamos chamando o módulo [http](http://nodejs.org/api/http.html) do Node.js o qual é responsável por toda a comunicação via o protocolo [HTTP](http://pt.wikipedia.org/wiki/Hypertext_Transfer_Protocol).
 
-## EXPLICAR O REQ, RES, WRITE, END ETC
+Logo abaixo estamos executando a função [createServer](http://nodejs.org/api/http.html#http_http_createserver_requestlistener) o qual recebe como parâmetro uma [função anônima](http://pt.stackoverflow.com/questions/9936/como-funcionam-fun%C3%A7%C3%B5es-an%C3%B4nimas) com 2 parâmetros:
+
+- req: request
+- res: response
+
+E eles são os objetos que sempre teremos nessa função já que o *resquest* é o objeto que possui todas as informações das requisições que chegam nesse server, que acabamos de criar, e o *response* é o objeto que possui as informações da resposta que vamos enviar.
+
+Dentro dessa função primeiramente estamos setando o [código 200](http://pt.wikipedia.org/wiki/Lista_de_c%C3%B3digos_de_status_HTTP#200_OK) da resposta e o cabeçalho `Content-type` com o valor `text/plain`. E isso diz quem minha respostá será um texto puro.
+
+Logo após temos o `res.end('Hello World');` que irá fechar a conexão do cliente com o servidor, enviando o texto `Hello World`. Depois iniciamos o servidor, propriamente dito, na porta 3000.
 
 
 ```js
