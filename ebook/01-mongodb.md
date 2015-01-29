@@ -121,21 +121,6 @@ O MongoDb é um banco NoSQL orientado a documento [JSON](http://json.org/), ou s
 
 O [BSON](http://bsonspec.org/) nada mais é que uma versão serializada e "binarizada", transformada em binário, do JSON. Ele possui diversos tipos caso queira conhecer mais sobre esses tipos [visite http://docs.mongodb.org/manual/reference/bson-types/](http://docs.mongodb.org/manual/reference/bson-types/).
 
-Comparativo de estruturas JSON e BSON:
-
-```javascript
-// JSON
-{
-  "curso": "beMEAN by Jean"
-}
-
-// BSON
-{
-  "_id": ObjectId("54be9c3a9b7269ae5d93ed94"),
-  "curso": "beMEAN by Jean"
-}
-```
-
 O [MongoDB](http://www.mongodb.com/json-and-bson) usa o [BSON](http://docs.mongodb.org/manual/reference/bson-types/) para estende o modelo de [JSON](http://json-schema.org/latest/json-schema-core.html#anchor8) para fornecer tipos de dados adicionais e para ser eficiente na codificação e decodificação em diferentes idiomas.db.teste.insert(json)
 
 
