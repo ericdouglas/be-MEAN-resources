@@ -20,8 +20,8 @@ Na primeira linha estamos chamando o módulo [http](http://nodejs.org/api/http.h
 
 Logo abaixo estamos executando a função [createServer](http://nodejs.org/api/http.html#http_http_createserver_requestlistener) o qual recebe como parâmetro uma [função anônima](http://pt.stackoverflow.com/questions/9936/como-funcionam-fun%C3%A7%C3%B5es-an%C3%B4nimas) com 2 parâmetros:
 
-- req: request
-- res: response
+- **req**: request
+- **res**: response
 
 E eles são os objetos que sempre teremos nessa função já que o *resquest* é o objeto que possui todas as informações das requisições que chegam nesse server, que acabamos de criar, e o *response* é o objeto que possui as informações da resposta que vamos enviar.
 
@@ -44,9 +44,33 @@ console.log('Server running at http://localhost:3000/');
 
 Agora além de modificarmos o cabeçalho para retornar HTML em UTF-8, também enviamos a tag `<h1>Hello World</h1>` via `res.write` e `<h2>Hoje está um belo dia :p</h2>` via `res.end`. Como vimos anteriormente o `res.end` envia uma mensagem finalizando a conexão e esse `res.send`?
 
+####res.send
+Esse método realiza uma infinidade de tarefas úteis para respostas não-streaming simples como atribuir automaticamente o Content-Length, a menos que previamente definindo e provendo o HEAD automático e limpeza de cache HTTP.
+
+```js
+res.send(new Buffer('buferando'));
+res.send({ algum: 'json' });
+res.send('algum html');
+res.send(404, 'Não achei!');
+res.send(500, { error: 'FFFFFUUUUUUU' });
+res.send(200);
+```
+
+Quando um buffer é enviado o Content-Type é definido como “application / octet-stream” a menos que previamente definido, como mostrado abaixo:
+
+```js
+res.set('Content-Type', 'text/html');
+res.send(new Buffer('<h1>Be MEAN</h1>'));
+
+```
+
+Legal podemos enviar HTML direto na nossa resposta, mas é claro que não usamos dessa forma, então qual seria a melhor forma?
+
+Ler um arquivo HTML e enviar seu conteúdo nessa resposta, como veremos a seguir.
+
 ## FileSystem
 
-Para retornamos um HTML lido pelo Node.js, utilizamos o módulo `fs` (FileSystem) para ler/escrever arquivos. Esse módulo é um dos mais importantes do Node.js, pois proporciona grandes poderes e com grandes poderes vem grandes responsabilidades :p
+Para retornamos um HTML lido pelo Node.js, utilizamos o módulo `fs` ([FileSystem](http://nodejs.org/api/fs.html)) para ler/escrever arquivos. Esse módulo é um dos mais importantes do Node.js, pois proporciona grandes poderes e com grandes poderes vem grandes responsabilidades :p
 
 ```js
 var http = require('http')
@@ -60,6 +84,73 @@ http.createServer(function (req, res) {
 }).listen(3000);
 console.log('Server running at http://localhost:3000/');
 ```
+
+Nesse caso usamos a função [fs.readFileSync](http://nodejs.org/api/fs.html#fs_fs_readfilesync_filename_options) que é a versão síncrona da [fs.readFile](http://nodejs.org/api/fs.html#fs_fs_readfile_filename_options_callback)
+
+**DICA IMPORTANTE!!!!**
+
+> Todas as funções do Node.js são por padrão assíncronas, caso você necessite usar alguma de forma síncrona deverá usar sua versão com `Sync` no final.
+
+Vamos entender um pouco melhor qual a diferença entre as 2. Observe o código abaixo que irá ler um arquivo de forma síncrona.
+
+```js
+var fs = require('fs');
+
+console.log('Vou ler', Date.now());
+console.time('leitura');
+
+var file = fs.readFileSync('file.zip');
+console.log(file);
+
+console.timeEnd('leitura');
+console.log('Ja li', Date.now());
+```
+
+Rodando esse código para ele ler um arquivo chamado `file.zip` temos a seguinte saída:
+
+```
+➜  node.js  node sync-world.js
+Vou ler 1422637149740
+<Buffer 50 4b 03 04 14 00 08 00 08 00 63 42 e8 44 00 00 00 00 00 00 00 00 00 00 00 00 23 00 10 00 57 69 6c 66 72 65 64 2e 55 53 2e 53 30 34 45 30 31 2e 48 44 54 ...>
+leitura: 2106ms
+Ja li 1422637151848
+```
+
+Agora vamos rodar o código assíncrono:
+
+```
+var fs = require("fs");
+
+console.log("Vou ler", Date.now());
+console.time("leitura");
+// var file = fs.readFileSync("file.zip");
+
+fs.readFile('file.zip', function(err, data){
+    console.log(data);
+});
+
+console.timeEnd("leitura");
+console.log("Ja li", Date.now());
+```
+
+Rodando esse arquivo:
+
+```
+➜  node.js  node async-world.js 
+Vou ler 1422637230715
+leitura: 1ms
+Ja li 1422637230718
+<Buffer 50 4b 03 04 14 00 08 00 08 00 63 42 e8 44 00 00 00 00 00 00 00 00 00 00 00 00 23 00 10 00 57 69 6c 66 72 65 64 2e 55 53 2e 53 30 34 45 30 31 2e 48 44 54 ...>
+```
+
+Conseguiu perceber a diferença? Não foi apenas no tempo, que nesse caso é irrelevante já que o tempo de leitura do arquivo não muda.
+
+Você deve estar se perguntando:
+
+**- Como assim não muda? E aquele leitura: 1ms ali?**
+
+Antes de responder vamos analisar o código síncrono
+
 
 ## Mongoose
 
