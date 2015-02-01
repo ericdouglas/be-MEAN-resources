@@ -909,7 +909,24 @@ suissacorp(mongod-2.4.8) be-mean> db.products.find(query)
   "description": "Mé brasileiro",
   "price": 23
 }
-
+{
+  "_id": ObjectId("54614d5c5b9f2b586cb31d09"),
+  "name": "Pinga",
+  "description": "da braba po tubão",
+  "price": 4.5
+}
+{
+  "_id": ObjectId("54614d5c5b9f2b586cb31d0a"),
+  "name": "Uísque",
+  "description": "Pra preiboi toma com energético",
+  "price": 80
+}
+{
+  "_id": ObjectId("54614d5c5b9f2b586cb31d0b"),
+  "name": "Champagne",
+  "description": "só podia ser saopaulino",
+  "price": 130
+}
 ```
 
 ##Busca em Arrays
@@ -1463,7 +1480,7 @@ var obj = db.workshop.findOne()
 {
 "_id" : ObjectId("51ccffe9c49bec6fd946c92a"),
 "nome" : "Be MEAN",
-"professor" : DBRef("users", "51ccffa2c49bec6fd946c929")
+"professor" : DBRef("professores", "51ccffa2c49bec6fd946c929")
 }
 ```
 
