@@ -16,13 +16,13 @@ Agradecer principalmente a galera que me segue no Facebook/Twitter e me vê *flo
 
 ## Sobre o autor
 
-Nunca esquecerei quando sabia que minha vida seria na informática.
+Nunca esquecerei o dia em que soube que minha vida seria na área da informática.
 
-Quando ainda era um criança de uns 10/11 anos, um cara foi instalar uma [BBS](http://pt.wikipedia.org/wiki/Bulletin_board_system) no IBM 486 do meu pai e quando olhei no monitor ele estava conversando via chat com uma outra operadora de suporte, isso deve ter sido em meados de 94, naquela época ninguém tinha celular aqui, malemal o telefone funcionava bem naquela época.
+Quando ainda era um criança de uns 10/11 anos, um cara foi instalar uma [BBS](http://pt.wikipedia.org/wiki/Bulletin_board_system) no IBM 486 do meu pai e quando olhei no monitor ele estava conversando via chat com uma outra operadora de suporte. Isso deve ter sido em meados de 1994, naquela época ninguém tinha celular aqui, malemal o telefone funcionava bem naquela época.
 
 Perguntei incautamente :
 
-\- Você esta escrevendo para ela agora e ela responde no mesmo momento?
+\- Você está escrevendo para ela agora e ela responde no mesmo momento?
 
 Quando ele disse:
 
@@ -30,7 +30,7 @@ Quando ele disse:
 
 ![](http://wersm.com/wp-content/uploads/2013/08/Mind-Blowing-EMR-and-Meaningful-Use-Stats-and-Facts.gif)
 
-Hoje em dia odeio falar no celular, fixo, skype para me comunicar diretamente com alguém, sempre prefiro o texto escrito. Mas minha vida na Web mesmo começou aos 14 anos quando ganhei um Pentium 3 500 MHz do meu avô porque iria fazer 15 anos, melhor presente que ganhei na vida!
+Hoje em dia odeio falar no celular, fixo ou call no Skype. Para me comunicar diretamente com alguém, sempre prefiro o texto escrito. Mas minha vida na Web começou mesmo aos 14 anos, quando ganhei um Pentium 3 500 MHz do meu avô de aniversário de 15 anos, melhor presente que ganhei na vida!
 
 Naquela época o Google ainda não existia, era quase uma Deep Web se você não fosse catalogado pelo Yahoo ou Cadê, mas as 2 permitiam que você mesmo adicionasse seu site, pelo menos o Cadê.
 
@@ -38,15 +38,15 @@ Não esqueço de um jogo tipo RPG que eu jogava via TELNET, passei MUITAS horas 
 
 Mas o que me marcou mesmo foi um filme que eu tinha visto entre o tempo de ter o primeiro computador na família, com uns 12 anos, e depois ficar sem até os 14; foi [Hackers - Piratas de Computador](http://pt.wikipedia.org/wiki/Hackers_%28filme%29), esse filme que me fez ter a gana de virar um [Hacker](http://pt.wikipedia.org/wiki/Hacker).
 
-Em 6 meses que eu tinha ganho o computador já tinha começado a hackear sites por um bug ESCROTO demais do FrontPage, na época você podia instalar um módulo do FrontPage no IIS, da Microsoft óbvio, que deixava você editar seu site diretamente do FrontPage, porém qualquer pessoa que soubesse aquilo e também usasse o FrontPage poderia alterar, não existia nenhum tipo de autenticação.
+Depois de 6 meses com o computador, já tinha começado a hackear sites por um bug ESCROTO demais do FrontPage, na época você podia instalar um módulo do FrontPage no IIS da Microsoft (óbvio), que deixava você editar seu site diretamente do FrontPage, porém qualquer pessoa que soubesse aquilo e também usasse o FrontPage poderia alterar, não existia nenhum tipo de autenticação.
 
 ![WAT](https://cldup.com/BOagKEB49C.gif)
 
-Esse foi apenas o início para começar a usar Trojans, Port Scanners e programas de DoS, naquel época ainda não existia o DDOS.
+Esse foi apenas o início para começar a usar Trojans, Port Scanners e programas de DoS, naquela época ainda não existia o DDOS.
 
-Nunca vou esquecer quando usava conexão discada entrava só depois da meia noite e passava a madrugada procurando servidores vulneráveis para os exploits que eu rodava via Cygwin no Windows, para rodar exploits em C. Toda madruga era no mínimo UM deface, termo usado na época para o "pixamento" de algum site.
+Nunca vou esquecer quando usava conexão discada, entrava só depois da meia noite e passava a madrugada procurando servidores vulneráveis para os exploits que eu rodava via Cygwin no Windows, para rodar exploits em C. Toda madruga era no mínimo UM deface, termo usado na época para o "pichamento" de algum site.
 
-Depois de começar a fazer *defaces* que me interessei em aprender HTML e CSS para deixar mensagens mais bonitas nos sites hackeados. Nessa época eu já usava Linux o dia todo, só ia para o Windows conectar na Internet porque meu modem era um lixo de um WinModem, como eu usava direto o Linux comecei a brincar no GIMP e comecei a fazer várias montagens muito loucas e a galera me perguntava onde eu tinha feito e eu falava:
+Depois de começar a fazer *defaces* eu me interessei em aprender HTML e CSS para deixar mensagens mais bonitas nos sites hackeados. Nessa época eu já usava Linux o dia todo, só ia para o Windows conectar na Internet porque meu modem era um lixo de um WinModem, como eu usava direto o Linux comecei a brincar no GIMP e comecei a fazer várias montagens muito loucas e a galera me perguntava onde eu tinha feito e eu falava:
 
 \- GIMP.
 
@@ -58,7 +58,7 @@ Só faltava a pessoa me dar um tiro na cara.
 
 \- PhotoShop.
 
-Ai fui obrigado pela minha mente a testar esse PhotoShop, nunca mais larguei. Até fui em uma FENASOFT que na época era maior convenção de Informática e vi nesse evento o PhotoShop 7 ser lançado, era meu primeiro ano na Faculdade e minha palestra que vi já foi sobre Computação Quântica, imagine se o [piá](http://pt.wiktionary.org/wiki/pi%C3%A1) não estava todo empolgado.
+Aí fui obrigado pela minha mente a testar esse PhotoShop, nunca mais larguei. Até fui em uma FENASOFT que na época era maior convenção de Informática e vi nesse evento o PhotoShop 7 ser lançado, era meu primeiro ano na Faculdade e a primeira palestra que vi foi sobre Computação Quântica, imagine se o [piá](http://pt.wiktionary.org/wiki/pi%C3%A1) não estava todo empolgado.
 
 Mas a faculdade em si foi chata para caraleo! Pois na minha época não existia nada para WEB, só não conto minha saga nas Faculdades pois daria outro livro.
 
