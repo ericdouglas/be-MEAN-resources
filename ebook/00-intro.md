@@ -112,3 +112,5 @@ Nesse exemplo estamos fazendo a listagem de cervejas. A sequência de eventos é
 6. MongoDb retorna um JSON
 7. Node.js retorna um JSON
 8. AngularJS recebe e trabalha com o retorno
+
+[MongoDB](https://github.com/ericdouglas/be-MEAN-resources/blob/master/ebook/01-mongodb.md)

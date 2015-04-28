@@ -1210,3 +1210,5 @@ var http = require('http')
 ```
 
 O *require* do `config/db` vem antes do *Controller* para que os *Models* ja estejam importados, em cache, para que possamos apenas chamá-lo.
+
+[MongoDB](https://github.com/ericdouglas/be-MEAN-resources/blob/master/ebook/01-mongodb.md) | [Express](https://github.com/ericdouglas/be-MEAN-resources/blob/master/ebook/03-express.md)
