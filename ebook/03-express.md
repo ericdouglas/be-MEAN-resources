@@ -282,3 +282,5 @@ form(action='/api/beers/#{cerveja._id}', method='POST', enctype='application/x-w
   input(type='hidden', name='_method', value='DELETE')
   input(type='submit', value='REMOVER')
 ```
+
+[Node.JS](https://github.com/ericdouglas/be-MEAN-resources/blob/master/ebook/02-nodejs.md) | [AngularJS](https://github.com/ericdouglas/be-MEAN-resources/blob/master/ebook/04-angularjs.md)

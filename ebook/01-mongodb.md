@@ -1544,3 +1544,5 @@ Na coleção `fs.chunks` fica nosso arquivo binário divido em pequenas partes, 
 Você deve ter notado que temos o campo md5, para que o md5 do arquivo pode ser interessante nesse caso? 
 
 Bom, você pode fazer uma busca pelo md5 e caso encontre mais de 1 registro, é porque existem arquivos duplicados, ai você decide o que fazer com ele.
+
+[Introdução](https://github.com/ericdouglas/be-MEAN-resources/blob/master/ebook/00-intro.md) | [Node.JS](https://github.com/ericdouglas/be-MEAN-resources/blob/master/ebook/02-nodejs.md)
