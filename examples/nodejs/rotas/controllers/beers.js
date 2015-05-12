@@ -5,11 +5,11 @@ var msg = '';
 module.exports = {
   create : function( req, res ) {
     var dados = {
-      name        : 'Skol',
-      description : 'Mijo de rato',
-      alcohol     : 4.5,
-      price       : 3.0,
-      category    : 'pilsen'
+        name        : 'Skol'
+      , description : 'Mijo de rato'
+      , alcohol     : 4.5
+      , price       : 3.0
+      , category    : 'pilsen'
     }
 
     var model = new Beer( dados );
@@ -44,8 +44,8 @@ module.exports = {
       alcohol : 666
     };
     var optional = {
-      upsert : false,
-      multi : true
+        upsert : false
+      , multi : true
     };
 
     Beer.update( query, mod, optional, function( err, data ) {
